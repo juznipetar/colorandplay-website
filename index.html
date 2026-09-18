@@ -90,8 +90,9 @@
 }
 :root[data-theme="dark"] .cta:hover{background:#045654; border-color:#045654;}
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; scroll-padding-top:72px;}
 body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:16px; line-height:1.6; overflow-x:hidden;}
+#pakete,#ablauf,#standort,#kontakt,#main{scroll-margin-top:72px;}
 [hidden]{display:none!important;}
 img,svg{max-width:100%;}
 .wrap{max-width:1120px; margin-inline:auto; padding-inline:20px; position:relative;}
@@ -111,6 +112,7 @@ a{color:inherit;}
   .blob{animation:none!important;}
   .brandmark .dot{animation:none!important;}
   .tier .badge{animation:none!important;}
+  .cta:hover,.cta.ghost:hover,.prop:hover,.tier:hover,.tier.popular,.tier.popular:hover,.step:hover,.offercard:hover{transform:none!important;}
 }
 .skip-link{position:absolute; left:12px; top:-100px; z-index:100; background:var(--teal-deep); color:#fff; padding:10px 16px; border-radius:8px; font-weight:600; font-size:14px; text-decoration:none;}
 .skip-link:focus{top:12px;}
@@ -128,12 +130,22 @@ a{color:inherit;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--teal-soft);} 50%{box-shadow:0 0 0 6px var(--teal-soft);}}
 .brandmark-text{font-family:var(--font-display); font-weight:600; font-size:17px; letter-spacing:.01em;}
 .topbar-right{display:flex; align-items:center; gap:14px;}
-.navlinks{display:none; gap:22px; font-size:14px; font-weight:500;}
-.navlinks a{text-decoration:none; color:var(--ink-soft); position:relative; padding-block:2px;}
+.navlinks{display:flex; gap:14px; font-size:13px; font-weight:500; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; flex:1 1 100%; order:2; padding-bottom:2px;}
+.navlinks::-webkit-scrollbar{display:none;}
+.navlinks a{text-decoration:none; color:var(--ink-soft); position:relative; padding-block:2px; white-space:nowrap; flex-shrink:0;}
 .navlinks a::after{content:""; position:absolute; left:0; right:100%; bottom:-2px; height:1.5px; background:var(--teal); transition:right .25s ease;}
 .navlinks a:hover{color:var(--teal-deep);}
 .navlinks a:hover::after{right:0;}
-@media (min-width:760px){ .navlinks{display:flex;} }
+@media (min-width:760px){
+  .topbar-inner{flex-wrap:nowrap;}
+  .topbar-right{width:auto; flex-wrap:nowrap;}
+  .navlinks{flex:0 1 auto; order:0; gap:22px; font-size:14px; overflow:visible; padding-bottom:0;}
+}
+@media (max-width:759px){
+  .topbar-inner{flex-wrap:wrap; row-gap:10px;}
+  .topbar-right{width:100%; flex-wrap:wrap; gap:8px; justify-content:flex-end;}
+  .langtoggle{order:1; margin-left:auto;}
+}
 .langtoggle{display:flex; border:1px solid var(--line-strong); border-radius:999px; overflow:hidden; font-family:var(--font-mono); font-size:12.5px; font-weight:500;}
 .langtoggle button{border:0; background:transparent; color:var(--ink-soft); padding:7px 14px; cursor:pointer; letter-spacing:.03em; transition:background .2s, color .2s;}
 .langtoggle button[aria-pressed="true"]{background:var(--teal-deep); color:#fff;}
@@ -244,6 +256,8 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 .field label .opt{font-weight:400; color:var(--ink-faint); font-size:12px;}
 .field input,.field textarea{width:100%; font:inherit; font-size:15px; color:var(--ink); background:var(--bg); border:1px solid var(--line-strong); border-radius:10px; padding:11px 13px; transition:border-color .2s, box-shadow .2s;}
 .field input:focus,.field textarea:focus,.field input:focus-visible,.field textarea:focus-visible{outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-soft);}
+.field.is-invalid input,.field.is-invalid textarea{border-color:var(--coral); box-shadow:0 0 0 3px color-mix(in srgb, var(--coral) 20%, transparent);}
+.field.is-invalid input:focus,.field.is-invalid textarea:focus{border-color:var(--coral); box-shadow:0 0 0 3px color-mix(in srgb, var(--coral) 25%, transparent);}
 .field textarea{min-height:132px; resize:vertical;}
 .contact-form .cta{width:100%; justify-content:center; margin-top:4px; cursor:pointer; font-family:inherit;}
 .contact-form .cta:disabled{opacity:.65; cursor:not-allowed; transform:none;}
@@ -251,6 +265,7 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 .form-status.is-visible{display:block;}
 .form-status.ok{background:var(--teal-soft); color:var(--teal-deep); border:1px solid color-mix(in srgb, var(--teal) 25%, transparent);}
 .form-status.err{background:var(--coral-soft); color:var(--coral); border:1px solid color-mix(in srgb, var(--coral) 25%, transparent);}
+.form-status.warn{background:var(--gold-soft); color:var(--ink); border:1px solid color-mix(in srgb, var(--gold) 35%, transparent);}
 .contact-fallback{font-size:14px; color:var(--ink-soft); margin-top:18px;}
 .contact-fallback a{color:var(--teal-deep); font-weight:600; text-decoration:underline; text-underline-offset:2px;}
 .contact-aside{display:flex; flex-direction:column; gap:16px;}
@@ -326,7 +341,7 @@ footer{padding-block:44px 60px;}
       <div class="t" style="--i:0"><div class="v" data-count="11">0</div><div class="l i18n" data-lang="de">Erlebnis-Formate</div><div class="l i18n" data-lang="en" hidden>Experience formats</div></div>
       <div class="t" style="--i:1"><div class="v" data-count="6">0</div><div class="l i18n" data-lang="de">Tage die Woche geöffnet</div><div class="l i18n" data-lang="en" hidden>Days open per week</div></div>
       <div class="t" style="--i:2"><div class="v" data-count="100" data-suffix="%">0</div><div class="l i18n" data-lang="de">Material inklusive</div><div class="l i18n" data-lang="en" hidden>Materials included</div></div>
-      <div class="t" style="--i:3"><div class="v"><span class="i18n" data-lang="de">ab</span><span class="i18n" data-lang="en" hidden>from</span> CHF <span data-count="39">0</span></div><div class="l i18n" data-lang="de">pro Erlebnis</div><div class="l i18n" data-lang="en" hidden>per experience</div></div>
+      <div class="t" style="--i:3"><div class="v"><span class="i18n" data-lang="de">ab</span><span class="i18n" data-lang="en" hidden>from</span> CHF 39</div><div class="l i18n" data-lang="de">pro Erlebnis</div><div class="l i18n" data-lang="en" hidden>per experience</div></div>
     </div>
   </div>
 </header>
@@ -823,8 +838,7 @@ footer{padding-block:44px 60px;}
   <div class="contact-layout">
     <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
       <fieldset>
-        <legend class="i18n" data-lang="de">Anfrage senden</legend>
-        <legend class="i18n" data-lang="en" hidden>Send an enquiry</legend>
+        <legend><span class="i18n" data-lang="de">Anfrage senden</span><span class="i18n" data-lang="en" hidden>Send an enquiry</span></legend>
         <div class="field">
           <label for="contact-name">
             <span class="i18n" data-lang="de">Name</span><span class="i18n" data-lang="en" hidden>Name</span>
@@ -978,23 +992,54 @@ footer{padding-block:44px 60px;}
     function currentLang(){
       return document.documentElement.lang === "en" ? "en" : "de";
     }
-    function showStatus(key){
+    function showStatus(key, customText){
       var lang = currentLang();
-      formStatus.textContent = statusCopy[key][lang];
-      formStatus.className = "form-status is-visible " + (key === "ok" ? "ok" : (key === "sending" ? "" : "err"));
-      if (key === "sending") formStatus.classList.remove("ok", "err");
+      formStatus.textContent = customText || statusCopy[key][lang];
+      formStatus.className = "form-status is-visible " + (key === "ok" ? "ok" : (key === "warn" ? "warn" : (key === "sending" ? "" : "err")));
+      if (key === "sending") formStatus.classList.remove("ok", "err", "warn");
     }
+    function clearFieldErrors(){
+      contactForm.querySelectorAll(".field.is-invalid").forEach(function(field){
+        field.classList.remove("is-invalid");
+        var input = field.querySelector("input, textarea");
+        if (input) input.removeAttribute("aria-invalid");
+      });
+    }
+    function markInvalidFields(){
+      clearFieldErrors();
+      var firstBad = null;
+      contactForm.querySelectorAll("input, textarea").forEach(function(el){
+        if (el.willValidate && !el.checkValidity()){
+          var field = el.closest(".field");
+          if (field) field.classList.add("is-invalid");
+          el.setAttribute("aria-invalid", "true");
+          if (!firstBad) firstBad = el;
+        }
+      });
+      if (firstBad) firstBad.focus();
+      return !!firstBad;
+    }
+    contactForm.querySelectorAll("input, textarea").forEach(function(el){
+      el.addEventListener("input", function(){
+        var field = el.closest(".field");
+        if (field && field.classList.contains("is-invalid") && el.checkValidity()){
+          field.classList.remove("is-invalid");
+          el.removeAttribute("aria-invalid");
+        }
+      });
+    });
     contactForm.addEventListener("submit", function(ev){
       ev.preventDefault();
+      clearFieldErrors();
       if (!contactForm.checkValidity()){
+        markInvalidFields();
         showStatus("invalid");
         return;
       }
       if (contactForm.action.indexOf("YOUR_FORMSPREE_ID") !== -1){
-        showStatus("err");
-        formStatus.textContent = currentLang() === "de"
+        showStatus("warn", currentLang() === "de"
           ? "Formular noch nicht aktiv — bitte Formspree-ID eintragen (siehe DEPLOY.md) oder nutze die E-Mail-Option."
-          : "Form not active yet — add the Formspree ID (see DEPLOY.md) or use the email option.";
+          : "Form not active yet — add the Formspree ID (see DEPLOY.md) or use the email option.");
         return;
       }
       submitBtn.disabled = true;
