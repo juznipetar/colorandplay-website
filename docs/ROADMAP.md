@@ -80,6 +80,11 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
       Odlozeno: globalna `--sage`/`--gold` odluka ako se koriste za tekst.
 - [x] Performance provera (Lighthouse) — cilj 90+ Performance i SEO: live pre
       91/100, lokalno posle 99/100 (async fonts, manje font-weight varijanti).
+- [x] **BOT:** Primena Playful Pastel / Manus palete sa
+      [bojaprica-ewkzvomb.manus.space](https://bojaprica-ewkzvomb.manus.space)
+      — hex map u `:root` na `index.html` i `businessplan/index.html`, dark mode
+      usklađen, lokalne WCAG korekcije (CTA/teal tekst). Detalji u
+      `docs/izvestaji/05-izvestaj-sesije-2026-09.md`.
 
 ## Faza 3 — Prosirenje paketa (BOT)
 
