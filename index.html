@@ -243,6 +243,15 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 @media (min-width:820px){ .cols2{grid-template-columns:1fr 1fr;} }
 .infocard{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px 28px; box-shadow:var(--shadow);}
 .infocard h3{font-size:1.1rem; margin-bottom:14px;}
+.mapcard{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); margin-top:28px; transition:box-shadow .25s ease;}
+.mapcard:hover{box-shadow:var(--shadow-lg);}
+.mapcard .maplabel{display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+.mapcard .maplabel .pin{width:20px; height:20px; flex:none; color:var(--teal-deep);}
+.mapcard .maplabel h3{font-size:1.05rem; margin:0;}
+.map-embed{position:relative; width:100%; aspect-ratio:16/8; border-radius:10px; overflow:hidden; border:1px solid var(--line-strong); background:var(--surface-2);}
+.map-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0; filter:saturate(.85) contrast(1.02);}
+.mapcard .mapnote{font-size:13px; color:var(--ink-soft); margin-top:14px;}
+@media (max-width:560px){ .map-embed{aspect-ratio:4/3;} }
 .infolist{display:flex; flex-direction:column; gap:10px; font-size:14px;}
 .infolist .k{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); display:block; margin-bottom:2px;}
 .infolist .v{color:var(--ink);}
@@ -825,6 +834,17 @@ footer{padding-block:44px 60px;}
         <div><span class="k i18n" data-lang="de">Mo</span><span class="k i18n" data-lang="en" hidden>Mon</span><span class="v i18n" data-lang="de">geschlossen</span><span class="v i18n" data-lang="en" hidden>closed</span></div>
       </div>
     </div>
+  </div>
+  <div class="mapcard">
+    <div class="maplabel">
+      <svg class="pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" fill="currentColor"/></svg>
+      <h3 class="i18n" data-lang="de">Karte</h3><h3 class="i18n" data-lang="en" hidden>Map</h3>
+    </div>
+    <div class="map-embed">
+      <iframe title="Color and Play — Baar, Kanton Zug" src="https://www.google.com/maps?q=47.1974,8.5237&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="mapnote i18n" data-lang="de">Markierung zeigt aktuell das Zentrum von Baar — die genaue Adresse folgt in Kürze.</p>
+    <p class="mapnote i18n" data-lang="en" hidden>Pin currently shows central Baar — the exact address is coming soon.</p>
   </div>
 </section>
 
