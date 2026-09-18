@@ -125,6 +125,65 @@ mesta i da se brojevi razmimoilaze.
 - CRM / lista klijenata
 - Email marketing (newsletter prijava)
 
+## Faza 6 — Kreativne nove ideje (predlog, sesija 06, 2026-09-18)
+
+Posle deep-check-a sesija 02-05 (sve potvrdjeno live, bez regresija — vidi
+`docs/izvestaji/06-izvestaj-sesije-2026-09.md`). Ideje ispod NISU obavezne —
+predlog je da BOT uzme (a) odmah, jednu po jednu, bez cekanja na coveka, a (b)
+samo posle eksplicitnog OK od Petra/Suzane.
+
+### (a) BOT moze odmah, bez zavisnosti
+
+- [x] **Favicon/OG slike usaglasene sa novom paletom** — `favicon-16/32/192/512.png`,
+      `favicon.ico`, `apple-touch-icon.png`, `og-image.png` su i dalje koristili
+      staru teal/gold paletu iako je `favicon.svg` i sajt vec presli na Playful
+      Pastel (sesija 05). Regenerisano i zamenjeno u ovoj sesiji (cloud agent,
+      PIL) — sad su svi na `--teal #0b8e8b` / `--gold #f5cb50` / mist halo.
+- [ ] **Impressum + Datenschutzerklaerung stranice.** Za komercijalni sajt u
+      Svajcarskoj ovo nije opciono (OR/UWG identifikacija firme + revDSG za
+      podatke koje kontakt forma/Formspree obradjuje). Predlog: `/impressum/`
+      i `/datenschutz/` (DE/EN), link u footer-u oba HTML fajla. Sadrzaj:
+      pravno ime, adresa, email, ko obradjuje podatke (Formspree, GitHub
+      Pages), koja prava korisnik ima. Bot moze napisati nacrt teksta, ali
+      **pravno ime firme / tacna adresa mora potvrditi covek** pre nego sto
+      ide live — dodati kao vidljiv `[TODO: potvrditi]` placeholder ako fali.
+- [ ] **JSON-LD structured data (schema.org LocalBusiness)** na `index.html` —
+      ime, adresa (Baar, Kanton Zug), tip usluge, cenovni raspon, radno vreme
+      ako postoji. Besplatan lokalni SEO potez (Google lokalni rezultati za
+      "Kindergeburtstag Baar", "Malatelier Zug" i sl.), ne dira vizuelni dizajn.
+- [ ] **Custom 404 stranica** — GitHub Pages trenutno servira default prazan
+      404. Kratka DE/EN stranica u brend stilu ("Diese Seite gibt's nicht —
+      zurueck zur Startseite") sa linkom na `/`. Mala stvar, ali losi prvi
+      utisak kod pokvarenog linka ili tipfelera u URL-u.
+- [ ] **"Koji paket odgovara nama?" mini-kviz** — 3-4 kratka pitanja (broj
+      osoba, prilika: rodjendan/firma/spoj, budzet) → JS bez backend-a scroll-uje
+      i istice preporuceni tier medju postojecih 11 paketa. Igrivo, uklapa se u
+      "Play" brend ton, nula rizika po postojeci sadrzaj (cist dodatak, ne
+      menja cene/tekst).
+- [ ] **Print stylesheet za `businessplan/index.html`** — `@media print` da
+      Herr Alig moze cist da odstampa/PDF-uje stranicu za sastanak (bez topbar-a,
+      gate-a, dekorativnih blob-ova; teal umesto svetlih boja za bolji crno-belo
+      ispis).
+- [ ] **Vizuelni preview generator za poklon vaucer** (Geschenkgutscheine paket
+      vec postoji u cenovniku) — mali klijentski prikaz (ime primaoca, iznos,
+      brend dizajn) koji se moze odstampati/sacuvati kao PDF pre nego sto se
+      posalje. Direktno vezano za postojeci prihodni paket, ne izmisljena
+      funkcija.
+
+### (b) Ceka eksplicitno OK od Petra/Suzane pre nego sto se radi
+
+- **Analytics** (npr. Plausible ili GoatCounter — privacy-friendly, bez
+  cookie banner-a) — trenutno nema nikakve vidljivosti u saobracaj. Treba
+  odluka o alatu + nalog.
+- **Testimonials/recenzije sekcija** — samo ako Suzana ima stvarne izjave
+  klijenata za deljenje. Bot ne sme izmisljati recenzije ni citate.
+- **Instagram/social embed** — treba pravi handle/nalog da se poveze.
+- **Blog/News sekcija** (sezonski workshopi, akcije) — SEO korisno, ali
+  zahteva redovan sadrzaj; pitanje da li Suzana zeli tu obavezu.
+- **Francuski jezik (FR)** — Svajcarska ima 4 jezika; Baar/Zug je nemacko
+  govorno podrucje pa nizak prioritet, ali ako cilja i frankofone
+  turiste/expate u okolini Ciriha, treci jezik je moguc dodatak.
+
 ---
 
 **Napomena za bota:** faze 1-3 se mogu raditi paralelno gde nema zavisnosti (npr.
