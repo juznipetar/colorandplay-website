@@ -238,6 +238,8 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 .signature{margin-top:52px;}
 .signature + .signature{margin-top:64px;}
 .sig-head{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:22px;}
+.sig-head-left{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px;}
+.sig-more{flex-shrink:0; align-self:center;}
 .sig-head h3{font-size:1.35rem;}
 .sig-head .sig-tag{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--teal-deep); font-weight:600; background:var(--teal-soft); padding:4px 10px; border-radius:999px;}
 .tiers{display:grid; grid-template-columns:1fr; gap:16px;}
@@ -328,6 +330,9 @@ footer{padding-block:44px 60px;}
 @media (min-width:680px){ .footgrid{flex-direction:row; justify-content:space-between; align-items:flex-end;} }
 .footer-brand{font-family:var(--font-display); font-size:1.3rem; font-weight:600;}
 .footer-meta{font-size:12.5px; color:var(--ink-soft); line-height:1.7;}
+.footer-links{margin-top:8px;}
+.footer-links a{color:var(--teal-deep); text-decoration:none; margin-right:14px;}
+.footer-links a:hover{text-decoration:underline;}
 .fineprint{font-size:12px; color:var(--ink-soft); margin-top:32px;}
 </style>
 </head>
@@ -345,6 +350,7 @@ footer{padding-block:44px 60px;}
     <div class="topbar-right">
       <nav class="navlinks" aria-label="Hauptnavigation / Main navigation">
         <a href="#pakete" class="i18n" data-lang="de">Pakete</a><a href="#pakete" class="i18n" data-lang="en" hidden>Packages</a>
+        <a href="galerie/" class="i18n" data-lang="de">Galerie</a><a href="galerie/" class="i18n" data-lang="en" hidden>Gallery</a>
         <a href="#ablauf" class="i18n" data-lang="de">Ablauf</a><a href="#ablauf" class="i18n" data-lang="en" hidden>How it works</a>
         <a href="#standort" class="i18n" data-lang="de">Standort</a><a href="#standort" class="i18n" data-lang="en" hidden>Location</a>
         <a class="cta small" href="#kontakt"><span class="i18n" data-lang="de">Termin sichern</span><span class="i18n" data-lang="en" hidden>Reserve a spot</span></a>
@@ -431,14 +437,19 @@ footer{padding-block:44px 60px;}
   <p class="lead i18n" data-lang="de">Unsere Signature-Formate gibt es in drei Ausbaustufen. So bekommst du genau das Erlebnis, das zu deinem Anlass und Budget passt.</p>
   <p class="lead i18n" data-lang="en" hidden>Our signature formats come in three tiers, so you get exactly the experience that fits your occasion and budget.</p>
 
+  <!-- BUILD:PACKAGES-START -->
   <!-- Kindergeburtstage -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Kindergeburtstage</h3><h3 class="i18n" data-lang="en" hidden>Kids' Birthdays</h3>
-      <span class="sig-tag i18n" data-lang="de">4–12 Jahre · bis 10 Kinder</span><span class="sig-tag i18n" data-lang="en" hidden>Ages 4–12 · up to 10 kids</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Kindergeburtstage</h3><h3 class="i18n" data-lang="en" hidden>Kids' Birthdays</h3>
+        <span class="sig-tag i18n" data-lang="de">4–12 Jahre · bis 10 Kinder</span><span class="sig-tag i18n" data-lang="en" hidden>Ages 4–12 · up to 10 kids</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/kindergeburtstage/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 390</div>
         <ul class="tfeat">
@@ -449,6 +460,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 480</div>
         <ul class="tfeat">
@@ -458,6 +470,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 600</div>
         <ul class="tfeat">
@@ -472,11 +485,15 @@ footer{padding-block:44px 60px;}
   <!-- Firmen & Teams -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Firmen &amp; Teams</h3><h3 class="i18n" data-lang="en" hidden>Companies &amp; Teams</h3>
-      <span class="sig-tag i18n" data-lang="de">8–30 Personen</span><span class="sig-tag i18n" data-lang="en" hidden>8–30 people</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Firmen &amp; Teams</h3><h3 class="i18n" data-lang="en" hidden>Companies &amp; Teams</h3>
+        <span class="sig-tag i18n" data-lang="de">8–30 Personen</span><span class="sig-tag i18n" data-lang="en" hidden>8–30 people</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/firmen-teams/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 89<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -487,6 +504,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 110<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -496,6 +514,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 145<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -510,11 +529,15 @@ footer{padding-block:44px 60px;}
   <!-- Wine & Draw -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3>Wine &amp; Draw</h3>
-      <span class="sig-tag i18n" data-lang="de">Fr &amp; Sa, 19:00 Uhr</span><span class="sig-tag i18n" data-lang="en" hidden>Fri &amp; Sat, 7 pm</span>
+      <div class="sig-head-left">
+        <h3>Wine &amp; Draw</h3>
+        <span class="sig-tag i18n" data-lang="de">Fr &amp; Sa, 19:00 Uhr</span><span class="sig-tag i18n" data-lang="en" hidden>Fri &amp; Sat, 7 pm</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/wine-draw/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 55<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -524,6 +547,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 65<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -532,6 +556,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 85<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -546,11 +571,15 @@ footer{padding-block:44px 60px;}
   <!-- Private Feiern -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Private Feiern</h3><h3 class="i18n" data-lang="en" hidden>Private Celebrations</h3>
-      <span class="sig-tag i18n" data-lang="de">JGA · Babyshower · Jubiläen</span><span class="sig-tag i18n" data-lang="en" hidden>Bachelorette · Baby Showers · Anniversaries</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Private Feiern</h3><h3 class="i18n" data-lang="en" hidden>Private Celebrations</h3>
+        <span class="sig-tag i18n" data-lang="de">JGA · Babyshower · Jubiläen</span><span class="sig-tag i18n" data-lang="en" hidden>Bachelorette · Baby Showers · Anniversaries</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/private-feiern/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 55<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -560,6 +589,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 75<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -568,6 +598,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 95<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -578,14 +609,18 @@ footer{padding-block:44px 60px;}
     </div>
   </div>
 
-  <!-- Art Club -->
+  <!-- Art Club Mitgliedschaft -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Art Club Mitgliedschaft</h3><h3 class="i18n" data-lang="en" hidden>Art Club Membership</h3>
-      <span class="sig-tag i18n" data-lang="de">Monatlich kündbar</span><span class="sig-tag i18n" data-lang="en" hidden>Cancel anytime</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Art Club Mitgliedschaft</h3><h3 class="i18n" data-lang="en" hidden>Art Club Membership</h3>
+        <span class="sig-tag i18n" data-lang="de">Monatlich kündbar</span><span class="sig-tag i18n" data-lang="en" hidden>Cancel anytime</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/art-club/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 59<span class="unit i18n" data-lang="de"> / Monat</span><span class="unit i18n" data-lang="en" hidden> / month</span></div>
         <ul class="tfeat">
@@ -595,6 +630,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 89<span class="unit i18n" data-lang="de"> / Monat</span><span class="unit i18n" data-lang="en" hidden> / month</span></div>
         <ul class="tfeat">
@@ -603,6 +639,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 129<span class="unit i18n" data-lang="de"> / Monat</span><span class="unit i18n" data-lang="en" hidden> / month</span></div>
         <ul class="tfeat">
@@ -616,11 +653,15 @@ footer{padding-block:44px 60px;}
   <!-- Grundangebot -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Grundangebot</h3><h3 class="i18n" data-lang="en" hidden>Core Packages</h3>
-      <span class="sig-tag i18n" data-lang="de">Leinwand · Steine · Gips · 1.5–2 Std.</span><span class="sig-tag i18n" data-lang="en" hidden>Canvas · Stones · Plaster · 1.5–2 hrs</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Grundangebot</h3><h3 class="i18n" data-lang="en" hidden>Core Packages</h3>
+        <span class="sig-tag i18n" data-lang="de">Leinwand · Steine · Gips · 1.5–2 Std.</span><span class="sig-tag i18n" data-lang="en" hidden>Canvas · Stones · Plaster · 1.5–2 hrs</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/grundangebot/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 49<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -630,6 +671,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 59<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -638,6 +680,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 69<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -648,14 +691,18 @@ footer{padding-block:44px 60px;}
     </div>
   </div>
 
-  <!-- Solo-Abend (Offenes Atelier) -->
+  <!-- Solo-Abend -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Solo-Abend für Erwachsene</h3><h3 class="i18n" data-lang="en" hidden>Solo Evening for Adults</h3>
-      <span class="sig-tag i18n" data-lang="de">Offenes Atelier · Di &amp; Sa, 17:30 Uhr · 20 Plätze</span><span class="sig-tag i18n" data-lang="en" hidden>Open studio · Tue &amp; Sat, 5:30 pm · 20 seats</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Solo-Abend für Erwachsene</h3><h3 class="i18n" data-lang="en" hidden>Solo Evening for Adults</h3>
+        <span class="sig-tag i18n" data-lang="de">Offenes Atelier · Di &amp; Sa, 17:30 Uhr · 20 Plätze</span><span class="sig-tag i18n" data-lang="en" hidden>Open studio · Tue &amp; Sat, 5:30 pm · 20 seats</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/solo-abend/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 45<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -665,6 +712,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 49<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -673,6 +721,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 59<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -686,11 +735,15 @@ footer{padding-block:44px 60px;}
   <!-- Familie / Paare / Senioren -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Familie · Paare · 60+</h3><h3 class="i18n" data-lang="en" hidden>Family · Couples · 60+</h3>
-      <span class="sig-tag i18n" data-lang="de">Familientisch · Paar-Abend · Kreativkreis</span><span class="sig-tag i18n" data-lang="en" hidden>Family table · Couples' evening · Creative circle</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Familie · Paare · 60+</h3><h3 class="i18n" data-lang="en" hidden>Family · Couples · 60+</h3>
+        <span class="sig-tag i18n" data-lang="de">Familientisch · Paar-Abend · Kreativkreis</span><span class="sig-tag i18n" data-lang="en" hidden>Family table · Couples' evening · Creative circle</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/familie-paare-60plus/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 39<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -700,6 +753,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 69<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -708,6 +762,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 290</div>
         <ul class="tfeat">
@@ -721,11 +776,15 @@ footer{padding-block:44px 60px;}
   <!-- Plus-Angebot -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Plus-Angebot</h3><h3 class="i18n" data-lang="en" hidden>Plus Add-ons</h3>
-      <span class="sig-tag i18n" data-lang="de">Spiegel &amp; Taschen bemalen · Zusatz zu jedem Grundformat</span><span class="sig-tag i18n" data-lang="en" hidden>Mirror &amp; tote painting · Add-on to any core format</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Plus-Angebot</h3><h3 class="i18n" data-lang="en" hidden>Plus Add-ons</h3>
+        <span class="sig-tag i18n" data-lang="de">Spiegel &amp; Taschen bemalen · Zusatz zu jedem Grundformat</span><span class="sig-tag i18n" data-lang="en" hidden>Mirror &amp; tote painting · Add-on to any core format</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/plus-angebot/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">+CHF 69<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -735,6 +794,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">+CHF 74<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -743,6 +803,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">+CHF 79<span class="unit i18n" data-lang="de"> / Pers.</span><span class="unit i18n" data-lang="en" hidden> / person</span></div>
         <ul class="tfeat">
@@ -756,11 +817,15 @@ footer{padding-block:44px 60px;}
   <!-- Geschenkgutscheine -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Geschenkgutscheine</h3><h3 class="i18n" data-lang="en" hidden>Gift Vouchers</h3>
-      <span class="sig-tag i18n" data-lang="de">Digital oder gedruckt · das ganze Jahr gültig</span><span class="sig-tag i18n" data-lang="en" hidden>Digital or printed · valid year-round</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Geschenkgutscheine</h3><h3 class="i18n" data-lang="en" hidden>Gift Vouchers</h3>
+        <span class="sig-tag i18n" data-lang="de">Digital oder gedruckt · das ganze Jahr gültig</span><span class="sig-tag i18n" data-lang="en" hidden>Digital or printed · valid year-round</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/geschenkgutscheine/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 49</div>
         <ul class="tfeat">
@@ -770,6 +835,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 149</div>
         <ul class="tfeat">
@@ -778,6 +844,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 390</div>
         <ul class="tfeat">
@@ -791,11 +858,15 @@ footer{padding-block:44px 60px;}
   <!-- Ferien-Workshops -->
   <div class="signature reveal">
     <div class="sig-head">
-      <h3 class="i18n" data-lang="de">Ferien-Workshops</h3><h3 class="i18n" data-lang="en" hidden>School Holiday Workshops</h3>
-      <span class="sig-tag i18n" data-lang="de">Kinder &amp; Jugendliche · Halbtags-Atelier in den Schulferien</span><span class="sig-tag i18n" data-lang="en" hidden>Kids &amp; teens · Half-day sessions during school holidays</span>
+      <div class="sig-head-left">
+        <h3 class="i18n" data-lang="de">Ferien-Workshops</h3><h3 class="i18n" data-lang="en" hidden>School Holiday Workshops</h3>
+        <span class="sig-tag i18n" data-lang="de">Kinder &amp; Jugendliche · Halbtags-Atelier in den Schulferien</span><span class="sig-tag i18n" data-lang="en" hidden>Kids &amp; teens · Half-day sessions during school holidays</span>
+      </div>
+      <a class="cta ghost small sig-more" href="pakete/ferien-workshops/"><span class="i18n" data-lang="de">Mehr erfahren</span><span class="i18n" data-lang="en" hidden>Learn more</span></a>
     </div>
     <div class="tiers reveal-stagger reveal">
       <div class="tier" style="--i:0">
+        
         <div class="tname">Basic</div>
         <div class="tprice">CHF 55<span class="unit i18n" data-lang="de"> / Tag / Kind</span><span class="unit i18n" data-lang="en" hidden> / day / child</span></div>
         <ul class="tfeat">
@@ -805,6 +876,7 @@ footer{padding-block:44px 60px;}
       </div>
       <div class="tier popular" style="--i:1">
         <span class="badge i18n" data-lang="de">Beliebt</span><span class="badge i18n" data-lang="en" hidden>Popular</span>
+        
         <div class="tname">Advance</div>
         <div class="tprice">CHF 65<span class="unit i18n" data-lang="de"> / Tag / Kind</span><span class="unit i18n" data-lang="en" hidden> / day / child</span></div>
         <ul class="tfeat">
@@ -813,6 +885,7 @@ footer{padding-block:44px 60px;}
         </ul>
       </div>
       <div class="tier" style="--i:2">
+        
         <div class="tname">All Inclusive</div>
         <div class="tprice">CHF 85<span class="unit i18n" data-lang="de"> / Tag / Kind</span><span class="unit i18n" data-lang="en" hidden> / day / child</span></div>
         <ul class="tfeat">
@@ -822,6 +895,7 @@ footer{padding-block:44px 60px;}
       </div>
     </div>
   </div>
+  <!-- BUILD:PACKAGES-END -->
 
   <p class="fineprint i18n" data-lang="de">Alle Preise vorläufig und können sich bis zur Eröffnung noch ändern.</p>
   <p class="fineprint i18n" data-lang="en" hidden>All prices are preliminary and may still change before opening.</p>
@@ -924,6 +998,7 @@ footer{padding-block:44px 60px;}
           <textarea id="contact-message" name="message" required></textarea>
         </div>
         <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="paket" id="contact-paket" value="">
         <input type="hidden" name="_subject" value="Anfrage Color and Play">
         <button type="submit" class="cta" id="contact-submit">
           <span class="i18n" data-lang="de">Anfrage absenden</span><span class="i18n" data-lang="en" hidden>Send enquiry</span>
@@ -952,8 +1027,12 @@ footer{padding-block:44px 60px;}
     <div class="footer-meta">
       <span class="i18n" data-lang="de">Baar, Kanton Zug — exklusives Kreativatelier für jeden Anlass.</span>
       <span class="i18n" data-lang="en" hidden>Baar, Canton of Zug — an exclusive creative studio for every occasion.</span><br>
-      <span class="i18n" data-lang="de">© <span id="year-de"></span> Color and Play. Impressum in Vorbereitung.</span>
-      <span class="i18n" data-lang="en" hidden>© <span id="year-en"></span> Color and Play. Legal notice in preparation.</span>
+      <span class="i18n" data-lang="de">© <span id="year-de"></span> Color and Play.</span>
+      <span class="i18n" data-lang="en" hidden>© <span id="year-en"></span> Color and Play.</span>
+      <div class="footer-links">
+        <a href="impressum/" class="i18n" data-lang="de">Impressum</a><a href="impressum/" class="i18n" data-lang="en" hidden>Legal notice</a>
+        <a href="datenschutz/" class="i18n" data-lang="de">Datenschutz</a><a href="datenschutz/" class="i18n" data-lang="en" hidden>Privacy</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1122,6 +1201,47 @@ footer{padding-block:44px 60px;}
       });
     });
   }
+
+  /* ---------- package prefill from ?paket= (stored in hidden field + message) ---------- */
+  var PAKET_NAMES = {
+    "kindergeburtstage": { de: "Kindergeburtstage", en: "Kids' Birthdays" },
+    "firmen-teams": { de: "Firmen & Teams", en: "Companies & Teams" },
+    "wine-draw": { de: "Wine & Draw", en: "Wine & Draw" },
+    "private-feiern": { de: "Private Feiern", en: "Private Celebrations" },
+    "art-club": { de: "Art Club Mitgliedschaft", en: "Art Club Membership" },
+    "grundangebot": { de: "Grundangebot", en: "Core Packages" },
+    "solo-abend": { de: "Solo-Abend für Erwachsene", en: "Solo Evening for Adults" },
+    "familie-paare-60plus": { de: "Familie · Paare · 60+", en: "Family · Couples · 60+" },
+    "plus-angebot": { de: "Plus-Angebot", en: "Plus Add-ons" },
+    "geschenkgutscheine": { de: "Geschenkgutscheine", en: "Gift Vouchers" },
+    "ferien-workshops": { de: "Ferien-Workshops", en: "School Holiday Workshops" }
+  };
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var paket = params.get("paket");
+    var valid = Object.keys(PAKET_NAMES);
+    if (paket && valid.indexOf(paket) === -1) paket = null;
+    if (!paket) {
+      try { paket = sessionStorage.getItem("cap_paket"); } catch(e) {}
+      if (paket && valid.indexOf(paket) === -1) paket = null;
+    } else {
+      try { sessionStorage.setItem("cap_paket", paket); } catch(e) {}
+    }
+    var hidden = document.getElementById("contact-paket");
+    if (hidden && paket) hidden.value = paket;
+    var msg = document.getElementById("contact-message");
+    if (msg && paket && !msg.value && PAKET_NAMES[paket]){
+      var lang = document.documentElement.lang === "en" ? "en" : "de";
+      var label = PAKET_NAMES[paket][lang];
+      msg.value = lang === "de"
+        ? "Interesse am Paket: " + label
+        : "Interested in package: " + label;
+    }
+    if (params.get("paket") && window.location.hash === "#kontakt"){
+      var kontakt = document.getElementById("kontakt");
+      if (kontakt) kontakt.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    }
+  })();
 })();
 </script>
 </body>

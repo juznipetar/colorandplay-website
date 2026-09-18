@@ -112,11 +112,14 @@ Trenutno cene i paketi postoje rucno upisani na DVA mesta: `index.html`
 za vlasnika). Kad se prave/finalne cene odrede, lako je da se zaboravi izmeniti oba
 mesta i da se brojevi razmimoilaze.
 
-- [ ] Napraviti `data/pricing.json` kao jedini izvor istine za sve pakete/tier-ove
-- [ ] Prepraviti `build_site.py` (i ekvivalent za marketing stranicu) da generisu
-      HTML iz tog JSON-a, umesto rucno kucanog HTML-a
+- [x] Napraviti `data/pricing.json` kao jedini izvor istine za sve pakete/tier-ove
+      (sesija 08 scaffold + sesija 09 verifikacija; businessplan jos nije na JSON-u)
+- [x] Prepraviti marketing build (`build_pages.py`) da generise `.tiers` na
+      `index.html` + paket-stranice iz `pricing.json` (businessplan i dalje
+      odvojen — `build_site.py` van repo-a)
 - [ ] Gotovo je kad izmena jedne cene u `pricing.json` + ponovno pokretanje build
       skripte azurira I marketing stranicu I businessplan stranicu konzistentno
+      (marketing deo gotov; businessplan ceka)
 
 ## Faza 5 — Van trenutnog obima (samo za buducnost, ne raditi bez eksplicitnog OK)
 
@@ -139,14 +142,10 @@ samo posle eksplicitnog OK od Petra/Suzane.
       staru teal/gold paletu iako je `favicon.svg` i sajt vec presli na Playful
       Pastel (sesija 05). Regenerisano i zamenjeno u ovoj sesiji (cloud agent,
       PIL) — sad su svi na `--teal #0b8e8b` / `--gold #f5cb50` / mist halo.
-- [ ] **Impressum + Datenschutzerklaerung stranice.** Za komercijalni sajt u
-      Svajcarskoj ovo nije opciono (OR/UWG identifikacija firme + revDSG za
-      podatke koje kontakt forma/Formspree obradjuje). Predlog: `/impressum/`
-      i `/datenschutz/` (DE/EN), link u footer-u oba HTML fajla. Sadrzaj:
-      pravno ime, adresa, email, ko obradjuje podatke (Formspree, GitHub
-      Pages), koja prava korisnik ima. Bot moze napisati nacrt teksta, ali
-      **pravno ime firme / tacna adresa mora potvrditi covek** pre nego sto
-      ide live — dodati kao vidljiv `[TODO: potvrditi]` placeholder ako fali.
+- [x] **Impressum + Datenschutzerklaerung stranice (NACRT, sesija 09).** `/impressum/`
+      i `/datenschutz/` (DE/EN), link u footer-u. Formspree + GitHub Pages kao
+      procesori u Datenschutz. `[TODO: potvrditi]` za pravno ime i tacnu ulicu —
+      **covek mora potvrditi pre go-live.**
 - [x] **JSON-LD structured data (schema.org LocalBusiness)** na `index.html` —
       ime, adresa (Baar, Kanton Zug), tip usluge, cenovni raspon, radno vreme
       ako postoji. Besplatan lokalni SEO potez (Google lokalni rezultati za
@@ -221,14 +220,12 @@ izvora istine je pitanje vremena kad ce se brojevi razmimoici.
       nekonzistentne.
 
 **Jos treba (BOT):**
-- [ ] `data/opisi.json` — prosireni marketing opis + opciono FAQ po paketu
-      (bot pise NACRT na osnovu `tag_de`/`pogodnosti` iz `pricing.json`, ide na
-      pregled coveku pre nego sto ide live — vidi `docs/faza7-spec.md` sekcija 4)
-- [ ] `build_pages.py` — cita `pricing.json`/`gallery.json`/`opisi.json`,
-      generise `.tiers` blokove na `index.html` + 11 paket-stranica +
-      `/galerie/index.html` + azurira `sitemap.xml`. Test da build ne menja
-      postojeci `index.html` sadrzaj (vidi "gotovo je kad..." u spec fajlu,
-      tacka 1) pre nego sto se nastavi dalje.
+- [x] `data/opisi.json` — prosireni marketing opis + FAQ po paketu (NACRT, sesija 09;
+      Petar/Suzana pregled pre finalnog tona)
+- [x] `build_pages.py` — cita `pricing.json`/`gallery.json`/`opisi.json`,
+      generise `.tiers` na `index.html` + 11 paket-stranica + `/galerie/` +
+      impressum/datenschutz + azurira `sitemap.xml`. Verifikovano: cene na index
+      ne menjaju se neocekivano posle build-a (samo Mehr erfahren + struktura).
 
 **Vazna napomena o principu iz ARHITEKTURA.md** ("nema build koraka, nema
 framework-a"): ovo se NE krsi. Princip se odnosi na to sta GitHub Pages servira
@@ -240,9 +237,10 @@ koju ARHITEKTURA.md upucuje kad sajt naraste dovoljno da opravda automatizaciju
 
 ### 7.1 — Galerija (`/galerie/index.html`)
 
-- Responzivna mreza fotografija + lightbox (klik za uvecanje), lazy-loading,
-  alt tekst DE/EN po slici (iz `data/gallery.json`)
-- Link u glavnoj navigaciji (topbar), DE "Galerie" / EN "Gallery"
+- [x] Responzivna mreza fotografija + lightbox (klik za uvecanje), lazy-loading,
+  alt tekst DE/EN po slici (iz `data/gallery.json`) — infrastruktura gotova,
+  placeholder pločice dok `slike: []`
+- [x] Link u glavnoj navigaciji (topbar), DE "Galerie" / EN "Gallery"
 - **KLJUCNI OTVOREN PROBLEM — prave fotografije ateljea ne postoje jos.** Sajt
   trenutno nema nijednu pravu fotografiju (samo CSS/SVG dekoracije). Isti princip
   kao kod izmisljenih recenzija (vidi STROGE GRANICE u BOT-INSTRUKCIJE.md): **bot
@@ -259,7 +257,7 @@ koju ARHITEKTURA.md upucuje kad sajt naraste dovoljno da opravda automatizaciju
   Ne mora profesionalni foto-shoot, mogu i telefonom snimljene, bitno je da su
   prave.
 
-### 7.2 — Pojedinacna stranica za svaki paket (`/pakete/<slug>/index.html`)
+### 7.2 — Pojedinacna stranica za svaki paket (`/pakete/<slug>/index.html`) — [x] svih 11 (sesija 09)
 
 Predlozeni slug-ovi (11, redosled kao na pocetnoj):
 
@@ -297,14 +295,15 @@ Svaka stranica sadrzi:
   Malen in Baar | Color and Play") — realan SEO dobitak za long-tail pretrage,
   nesto sto jedna zajednicka pocetna stranica ne moze da pokrije
 
-### 7.3 — Povezivanje sa postojecim sajtom
+### 7.3 — Povezivanje sa postojecim sajtom — [x] (sesija 09)
 
-- Svaka `.signature`/`.tiers` grupa na `index.html#pakete` dobija dugme "Mehr
-  erfahren" / "Learn more" → odgovarajuca `/pakete/<slug>/` stranica
-- Topbar navigacija dobija link "Galerie"/"Gallery"
-- `sitemap.xml` prosiriti sa svih 12 novih URL-ova (11 paket stranica + galerija)
-- Postojeca `404.html` (Faza 6a) automatski pokriva slucaj los kucanog URL-a
-  novih stranica — samo proveriti da linkovi rade pre merge-a
+- [x] Svaka `.signature` grupa na `index.html#pakete` ima "Mehr erfahren" /
+      "Learn more" → `/pakete/<slug>/`
+- [x] Topbar: "Galerie"/"Gallery" na index + podstranicama
+- [x] `sitemap.xml`: 11 paket URL-ova + `/galerie/`
+- [x] `?paket=<slug>` na `index.html#kontakt` — hidden polje + sessionStorage +
+      prefilled Nachricht (vidi `build_pages.py` / index JS)
+- [ ] Vizuelni pregled pilota od strane coveka pre smatranja finalnim (preporuka)
 
 ### 7.4 — Sta bot moze odmah vs. sta ceka coveka
 

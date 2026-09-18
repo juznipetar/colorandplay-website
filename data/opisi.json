@@ -1,0 +1,273 @@
+{
+  "_schema_napomena": "Prošireni marketing opis i FAQ po paketu (slug). NACRT — Petar/Suzana treba da pregledaju ton pre nego što se tretira kao finalni copy.",
+  "kindergeburtstage": {
+    "opis_de": "Ein Kindergeburtstag bei Color and Play ist mehr als Malen: Wir führen die Gruppe Schritt für Schritt durch eine Technik, sorgen für Material, Deko und eine ruhige, sichere Atmosphäre. Eltern können entspannt dabeibleiben — Aufräumen und Vorbereitung sind bei uns inklusive.",
+    "opis_en": "A kids' birthday at Color and Play is more than painting: we guide the group step by step through a technique, provide materials, decor and a calm, safe atmosphere. Parents can relax — clean-up and prep are included.",
+    "faq": [
+      {
+        "pitanje_de": "Für welches Alter ist das Format geeignet?",
+        "odgovor_de": "Ideal für Kinder von 4 bis 12 Jahren. Die Techniken passen wir an die Gruppe an — von einfachen Motiven bis zu kreativeren Projekten.",
+        "pitanje_en": "What ages is this format suitable for?",
+        "odgovor_en": "Ideal for children aged 4 to 12. We adapt techniques to the group — from simple motifs to more creative projects."
+      },
+      {
+        "pitanje_de": "Dürfen Eltern mitfeiern?",
+        "odgovor_de": "Ja. Ein bis zwei Begleitpersonen sind willkommen. Bei grösseren Gruppen empfehlen wir, die Anzahl vorab mit uns zu besprechen.",
+        "pitanje_en": "Can parents stay and celebrate?",
+        "odgovor_en": "Yes. One or two accompanying adults are welcome. For larger groups we recommend discussing numbers with us in advance."
+      },
+      {
+        "pitanje_de": "Was ist im Preis enthalten?",
+        "odgovor_de": "Material, professionelle Begleitung, Vorbereitung und Aufräumen. Je nach Stufe kommen Deko, Snacks oder zusätzliche Techniken hinzu — siehe Tier-Übersicht.",
+        "pitanje_en": "What is included in the price?",
+        "odgovor_en": "Materials, professional guidance, setup and clean-up. Depending on the tier, decor, snacks or extra techniques are added — see the tier overview."
+      }
+    ]
+  },
+  "firmen-teams": {
+    "opis_de": "Teambuilding ohne Zwang: In 90 bis 150 Minuten malt Ihr Team gemeinsam — geführt, ohne Vorkenntnisse. Ideal für Offsites, Kick-offs oder als kreativer Ausgleich nach intensiven Meetings. Firmen-Branding und Apéro sind in den höheren Stufen möglich.",
+    "opis_en": "Team building without pressure: in 90 to 150 minutes your team paints together — guided, no experience needed. Ideal for offsites, kick-offs or a creative break after intense meetings. Company branding and apéro are available in higher tiers.",
+    "faq": [
+      {
+        "pitanje_de": "Wie viele Personen passen ins Atelier?",
+        "odgovor_de": "Unsere Formate sind für 8 bis 30 Personen ausgelegt. Für grössere Gruppen sprechen Sie uns bitte direkt an.",
+        "pitanje_en": "How many people fit in the studio?",
+        "odgovor_en": "Our formats are designed for 8 to 30 people. For larger groups please contact us directly."
+      },
+      {
+        "pitanje_de": "Können wir ein Firmenlogo einbinden?",
+        "odgovor_de": "Ja — in Advance und All Inclusive können wir ein personalisiertes Motiv oder dezentes Firmen-Branding vorbereiten.",
+        "pitanje_en": "Can we include a company logo?",
+        "odgovor_en": "Yes — in Advance and All Inclusive we can prepare a personalised motif or subtle company branding."
+      },
+      {
+        "pitanje_de": "Ist das auch für gemischte Teams ohne künstlerisches Talent geeignet?",
+        "odgovor_de": "Absolut. Unsere Sessions sind für alle Niveaus gedacht — der Fokus liegt auf gemeinsamem Erleben, nicht auf Perfektion.",
+        "pitanje_en": "Is it suitable for mixed teams with no artistic talent?",
+        "odgovor_en": "Absolutely. Our sessions are designed for all levels — the focus is on shared experience, not perfection."
+      }
+    ]
+  },
+  "wine-draw": {
+    "opis_de": "Freitag- und Samstagabende ab 19:00: Ein Glas Wein, eine Leinwand und eine geführte Session in entspannter Atmosphäre. Perfekt für Freundinnen, Paare oder alle, die nach der Arbeit abschalten möchten — ohne Druck, mit viel Farbe.",
+    "opis_en": "Friday and Saturday evenings from 7 pm: a glass of wine, a canvas and a guided session in a relaxed atmosphere. Perfect for friends, couples or anyone who wants to unwind after work — no pressure, plenty of colour.",
+    "faq": [
+      {
+        "pitanje_de": "Wann finden Wine & Draw Abende statt?",
+        "odgovor_de": "Freitags und samstags um 19:00 Uhr. Plätze sind begrenzt — frühzeitige Anfrage empfohlen.",
+        "pitanje_en": "When do Wine & Draw evenings take place?",
+        "odgovor_en": "Fridays and Saturdays at 7 pm. Places are limited — early booking recommended."
+      },
+      {
+        "pitanje_de": "Muss ich Erfahrung mitbringen?",
+        "odgovor_de": "Nein. Wir führen Schritt für Schritt durch das Motiv — Sie müssen nur mitmachen und geniessen.",
+        "pitanje_en": "Do I need experience?",
+        "odgovor_en": "No. We guide you step by step through the motif — you just need to join in and enjoy."
+      },
+      {
+        "pitanje_de": "Gibt es auch alkoholfreie Optionen?",
+        "odgovor_de": "Ja. Bitte bei der Anfrage Bescheid geben — wir stellen passende Getränke bereit.",
+        "pitanje_en": "Are non-alcoholic options available?",
+        "odgovor_en": "Yes. Please let us know when enquiring — we will provide suitable drinks."
+      }
+    ]
+  },
+  "private-feiern": {
+    "opis_de": "JGA, Babyshower oder Jubiläum: Sie mieten das Atelier exklusiv und gestalten den Abend nach Ihrem Anlass. Von dezenter Grunddekoration bis zur vollen Fotobox — wir kümmern uns um Setup, Material und eine stimmige Atmosphäre.",
+    "opis_en": "Bachelorette party, baby shower or anniversary: you book the studio exclusively and shape the evening around your occasion. From subtle basic decor to a full photo booth — we handle setup, materials and the right atmosphere.",
+    "faq": [
+      {
+        "pitanje_de": "Können wir eigene Musik oder Deko mitbringen?",
+        "odgovor_de": "In Advance und All Inclusive ist ein eigenes Playlist-Setup möglich. Eigene Deko nach Absprache — Theme-Deko können wir auch für Sie vorbereiten.",
+        "pitanje_en": "Can we bring our own music or decor?",
+        "odgovor_en": "In Advance and All Inclusive your own playlist setup is possible. Own decor by arrangement — we can also prepare themed decor for you."
+      },
+      {
+        "pitanje_de": "Wie lange dauert eine private Feier?",
+        "odgovor_de": "Je nach Stufe zwischen 2 und 3,5 Stunden exklusive Studio-Nutzung.",
+        "pitanje_en": "How long does a private celebration last?",
+        "odgovor_en": "Depending on the tier, between 2 and 3.5 hours of exclusive studio use."
+      },
+      {
+        "pitanje_de": "Ist Verpflegung inklusive?",
+        "odgovor_de": "In der All-Inclusive-Stufe sind Snacks und alkoholfreie Cocktails enthalten. Andere Stufen können wir auf Wunsch erweitern.",
+        "pitanje_en": "Is catering included?",
+        "odgovor_en": "The All Inclusive tier includes snacks and non-alcoholic cocktails. Other tiers can be extended on request."
+      }
+    ]
+  },
+  "art-club": {
+    "opis_de": "Monatliche Mitgliedschaft für alle, die regelmässig kreativ sein möchten: Zugang zu offenen Atelier-Slots, Material inklusive und eine kleine Community Gleichgesinnter. Monatlich kündbar — ideal für regelmässige Auszeiten vom Alltag.",
+    "opis_en": "Monthly membership for anyone who wants to create regularly: access to open studio slots, materials included and a small community of like-minded people. Cancel anytime — ideal for regular creative breaks from everyday life.",
+    "faq": [
+      {
+        "pitanje_de": "Wie funktioniert die Kündigung?",
+        "odgovor_de": "Die Mitgliedschaft ist monatlich kündbar — keine langfristige Bindung.",
+        "pitanje_en": "How does cancellation work?",
+        "odgovor_en": "Membership can be cancelled monthly — no long-term commitment."
+      },
+      {
+        "pitanje_de": "Was ist in der Basic-Stufe enthalten?",
+        "odgovor_de": "Zugang zu festen wöchentlichen Slots und Grundmaterial. Höhere Stufen bieten mehr Flexibilität und Zusatzleistungen.",
+        "pitanje_en": "What is included in the Basic tier?",
+        "odgovor_en": "Access to fixed weekly slots and basic materials. Higher tiers offer more flexibility and extras."
+      },
+      {
+        "pitanje_de": "Brauche ich Vorkenntnisse?",
+        "odgovor_de": "Nein. Art Club ist für Einsteiger und Fortgeschrittene — unsere Begleitung passt sich an.",
+        "pitanje_en": "Do I need prior experience?",
+        "odgovor_en": "No. Art Club is for beginners and advanced participants — our guidance adapts to you."
+      }
+    ]
+  },
+  "grundangebot": {
+    "opis_de": "Das flexible Einstiegsformat: Kommen Sie allein oder zu zweit ins offene Atelier und wählen Sie ein Projekt nach Lust und Laune. Material und kurze Einführung sind dabei — perfekt, wenn Sie Color and Play zum ersten Mal ausprobieren möchten.",
+    "opis_en": "The flexible entry format: come alone or as a pair to the open studio and choose a project as you wish. Materials and a short introduction are included — perfect if you want to try Color and Play for the first time.",
+    "faq": [
+      {
+        "pitanje_de": "Muss ich mich anmelden?",
+        "odgovor_de": "Für garantierten Platz empfehlen wir eine kurze Anfrage — besonders an Wochenenden.",
+        "pitanje_en": "Do I need to register?",
+        "odgovor_en": "For a guaranteed spot we recommend a quick enquiry — especially at weekends."
+      },
+      {
+        "pitanje_de": "Wie lange kann ich bleiben?",
+        "odgovor_de": "Je nach Stufe zwischen 60 und 120 Minuten im Slot — Details siehe Tier-Übersicht.",
+        "pitanje_en": "How long can I stay?",
+        "odgovor_en": "Depending on the tier, between 60 and 120 minutes in the slot — see tier overview for details."
+      },
+      {
+        "pitanje_de": "Welche Techniken stehen zur Wahl?",
+        "odgovor_de": "In Basic eine Technik, in höheren Stufen mehr Projekte oder freie Wahl — immer mit Material inklusive.",
+        "pitanje_en": "Which techniques are available?",
+        "odgovor_en": "Basic includes one technique; higher tiers offer more projects or free choice — always with materials included."
+      }
+    ]
+  },
+  "solo-abend": {
+    "opis_de": "Ein Abend nur für Sie: Im offenen Atelier für Erwachsene malen Sie in Ruhe, geführt wenn gewünscht, mit Getränk inklusive. Ideal nach einem langen Tag — ohne Gruppendruck, mit Fokus auf Ihr eigenes Tempo.",
+    "opis_en": "An evening just for you: in the open studio for adults you paint at your own pace, guided if you wish, with a drink included. Ideal after a long day — no group pressure, focus on your own rhythm.",
+    "faq": [
+      {
+        "pitanje_de": "Ist das Format nur für Einzelpersonen?",
+        "odgovor_de": "Primär ja — aber Sie können auch zu zweit buchen, wenn Sie einen ruhigen gemeinsamen Abend wünschen.",
+        "pitanje_en": "Is this format only for individuals?",
+        "odgovor_en": "Primarily yes — but you can also book for two if you want a quiet evening together."
+      },
+      {
+        "pitanje_de": "Welche Getränke sind inklusive?",
+        "odgovor_de": "Je nach Stufe ein bis mehrere Getränke — alkoholfreie Optionen immer möglich.",
+        "pitanje_en": "Which drinks are included?",
+        "odgovor_en": "Depending on the tier, one or more drinks — non-alcoholic options always available."
+      },
+      {
+        "pitanje_de": "Kann ich mein Werk mitnehmen?",
+        "odgovor_de": "Ja. Alle Projekte sind zum Mitnehmen gedacht — Trocknungszeit je nach Technik einplanen.",
+        "pitanje_en": "Can I take my work home?",
+        "odgovor_en": "Yes. All projects are meant to take home — allow drying time depending on the technique."
+      }
+    ]
+  },
+  "familie-paare-60plus": {
+    "opis_de": "Zeit zu zweit oder mit der Familie: Vom Familientisch für bis zu vier Personen über den Paar-Abend bis zum Kreativkreis für Seniorengruppen — alle Formate sind ruhig, inklusiv und ohne Leistungsdruck.",
+    "opis_en": "Time together as a couple or family: from the family table for up to four people to couples' evenings and creative circles for senior groups — all formats are calm, inclusive and without performance pressure.",
+    "faq": [
+      {
+        "pitanje_de": "Ist das auch für Grosseltern mit Enkelkindern geeignet?",
+        "odgovor_de": "Ja. Der Familientisch ist speziell für gemischte Altersgruppen gedacht — wir passen Motive und Technik an.",
+        "pitanje_en": "Is it suitable for grandparents with grandchildren?",
+        "odgovor_en": "Yes. The family table is designed for mixed age groups — we adapt motifs and techniques."
+      },
+      {
+        "pitanje_de": "Was ist der Unterschied zwischen Paar-Abend und Kreativkreis?",
+        "odgovor_de": "Paar-Abend ist für zwei Personen mit gemeinsamem Motiv. Der Kreativkreis richtet sich an Gruppen bis acht Personen mit freierer Technikwahl.",
+        "pitanje_en": "What is the difference between couples' evening and creative circle?",
+        "odgovor_en": "Couples' evening is for two people with a shared motif. The creative circle is for groups of up to eight with freer choice of technique."
+      },
+      {
+        "pitanje_de": "Gibt es barrierefreien Zugang?",
+        "odgovor_de": "Die genaue Adresse folgt in Kürze — bei Mobilitätsfragen kontaktieren Sie uns bitte direkt.",
+        "pitanje_en": "Is there step-free access?",
+        "odgovor_en": "The exact address is coming soon — for mobility questions please contact us directly."
+      }
+    ]
+  },
+  "plus-angebot": {
+    "opis_de": "Zusatzprojekte zu jedem Grundformat: Spiegel oder Stofftaschen bemalen — als Ergänzung zu Kindergeburtstag, Firmenevent oder privatem Anlass. Wird pro Person berechnet und kann zu jeder gebuchten Session hinzugebucht werden.",
+    "opis_en": "Add-on projects for any core format: paint a mirror or tote bag — as an extra to kids' birthdays, corporate events or private celebrations. Priced per person and can be added to any booked session.",
+    "faq": [
+      {
+        "pitanje_de": "Muss ich ein anderes Paket buchen?",
+        "odgovor_de": "Ja — Plus-Angebot ist ein Zusatz zu einem Grundformat (z. B. Kindergeburtstag oder Firmenevent), nicht ein eigenständiger Termin.",
+        "pitanje_en": "Do I need to book another package?",
+        "odgovor_en": "Yes — Plus Add-ons are an extra to a core format (e.g. kids' birthday or corporate event), not a standalone booking."
+      },
+      {
+        "pitanje_de": "Kann jede Person ein anderes Projekt wählen?",
+        "odgovor_de": "In der Regel wählen wir pro Gruppe ein einheitliches Setup — individuelle Wünsche bitte bei der Anfrage nennen.",
+        "pitanje_en": "Can each person choose a different project?",
+        "odgovor_en": "Usually we use one setup per group — please mention individual wishes when enquiring."
+      },
+      {
+        "pitanje_de": "Wie lange dauert das Zusatzprojekt?",
+        "odgovor_de": "Etwa 30 bis 45 Minuten zusätzlich — wir planen das in Ihren gebuchten Slot ein.",
+        "pitanje_en": "How long does the add-on project take?",
+        "odgovor_en": "About 30 to 45 minutes extra — we schedule it within your booked slot."
+      }
+    ]
+  },
+  "geschenkgutscheine": {
+    "opis_de": "Verschenken Sie Kreativzeit: Von der digitalen Solo-Session bis zum kompletten Kindergeburtstag — Gutscheine sind das ganze Jahr gültig und digital oder in einer Geschenkbox erhältlich.",
+    "opis_en": "Give the gift of creative time: from a digital solo session to a full kids' birthday — vouchers are valid year-round and available digitally or in a gift box.",
+    "faq": [
+      {
+        "pitanje_de": "Wie lange sind Gutscheine gültig?",
+        "odgovor_de": "Gutscheine sind das ganze Jahr einlösbar — genaue Bedingungen erhalten Sie mit dem Gutschein.",
+        "pitanje_en": "How long are vouchers valid?",
+        "odgovor_en": "Vouchers can be redeemed year-round — exact terms are provided with the voucher."
+      },
+      {
+        "pitanje_de": "Kann ich einen individuellen Betrag wählen?",
+        "odgovor_de": "Die drei Stufen decken die häufigsten Anlässe ab. Für Sonderwünsche schreiben Sie uns bitte direkt.",
+        "pitanje_en": "Can I choose a custom amount?",
+        "odgovor_en": "The three tiers cover the most common occasions. For special requests please write to us directly."
+      },
+      {
+        "pitanje_de": "Wie erhalte ich den Gutschein?",
+        "odgovor_de": "Basic digital per E-Mail, Advance und All Inclusive auch als gedruckte Geschenkbox — nach Bestätigung der Zahlung.",
+        "pitanje_en": "How do I receive the voucher?",
+        "odgovor_en": "Basic digitally by email; Advance and All Inclusive also as a printed gift box — after payment confirmation."
+      }
+    ]
+  },
+  "ferien-workshops": {
+    "opis_de": "In den Schulferien: Halbtags- oder Ganztags-Atelier für Kinder und Jugendliche. Mehrere Projekte, Snacks oder Mittagessen je nach Stufe — betreute Kreativzeit, während die Eltern arbeiten oder Pause machen.",
+    "opis_en": "During school holidays: half-day or full-day studio sessions for kids and teens. Multiple projects, snacks or lunch depending on the tier — supervised creative time while parents work or take a break.",
+    "faq": [
+      {
+        "pitanje_de": "Für welches Alter sind die Ferien-Workshops?",
+        "odgovor_de": "Für Kinder und Jugendliche — typischerweise ab Schulalter. Bei jüngeren Kindern bitte vorab mit uns sprechen.",
+        "pitanje_en": "What ages are holiday workshops for?",
+        "odgovor_en": "For children and teenagers — typically from school age. For younger children please speak to us in advance."
+      },
+      {
+        "pitanje_de": "Muss mein Kind die ganze Zeit bleiben?",
+        "odgovor_de": "Ja. Die Workshops sind als abgeschlossene Betreuungszeit gedacht — Abholung bitte pünktlich.",
+        "pitanje_en": "Does my child need to stay the whole time?",
+        "odgovor_en": "Yes. Workshops are designed as a complete supervised session — please collect on time."
+      },
+      {
+        "pitanje_de": "Wann werden die Ferientermine veröffentlicht?",
+        "odgovor_de": "Vor jeder Ferienperiode — folgen Sie unseren Ankündigungen oder fragen Sie uns direkt an.",
+        "pitanje_en": "When are holiday dates published?",
+        "odgovor_en": "Before each holiday period — follow our announcements or contact us directly."
+      },
+      {
+        "pitanje_de": "Was ist im Ganztags-Format enthalten?",
+        "odgovor_de": "Sechs Stunden, drei Projekte, Mittagessen und ein Mitnahme-Set — siehe All-Inclusive-Stufe.",
+        "pitanje_en": "What is included in the full-day format?",
+        "odgovor_en": "Six hours, three projects, lunch and a take-home kit — see the All Inclusive tier."
+      }
+    ]
+  }
+}
