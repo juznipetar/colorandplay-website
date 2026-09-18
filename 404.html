@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Color and Play</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.ico">
+<style>
+:root{
+  --paper:#f7f1e7; --cream:#fffaf2; --ink:#20201c; --muted:#5f5e56;
+  --teal:#0b8e8b; --teal-deep:#056866; --coral:#ef7059; --yellow:#f5cb50; --mist:#dcebe5;
+  --font-display:ui-serif,Georgia,serif;
+  --font-body:ui-sans-serif,system-ui,sans-serif;
+  --font-mono:ui-monospace,'SF Mono',monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; display:flex; flex-direction:column;
+  background:var(--paper); color:var(--ink); font-family:var(--font-body);
+  font-size:16px; line-height:1.6;
+}
+[hidden]{display:none!important;}
+.page{
+  flex:1; display:flex; align-items:center; justify-content:center;
+  padding:32px 20px; position:relative; overflow:hidden;
+}
+.blobs{position:absolute; inset:0; pointer-events:none; z-index:0;}
+.blob{position:absolute; border-radius:50%; filter:blur(48px); opacity:.28;}
+.blob.b1{width:220px;height:220px;background:var(--teal);top:-40px;right:12%;}
+.blob.b2{width:180px;height:180px;background:var(--yellow);bottom:10%;left:8%;}
+.blob.b3{width:140px;height:140px;background:var(--coral);top:35%;left:55%;}
+.card{
+  position:relative; z-index:1; max-width:440px; width:100%;
+  background:var(--cream); border:1px solid #20201c29; border-radius:14px;
+  padding:36px 32px 32px; text-align:center;
+  box-shadow:0 8px 24px -12px rgba(32,32,28,.12);
+}
+.brand{display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:24px;}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px var(--mist);}
+.brand-name{font-family:var(--font-display); font-weight:600; font-size:17px;}
+.code{
+  font-family:var(--font-mono); font-size:3.2rem; font-weight:600;
+  color:var(--teal-deep); line-height:1; margin-bottom:12px;
+}
+h1{font-family:var(--font-display); font-size:1.45rem; font-weight:600; margin:0 0 10px;}
+.lede{font-size:1rem; color:var(--muted); margin:0 0 28px;}
+.cta{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--teal); color:#fff!important; text-decoration:none;
+  font-weight:600; font-size:14px; padding:12px 22px; border-radius:999px;
+  border:1px solid var(--teal); transition:background .2s, transform .2s;
+}
+.cta:hover{background:var(--teal-deep); border-color:var(--teal-deep); transform:translateY(-1px);}
+.langtoggle{
+  position:absolute; top:16px; right:20px; z-index:2;
+  display:flex; border:1px solid #20201c47; border-radius:999px; overflow:hidden;
+  font-family:var(--font-mono); font-size:12px; font-weight:500;
+}
+.langtoggle button{
+  border:0; background:transparent; color:var(--muted); padding:7px 14px; cursor:pointer;
+}
+.langtoggle button[aria-pressed="true"]{background:var(--teal); color:#fff;}
+@media (prefers-reduced-motion:reduce){
+  .cta:hover{transform:none;}
+}
+</style>
+</head>
+<body>
+<div class="langtoggle" role="group" aria-label="Sprache / Language">
+  <button type="button" id="btn-de" aria-pressed="true" aria-label="Deutsch" onclick="setLang('de')">DE</button>
+  <button type="button" id="btn-en" aria-pressed="false" aria-label="English" onclick="setLang('en')">EN</button>
+</div>
+<main class="page">
+  <div class="blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="card">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="brand-name">Color and Play</span>
+    </div>
+    <div class="code" aria-hidden="true">404</div>
+    <div class="i18n" data-lang="de">
+      <h1>Diese Seite gibt's nicht</h1>
+      <p class="lede">Der Link ist vielleicht veraltet oder die Adresse enthält einen Tippfehler. Zurück zur Startseite — dort finden Sie alle Pakete und Kontaktmöglichkeiten.</p>
+      <a class="cta" href="./">Zur Startseite</a>
+    </div>
+    <div class="i18n" data-lang="en" hidden>
+      <h1>This page doesn't exist</h1>
+      <p class="lede">The link may be outdated or the address might contain a typo. Head back to the homepage for packages and contact options.</p>
+      <a class="cta" href="./">Back to homepage</a>
+    </div>
+  </div>
+</main>
+<script>
+(function(){
+  var LANG_KEY = "cap-lang";
+  function getStoredLang(){
+    try{ return window.localStorage.getItem(LANG_KEY); }catch(e){ return null; }
+  }
+  function storeLang(l){
+    try{ window.localStorage.setItem(LANG_KEY, l); }catch(e){}
+  }
+  window.setLang = function(lang){
+    document.querySelectorAll(".i18n").forEach(function(n){
+      n.hidden = n.getAttribute("data-lang") !== lang;
+    });
+    document.getElementById("btn-de").setAttribute("aria-pressed", String(lang === "de"));
+    document.getElementById("btn-en").setAttribute("aria-pressed", String(lang === "en"));
+    document.documentElement.lang = lang;
+    storeLang(lang);
+  };
+  setLang(getStoredLang() || "de");
+})();
+</script>
+</body>
+</html>
