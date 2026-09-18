@@ -250,6 +250,45 @@ footer{padding-block:44px 60px;}
 .brandmark:focus-visible{outline-offset:3px;}
 #bp-gate input:focus-visible,
 #bp-gate button:focus-visible{outline-offset:2px;}
+
+/* ---------- Print (meeting / PDF) ---------- */
+@media print{
+  :root{
+    --bg:#fff; --surface:#fff; --surface-2:#f4f4f2; --surface-3:#eceae6;
+    --ink:#20201c; --ink-soft:#3d3c38; --ink-faint:#5f5e56;
+    --line:#20201c33; --line-strong:#20201c55;
+    --teal:#056866; --teal-deep:#034543; --teal-soft:#dcebe5;
+    --coral:#056866; --gold:#20201c;
+    --shadow:none;
+  }
+  @page{margin:1.4cm 1.6cm;}
+  body{background:#fff; color:var(--ink); font-size:10.5pt; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  #bp-gate,
+  .topbar,
+  .langtoggle,
+  .pdfhint,
+  .livebadge{display:none!important;}
+  #bp-content{display:block!important;}
+  .fade-in{animation:none!important; opacity:1!important; transform:none!important;}
+  .hero{padding-block:0 24px;}
+  section.chapter{padding-block:28px; break-inside:avoid; page-break-inside:avoid;}
+  .card,.chartcard,.offercard,.tblwrap,.statrow,.tilegrid .tile{
+    box-shadow:none; break-inside:avoid; page-break-inside:avoid;
+  }
+  .tblwrap{overflow:visible;}
+  table{min-width:0; font-size:9.5pt;}
+  th,td{padding:7px 10px;}
+  thead th{background:var(--surface-2)!important; color:var(--ink-soft)!important;}
+  tr.total td{background:var(--surface-2)!important;}
+  tr.positive td.num,tr.negative td.num{color:var(--ink)!important;}
+  em,.stat .v,.offercard .tag,.chip.low{color:var(--teal-deep)!important;}
+  .chip.med,.chip.high{border:1px solid var(--line-strong); background:var(--surface-2)!important; color:var(--ink)!important;}
+  .chart-legend .sw{border:1px solid var(--line-strong);}
+  .footer-meta a{color:var(--teal-deep); border-bottom-color:var(--teal-soft);}
+  a[href^="#"]::after{content:"";}
+  .revision-note{border-left-color:var(--teal-deep); background:var(--surface-2);}
+  .tstep::before{background:var(--teal-deep); border-color:#fff;}
+}
 </style>
 <style>
 #bp-gate{position:fixed; inset:0; z-index:999; background:var(--bg); display:flex;

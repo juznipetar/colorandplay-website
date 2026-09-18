@@ -151,19 +151,17 @@ samo posle eksplicitnog OK od Petra/Suzane.
       ime, adresa (Baar, Kanton Zug), tip usluge, cenovni raspon, radno vreme
       ako postoji. Besplatan lokalni SEO potez (Google lokalni rezultati za
       "Kindergeburtstag Baar", "Malatelier Zug" i sl.), ne dira vizuelni dizajn.
-- [ ] **Custom 404 stranica** — GitHub Pages trenutno servira default prazan
-      404. Kratka DE/EN stranica u brend stilu ("Diese Seite gibt's nicht —
-      zurueck zur Startseite") sa linkom na `/`. Mala stvar, ali losi prvi
-      utisak kod pokvarenog linka ili tipfelera u URL-u.
+- [x] **Custom 404 stranica** — `404.html` u root-u, DE/EN (data-lang + lang
+      toggle), Playful Pastel stil, link `./` na start. GitHub Pages automatski
+      servira za nepoznate putanje.
 - [ ] **"Koji paket odgovara nama?" mini-kviz** — 3-4 kratka pitanja (broj
       osoba, prilika: rodjendan/firma/spoj, budzet) → JS bez backend-a scroll-uje
       i istice preporuceni tier medju postojecih 11 paketa. Igrivo, uklapa se u
       "Play" brend ton, nula rizika po postojeci sadrzaj (cist dodatak, ne
       menja cene/tekst).
-- [ ] **Print stylesheet za `businessplan/index.html`** — `@media print` da
-      Herr Alig moze cist da odstampa/PDF-uje stranicu za sastanak (bez topbar-a,
-      gate-a, dekorativnih blob-ova; teal umesto svetlih boja za bolji crno-belo
-      ispis).
+- [x] **Print stylesheet za `businessplan/index.html`** — `@media print` sakriva
+      topbar, gate, lang toggle i livebadge; teal/tamni tekst za B&W ispis;
+      tabele i poglavlja sa `break-inside: avoid`.
 - [ ] **Vizuelni preview generator za poklon vaucer** (Geschenkgutscheine paket
       vec postoji u cenovniku) — mali klijentski prikaz (ime primaoca, iznos,
       brend dizajn) koji se moze odstampati/sacuvati kao PDF pre nego sto se
