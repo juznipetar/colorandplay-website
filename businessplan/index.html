@@ -1,0 +1,1053 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<title>Color and Play — Businessplan</title>
+<meta name="description" content="Vollständiger Business- und Mietvorschlag für Color and Play, Baar: Konzept, Markt, Recht, Finanzplan und Risikoanalyse." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+#bp-gate{position:fixed; inset:0; z-index:999; background:var(--bg); display:flex;
+  align-items:center; justify-content:center; padding:24px;}
+#bp-gate .box{max-width:360px; width:100%; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px;}
+#bp-gate h2{font-size:1.3rem; margin-bottom:8px;}
+#bp-gate p{font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;}
+#bp-gate input{width:100%; font-family:var(--font-mono); font-size:15px; padding:11px 13px;
+  border:1px solid var(--line-strong); border-radius:10px; background:var(--bg); color:var(--ink);
+  margin-bottom:12px;}
+#bp-gate button{width:100%; font-weight:600; font-size:14.5px; padding:11px 13px; border-radius:10px;
+  border:1px solid var(--teal); background:var(--teal); color:#fff; cursor:pointer;}
+#bp-gate button:hover{background:var(--teal-deep); border-color:var(--teal-deep);}
+#bp-gate .err{font-size:12.5px; color:var(--coral); margin-top:10px; display:none;}
+#bp-content{display:none;}
+</style>
+<div id="bp-gate">
+  <div class="box">
+    <h2>Color and Play</h2>
+    <p>Diese Seite enthält den vollständigen Businessplan und ist nur mit Zugangscode sichtbar.<br>This page holds the full business plan and requires an access code.</p>
+    <input type="password" id="bp-pw" placeholder="Zugangscode / Access code" autocomplete="off">
+    <button type="button" onclick="bpUnlock()">Öffnen / Open</button>
+    <div class="err" id="bp-err">Falscher Code. / Incorrect code.</div>
+  </div>
+</div>
+<div id="bp-content">
+
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --bg:#FAF6EC; --surface:#FFFFFF; --surface-2:#F1E9D6; --surface-3:#EAE0C8;
+  --ink:#1E241F; --ink-soft:#5B665D; --ink-faint:#8B9389;
+  --line:#E3D9BF; --line-strong:#CDBF9C;
+  --teal:#0B6E6B; --teal-deep:#083F3E; --teal-soft:#DCEEEC;
+  --gold:#C9962E; --gold-soft:#F5E7C4;
+  --coral:#B84A2C; --coral-soft:#F3DED4;
+  --sage:#6F8172;
+  --font-display:'Fraunces',ui-serif,Georgia,serif;
+  --font-body:'Work Sans',ui-sans-serif,system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(20,30,25,.04), 0 8px 24px -12px rgba(20,30,25,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101614; --surface:#161F1C; --surface-2:#1C2823; --surface-3:#233229;
+    --ink:#EDEFE9; --ink-soft:#A9B6AC; --ink-faint:#76857A;
+    --line:#2A3A32; --line-strong:#3A4C41;
+    --teal:#4BC0B6; --teal-deep:#8FDDD3; --teal-soft:#173330;
+    --gold:#E3B95C; --gold-soft:#2E2A18;
+    --coral:#E08160; --coral-soft:#33221B;
+    --sage:#93A78F;
+    --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px -12px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101614; --surface:#161F1C; --surface-2:#1C2823; --surface-3:#233229;
+  --ink:#EDEFE9; --ink-soft:#A9B6AC; --ink-faint:#76857A;
+  --line:#2A3A32; --line-strong:#3A4C41;
+  --teal:#4BC0B6; --teal-deep:#8FDDD3; --teal-soft:#173330;
+  --gold:#E3B95C; --gold-soft:#2E2A18;
+  --coral:#E08160; --coral-soft:#33221B;
+  --sage:#93A78F;
+  --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px -12px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--font-body);
+  font-size:16px; line-height:1.6; padding-inline:0;
+}
+[hidden]{display:none!important;}
+img,svg{max-width:100%;}
+.wrap{max-width:1080px; margin-inline:auto; padding-inline:20px;}
+@media (min-width:640px){ .wrap{padding-inline:32px;} }
+
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; color:var(--ink); text-wrap:balance; margin:0;}
+p{margin:0;}
+em{font-style:italic; color:var(--teal);}
+.num{font-family:var(--font-mono); font-variant-numeric:tabular-nums;}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:40;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding-block:12px;
+}
+.brandmark{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);}
+.brandmark .dot{width:11px;height:11px;border-radius:50%;background:var(--gold); box-shadow:0 0 0 3px var(--teal-soft);}
+.brandmark-text{font-family:var(--font-display); font-weight:600; font-size:16px; letter-spacing:.01em;}
+.brandmark-text small{display:block; font-family:var(--font-body); font-weight:500; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint);}
+.topbar-right{display:flex; align-items:center; gap:10px;}
+.langtoggle{
+  display:flex; border:1px solid var(--line-strong); border-radius:999px; overflow:hidden;
+  font-family:var(--font-mono); font-size:12.5px; font-weight:500;
+}
+.langtoggle button{
+  border:0; background:transparent; color:var(--ink-soft); padding:7px 14px; cursor:pointer;
+  letter-spacing:.03em;
+}
+.langtoggle button[aria-pressed="true"]{background:var(--teal); color:#fff;}
+.pdfhint{
+  font-size:11.5px; color:var(--ink-faint); font-family:var(--font-mono);
+  display:none;
+}
+@media (min-width:760px){ .pdfhint{display:inline;} }
+
+/* ---------- Hero ---------- */
+.hero{padding-block:56px 44px; border-bottom:1px solid var(--line);}
+.eyebrow{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; display:flex; align-items:center; gap:8px;
+}
+.eyebrow::before{content:""; width:18px; height:1.5px; background:var(--coral); display:inline-block;}
+.hero h1{font-size:clamp(2.4rem,6vw,4.1rem); line-height:1.02; margin-top:14px;}
+.hero .lede{font-size:clamp(1.05rem,2vw,1.25rem); color:var(--ink-soft); max-width:640px; margin-top:18px;}
+.hero .revision-note{
+  margin-top:22px; font-size:14.5px; padding:12px 16px; background:var(--surface-2);
+  border-left:3px solid var(--coral); border-radius:0 10px 10px 0; max-width:640px; color:var(--ink);
+}
+.statrow{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:1px; margin-top:36px;
+  background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+}
+@media (min-width:760px){ .statrow{grid-template-columns:repeat(4,1fr);} }
+.stat{background:var(--surface); padding:18px 18px 16px;}
+.stat .v{font-family:var(--font-mono); font-size:1.5rem; font-weight:600; color:var(--teal-deep);}
+:root:not([data-theme="light"]) .stat .v{color:var(--teal-deep);}
+.stat .l{font-size:12px; color:var(--ink-soft); margin-top:4px; line-height:1.35;}
+
+/* ---------- Section shell ---------- */
+section.chapter{padding-block:52px; border-bottom:1px solid var(--line);}
+.chapter-head{display:flex; gap:18px; align-items:baseline; margin-bottom:26px;}
+.chapter-num{font-family:var(--font-mono); font-size:14px; color:var(--ink-faint); padding-top:6px; min-width:26px;}
+.chapter-head h2{font-size:clamp(1.6rem,3.4vw,2.15rem);}
+.chapter-kicker{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:6px; display:block;}
+.lead{font-size:1.08rem; color:var(--ink-soft); max-width:700px; margin-bottom:22px;}
+.prose{max-width:700px; color:var(--ink); font-size:15.5px;}
+.prose p + p{margin-top:14px;}
+.cols2{display:grid; grid-template-columns:1fr; gap:28px;}
+@media (min-width:820px){ .cols2{grid-template-columns:1.1fr .9fr;} }
+
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px; box-shadow:var(--shadow);}
+.card h4{font-size:15px; margin-bottom:8px;}
+.card .small{font-size:13.5px; color:var(--ink-soft);}
+
+/* ---------- Offer grid (concept) ---------- */
+.offergrid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:8px;}
+@media (min-width:680px){ .offergrid{grid-template-columns:1fr 1fr;} }
+.offercard{border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; background:var(--surface);}
+.offercard .tag{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--teal); font-weight:600;}
+.offercard h4{margin-top:6px; font-size:16.5px;}
+.offercard .desc{font-size:13.8px; color:var(--ink-soft); margin-top:6px;}
+.offercard .price{font-family:var(--font-mono); font-weight:600; font-size:15px; margin-top:12px; color:var(--ink);}
+.offercard .price .from{color:var(--ink-faint); font-weight:400; font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;}
+.livebadge{
+  display:inline-flex; align-items:center; gap:7px; font-family:var(--font-mono); font-size:11.5px;
+  color:var(--teal-deep); background:var(--teal-soft); padding:5px 11px; border-radius:999px; font-weight:600;
+  margin-bottom:16px;
+}
+.livebadge .pulse{width:7px;height:7px;border-radius:50%;background:var(--teal); position:relative;}
+.livebadge .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--teal); opacity:.5;}
+
+/* ---------- Stat tiles ---------- */
+.tilegrid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:6px;}
+@media (min-width:680px){ .tilegrid{grid-template-columns:repeat(4,1fr);} }
+.tile{background:var(--surface-2); border-radius:12px; padding:16px 16px;}
+.tile .v{font-family:var(--font-mono); font-weight:600; font-size:1.3rem; color:var(--ink);}
+.tile .l{font-size:11.8px; color:var(--ink-soft); margin-top:3px;}
+
+/* ---------- Tables ---------- */
+.tblwrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface);}
+table{width:100%; border-collapse:collapse; font-size:14px; min-width:480px;}
+table caption{text-align:left; padding:14px 18px 0; font-size:12px; color:var(--ink-faint); font-family:var(--font-mono);}
+th,td{padding:11px 16px; text-align:left; border-bottom:1px solid var(--line);}
+thead th{
+  font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-soft); font-weight:600; background:var(--surface-2);
+}
+tbody tr:last-child td{border-bottom:0;}
+td.num, th.num{font-family:var(--font-mono); text-align:right; font-variant-numeric:tabular-nums;}
+tr.total td{font-weight:600; background:var(--surface-2); border-top:1.5px solid var(--line-strong);}
+tr.negative td.num{color:var(--coral);}
+tr.positive td.num{color:var(--teal-deep);}
+
+/* ---------- Timeline ---------- */
+.timeline{display:flex; flex-direction:column; gap:0; margin-top:8px;}
+.tstep{display:grid; grid-template-columns:64px 1fr; gap:16px; padding-block:14px; border-left:2px solid var(--line); margin-left:8px; padding-left:24px; position:relative;}
+.tstep::before{content:""; position:absolute; left:-7px; top:20px; width:12px; height:12px; border-radius:50%; background:var(--teal); border:2px solid var(--bg);}
+.tstep:last-child{border-left:2px solid transparent;}
+.tstep .wk{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); padding-top:2px;}
+.tstep h4{font-size:14.5px; margin-bottom:4px;}
+.tstep p{font-size:13.5px; color:var(--ink-soft);}
+
+/* ---------- Risk table chips ---------- */
+.chip{display:inline-block; font-family:var(--font-mono); font-size:10.5px; padding:3px 9px; border-radius:999px; font-weight:600; letter-spacing:.02em;}
+.chip.low{background:var(--teal-soft); color:var(--teal-deep);}
+.chip.med{background:var(--gold-soft); color:#8A6314;}
+:root:not([data-theme="light"]) .chip.med{color:var(--gold);}
+.chip.high{background:var(--coral-soft); color:var(--coral);}
+
+/* ---------- Charts ---------- */
+.chartcard{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px 14px; box-shadow:var(--shadow);}
+.chart-legend{display:flex; gap:18px; flex-wrap:wrap; font-size:12.5px; color:var(--ink-soft); margin-top:10px; padding-top:12px; border-top:1px solid var(--line);}
+.chart-legend .item{display:flex; align-items:center; gap:7px;}
+.chart-legend .sw{width:11px; height:11px; border-radius:3px;}
+
+/* ---------- Ask section ---------- */
+.asklist{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
+.askrow{display:grid; grid-template-columns:28px 1fr; gap:14px; align-items:start;}
+.askrow .ck{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--teal); display:flex; align-items:center; justify-content:center; margin-top:2px; flex-shrink:0;}
+.askrow .ck::after{content:"";width:9px;height:5px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal); transform:rotate(-45deg) translateY(-1px);}
+.askrow h4{font-size:15px; margin-bottom:3px;}
+.askrow p{font-size:13.8px; color:var(--ink-soft);}
+.askrow.optional{opacity:.92;}
+.askrow.optional .ck{border-style:dashed;}
+.askrow.optional .ck::after{border-color:var(--ink-faint);}
+
+/* ---------- Footer ---------- */
+footer{padding-block:44px 60px;}
+.footgrid{display:flex; flex-direction:column; gap:18px;}
+@media (min-width:680px){ .footgrid{flex-direction:row; justify-content:space-between; align-items:flex-end;} }
+.footer-brand{font-family:var(--font-display); font-size:1.3rem; font-weight:600;}
+.footer-meta{font-size:13px; color:var(--ink-soft); line-height:1.7;}
+.footer-meta a{color:var(--teal-deep); text-decoration:none; border-bottom:1px solid var(--teal-soft);}
+
+.footnote{font-size:12px; color:var(--ink-faint); margin-top:10px; max-width:640px;}
+.assumption{font-size:12px; color:var(--ink-faint); font-style:italic; margin-top:6px;}
+
+@media (prefers-reduced-motion:no-preference){
+  .fade-in{animation:fadeIn .5s ease both;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+}
+</style>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brandmark" href="#top">
+      <span class="dot"></span>
+      <span class="brandmark-text">Color and Play<small class="i18n" data-lang="de">Businessplan · Baar</small><small class="i18n" data-lang="en" hidden>Business Plan · Baar</small></span>
+    </a>
+    <div class="topbar-right">
+      <span class="pdfhint i18n" data-lang="de">Druckversion: siehe PDF</span>
+      <span class="pdfhint i18n" data-lang="en" hidden>Print version: see PDF</span>
+      <div class="langtoggle" role="group" aria-label="Language">
+        <button type="button" id="btn-de" aria-pressed="true" onclick="setLang('de')">DE</button>
+        <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="top"></div>
+
+<header class="hero wrap">
+  <div class="i18n" data-lang="de">
+    <div class="eyebrow">Business- &amp; Mietvorschlag · Baar, Kanton Zug</div>
+    <h1>Ein Atelier,<br>das seine Miete <em>verdient</em>.</h1>
+    <p class="lede">Vollständiger Businessplan für die Anmietung eines Gewerberaums in Baar — Konzept, Markt, Recht und, im Detail, die Zahlen.</p>
+    <div class="revision-note">Diese Fassung ersetzt unsere erste Präsentation vollständig. Sie wurde als Antwort auf die Rückmeldung «nicht profitabel und nicht vollständig» neu von Grund auf aufgebaut — mit Monatszahlen, vollständiger Investitionsrechnung und rechtlicher Prüfung.</div>
+  </div>
+  <div class="i18n" data-lang="en" hidden>
+    <div class="eyebrow">Business &amp; Lease Proposal · Baar, Canton of Zug</div>
+    <h1>A studio<br>that <em>earns</em> its rent.</h1>
+    <p class="lede">A complete business plan for renting commercial space in Baar — the concept, the market, the legal groundwork and, in full detail, the numbers.</p>
+    <div class="revision-note">This version fully replaces our first presentation. It was rebuilt from the ground up in direct response to the feedback "not profitable and not complete" — with month-by-month figures, a full investment plan and legal review.</div>
+  </div>
+
+  <div class="statrow">
+    <div class="stat"><div class="v">CHF 2'000</div><div class="l i18n" data-lang="de">Zielmiete pro Monat</div><div class="l i18n" data-lang="en" hidden>Target rent per month</div></div>
+    <div class="stat"><div class="v">CHF 103'000</div><div class="l i18n" data-lang="de">Eigenkapital, vollständig gedeckt — keine Bank, kein Investor</div><div class="l i18n" data-lang="en" hidden>Own capital, fully covered — no bank, no investor</div></div>
+    <div class="stat"><div class="v"><span class="i18n" data-lang="de">Monat 3</span><span class="i18n" data-lang="en" hidden>Month 3</span></div><div class="l i18n" data-lang="de">Operativer Break-even (konservativ)</div><div class="l i18n" data-lang="en" hidden>Operating break-even (conservative)</div></div>
+    <div class="stat"><div class="v">CHF ~109'000</div><div class="l i18n" data-lang="de">Umsatz Jahr 1, konservativ gerechnet</div><div class="l i18n" data-lang="en" hidden>Year 1 revenue, conservative case</div></div>
+  </div>
+</header>
+
+<main>
+
+<!-- 01 EXECUTIVE SUMMARY -->
+<section class="chapter wrap" id="summary">
+  <div class="chapter-head"><span class="chapter-num">01</span>
+    <h2 class="i18n" data-lang="de">Zusammenfassung</h2>
+    <h2 class="i18n" data-lang="en" hidden>Executive Summary</h2>
+  </div>
+
+  <div class="i18n" data-lang="de">
+    <div class="livebadge"><span class="pulse"></span> Konzept bereits live &amp; buchbar</div>
+    <div class="prose">
+      <p>Color and Play ist ein geführtes Kreativatelier für Kindergeburtstage, Familien, Paare, Seniorengruppen und Firmenteams. Das Konzept ist kein Papier-Entwurf: Preise, Ablauf und Buchungsprozess sind bereits als funktionierende Webseite live und öffentlich testbar. Was in der ersten Präsentation fehlte, war der Beweis, dass sich das Geschäft trägt — und dass die Miete von CHF 2'000 pro Monat auch in einer langsamen Anlaufphase gesichert ist.</p>
+      <p>Dieses Dokument liefert genau das: eine konservative, monatsgenaue Umsatz- und Kostenrechnung für drei Jahre, einen vollständigen Investitionsplan mit Kapitalreserve für die Anlaufphase, eine Rechts- und Bewilligungsprüfung für den Kanton Zug sowie eine Risikoanalyse mit konkreten Gegenmassnahmen.</p>
+      <p>Kurzfassung der Zahlen: Der Betrieb finanziert sich beim gewählten, bewusst vorsichtigen Buchungsszenario ab dem dritten Monat operativ selbst. Die Gründerperson trägt das gesamte Startkapital von rund CHF 103'000 aus eigenen Ersparnissen — ohne Bankkredit, ohne externe Investoren. Selbst bei einem um 25% schwächeren Geschäftsverlauf bleibt die Miete jederzeit gedeckt (siehe Kapitel 07.6).</p>
+    </div>
+  </div>
+  <div class="i18n" data-lang="en" hidden>
+    <div class="livebadge"><span class="pulse"></span> Concept already live &amp; bookable</div>
+    <div class="prose">
+      <p>Color and Play is a guided creative studio for kids' birthdays, families, couples, senior groups and corporate teams. This is not a paper concept: pricing, the session flow and the booking process are already live on a working website that can be tested today. What the first presentation lacked was proof that the business actually sustains itself — and that the CHF 2,000 monthly rent stays covered even through a slow start.</p>
+      <p>This document provides exactly that: a conservative, month-by-month revenue and cost plan for three years, a complete investment plan with a start-up cash reserve, a legal and permit review for the Canton of Zug, and a risk analysis with concrete mitigations.</p>
+      <p>The short version: under the deliberately cautious booking scenario used here, the business covers its own operating costs from month three onward. The founder is funding the full start-up capital of roughly CHF 103,000 from personal savings — no bank loan, no outside investors. Even if actual trading comes in 25% weaker than modelled, rent stays covered at every point (see chapter 07.6).</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 DAS KONZEPT -->
+<section class="chapter wrap" id="concept">
+  <div class="chapter-head"><span class="chapter-num">02</span>
+    <h2 class="i18n" data-lang="de">Das Konzept</h2>
+    <h2 class="i18n" data-lang="en" hidden>The Concept</h2>
+  </div>
+
+  <p class="lead i18n" data-lang="de">Sechs Kern-Angebotslinien unter einem Dach, plus ein wachsendes Paket-Portfolio für noch höhere Auslastung — damit das Atelier an sechs statt an einem Tag pro Woche Umsatz macht.</p>
+  <p class="lead i18n" data-lang="en" hidden>Six core offer lines under one roof, plus a growing package portfolio for even higher utilisation — so the studio earns revenue on six days a week, not one.</p>
+
+  <div class="prose i18n" data-lang="de" style="margin-bottom:22px;">
+    <p>Wir haben das Online-Erlebnis vollständig gebaut und mit echten Preisen getestet, bevor wir einen Franken in eine eigene Domain oder feste Ladeneinrichtung investieren — dieselbe disziplinierte Denkweise, mit der auch dieser Finanzplan aufgestellt wurde. Die aktuelle Testadresse läuft auf einer temporären Vorschau; mit Vertragsunterschrift sichern wir eine permanente <span class="num">.ch</span>-Domain und das endgültige Signalet.</p>
+  </div>
+  <div class="prose i18n" data-lang="en" hidden style="margin-bottom:22px;">
+    <p>We built the full online experience and tested it with real prices before spending a single franc on a permanent domain or shopfit — the same disciplined approach behind this entire financial plan. The current test address runs on a temporary preview link; on signing the lease we secure a permanent <span class="num">.ch</span> domain and the final signage.</p>
+  </div>
+
+  <div class="offergrid">
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Kindergeburtstage</div><div class="tag i18n" data-lang="en" hidden>Kids' Birthdays</div>
+      <h4 class="i18n" data-lang="de">3 Altersstufen, bis 8 Kinder</h4>
+      <h4 class="i18n" data-lang="en" hidden>3 age tiers, up to 8 kids</h4>
+      <div class="desc i18n" data-lang="de">4–12 Jahre · Leinwand, Steine, Glow-Art · inkl. Begleitung &amp; Material</div>
+      <div class="desc i18n" data-lang="en" hidden>Ages 4–12 · canvas, stones, glow-art · guided, materials included</div>
+      <div class="price">CHF 390 – 600 <span class="from i18n" data-lang="de">/ Fest · +55 je weiterem Kind</span><span class="from i18n" data-lang="en" hidden>/ party · +55 per extra child</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Grundangebot</div><div class="tag i18n" data-lang="en" hidden>Core Packages</div>
+      <h4 class="i18n" data-lang="de">Leinwand · Steine · Gips</h4>
+      <h4 class="i18n" data-lang="en" hidden>Canvas · Stones · Plaster</h4>
+      <div class="desc i18n" data-lang="de">1.5–2 Std. · buchbar einzeln oder als Zusatz zu jedem Format</div>
+      <div class="desc i18n" data-lang="en" hidden>1.5–2 hrs · bookable alone or added to any format</div>
+      <div class="price">CHF 49 – 69 <span class="from i18n" data-lang="de">/ Person</span><span class="from i18n" data-lang="en" hidden>/ person</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Offenes Atelier</div><div class="tag i18n" data-lang="en" hidden>Open Studio</div>
+      <h4 class="i18n" data-lang="de">Solo-Abend für Erwachsene</h4>
+      <h4 class="i18n" data-lang="en" hidden>Solo evening for adults</h4>
+      <div class="desc i18n" data-lang="de">Di &amp; Sa, 17:30 Uhr · 20 Plätze · alkoholfreies Willkommensgetränk inkl.</div>
+      <div class="desc i18n" data-lang="en" hidden>Tue &amp; Sat, 5:30 pm · 20 seats · non-alcoholic welcome drink included</div>
+      <div class="price">CHF 49 <span class="from i18n" data-lang="de">/ Person</span><span class="from i18n" data-lang="en" hidden>/ person</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Für jede Generation</div><div class="tag i18n" data-lang="en" hidden>Every Generation</div>
+      <h4 class="i18n" data-lang="de">Familie · Paare · 60+</h4>
+      <h4 class="i18n" data-lang="en" hidden>Family · Couples · 60+</h4>
+      <div class="desc i18n" data-lang="de">Familientisch bis 4 Pers., Paar-Abend, ruhiger Kreativkreis am Nachmittag</div>
+      <div class="desc i18n" data-lang="en" hidden>Family table up to 4, evening for couples, relaxed afternoon circle</div>
+      <div class="price">CHF 39 – 290 <span class="from i18n" data-lang="de">/ Fest o. Person</span><span class="from i18n" data-lang="en" hidden>/ booking or person</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Firmen &amp; Teams</div><div class="tag i18n" data-lang="en" hidden>Companies &amp; Teams</div>
+      <h4 class="i18n" data-lang="de">Team-Events, 8–30 Personen</h4>
+      <h4 class="i18n" data-lang="en" hidden>Team events, 8–30 people</h4>
+      <div class="desc i18n" data-lang="de">2 Std. abseits vom Bildschirm · personalisiertes Motiv · alkoholfreier Apéro</div>
+      <div class="desc i18n" data-lang="en" hidden>2 hrs away from the screen · personalised motif · non-alcoholic apéro</div>
+      <div class="price">ab CHF 110 <span class="from i18n" data-lang="de">/ Person</span><span class="from i18n" data-lang="en" hidden>/ person</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Plus-Angebot</div><div class="tag i18n" data-lang="en" hidden>Plus Add-ons</div>
+      <h4 class="i18n" data-lang="de">Spiegel &amp; Taschen bemalen</h4>
+      <h4 class="i18n" data-lang="en" hidden>Mirror &amp; tote painting</h4>
+      <div class="desc i18n" data-lang="de">Zusatzbuchung zu jedem Grundformat · höherer Materialertrag pro Slot</div>
+      <div class="desc i18n" data-lang="en" hidden>Add-on to any core format · higher material margin per slot</div>
+      <div class="price">+CHF 69 – 79 <span class="from i18n" data-lang="de">/ Person</span><span class="from i18n" data-lang="en" hidden>/ person</span></div>
+    </div>
+  </div>
+
+  <h3 class="i18n" data-lang="de" style="font-size:1.05rem;margin:26px 0 4px;">2.1 — Paket-Portfolio in Ausarbeitung</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.05rem;margin:26px 0 4px;">2.1 — Package Portfolio in Development</h3>
+  <p class="small i18n" data-lang="de" style="margin-bottom:12px;">Fünf weitere Pakete erweitern das Angebot über die sechs Kernlinien hinaus und erschliessen zusätzliche Tageszeiten, Zielgruppen und Anlässe.</p>
+  <p class="small i18n" data-lang="en" hidden style="margin-bottom:12px;">Five further packages extend the offer beyond the six core lines, opening up additional time slots, audiences and occasions.</p>
+
+  <div class="offergrid">
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Wine &amp; Draw</div><div class="tag i18n" data-lang="en" hidden>Wine &amp; Draw</div>
+      <h4 class="i18n" data-lang="de">Paint &amp; Sip für Erwachsene</h4>
+      <h4 class="i18n" data-lang="en" hidden>Paint &amp; sip for adults</h4>
+      <div class="desc i18n" data-lang="de">Fr &amp; Sa, 19:00 Uhr · geführte Leinwand-Session · 1 Glas Wein oder alkoholfreie Alternative inkl.</div>
+      <div class="desc i18n" data-lang="en" hidden>Fri &amp; Sat, 7 pm · guided canvas session · one glass of wine or non-alcoholic alternative included</div>
+      <div class="price">CHF 65 <span class="from i18n" data-lang="de">/ Person</span><span class="from i18n" data-lang="en" hidden>/ person</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Private Feiern</div><div class="tag i18n" data-lang="en" hidden>Private Celebrations</div>
+      <h4 class="i18n" data-lang="de">Junggesellinnenabschied, Babyshower, Jubiläen</h4>
+      <h4 class="i18n" data-lang="en" hidden>Bachelorette parties, baby showers, anniversaries</h4>
+      <div class="desc i18n" data-lang="de">Exklusive Studio-Miete ausserhalb der Öffnungszeiten · Deko &amp; Playlist nach Wunsch · min. 8 Personen</div>
+      <div class="desc i18n" data-lang="en" hidden>Exclusive studio buyout outside opening hours · decor &amp; playlist on request · min. 8 people</div>
+      <div class="price">ab CHF 55 <span class="from i18n" data-lang="de">/ Person</span><span class="from i18n" data-lang="en" hidden>/ person</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Für jeden Anlass</div><div class="tag i18n" data-lang="en" hidden>For Any Occasion</div>
+      <h4 class="i18n" data-lang="de">Geschenkgutscheine</h4>
+      <h4 class="i18n" data-lang="en" hidden>Gift vouchers</h4>
+      <div class="desc i18n" data-lang="de">Digital oder gedruckt · frei wählbarer Betrag oder festes Paket · das ganze Jahr gültig</div>
+      <div class="desc i18n" data-lang="en" hidden>Digital or printed · open amount or fixed package · valid year-round</div>
+      <div class="price">CHF 49 – 390</div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Kinder &amp; Jugendliche</div><div class="tag i18n" data-lang="en" hidden>Kids &amp; Teens</div>
+      <h4 class="i18n" data-lang="de">Ferien-Workshops</h4>
+      <h4 class="i18n" data-lang="en" hidden>School holiday workshops</h4>
+      <div class="desc i18n" data-lang="de">Halbtags-Atelier in den Schulferien Kanton Zug · 4–12 Jahre · max. 10 Kinder pro Gruppe</div>
+      <div class="desc i18n" data-lang="en" hidden>Half-day studio sessions during Canton Zug school holidays · ages 4–12 · max. 10 children per group</div>
+      <div class="price">CHF 65 <span class="from i18n" data-lang="de">/ Tag / Kind</span><span class="from i18n" data-lang="en" hidden>/ day / child</span></div>
+    </div>
+    <div class="offercard">
+      <div class="tag i18n" data-lang="de">Stammkundschaft</div><div class="tag i18n" data-lang="en" hidden>Regulars</div>
+      <h4 class="i18n" data-lang="de">Art Club Mitgliedschaft</h4>
+      <h4 class="i18n" data-lang="en" hidden>Art Club membership</h4>
+      <div class="desc i18n" data-lang="de">2 Sessions pro Monat · 10% Rabatt auf Material &amp; Zusatzbuchungen · monatlich kündbar</div>
+      <div class="desc i18n" data-lang="en" hidden>2 sessions per month · 10% off materials &amp; add-ons · cancel anytime</div>
+      <div class="price">CHF 89 <span class="from i18n" data-lang="de">/ Monat</span><span class="from i18n" data-lang="en" hidden>/ month</span></div>
+    </div>
+  </div>
+
+  <p class="footnote i18n" data-lang="de" style="margin-top:18px;">Preise der sechs Kernlinien gemäss aktuell publiziertem Angebot. Öffnungszeiten: Di–Fr 15:00–21:00, Sa 11:00–20:00, So 10:00–21:00, Mo geschlossen — 46 h Öffnungszeit pro Woche, verteilt über 6 Tage.</p>
+  <p class="footnote i18n" data-lang="en" hidden style="margin-top:18px;">Prices for the six core lines per the currently published offer. Opening hours: Tue–Fri 3–9 pm, Sat 11 am–8 pm, Sun 10 am–9 pm, closed Mon — 46 hours per week, spread across 6 days.</p>
+  <p class="footnote i18n" data-lang="de">Die fünf Pakete des Portfolios in 2.1 befinden sich in Ausarbeitung; die gezeigten Preise sind vorläufige Richtwerte und werden vor Eröffnung final festgelegt. Sie erschliessen zusätzliche Zeitfenster und Zielgruppen und stellen zusätzliches Umsatzpotenzial dar, das in der konservativen Finanzplanung in Kapitel 07 bewusst <em>nicht</em> eingerechnet ist.</p>
+  <p class="footnote i18n" data-lang="en" hidden>The five packages in section 2.1 are still in development; the prices shown are preliminary and will be finalised before opening. They open up additional time slots and audiences and represent extra upside that is deliberately <em>not</em> included in the conservative financial plan in chapter 07.</p>
+</section>
+
+<!-- 03 STANDORT & MARKT -->
+<section class="chapter wrap" id="market">
+  <div class="chapter-head"><span class="chapter-num">03</span>
+    <h2 class="i18n" data-lang="de">Standort &amp; Markt</h2>
+    <h2 class="i18n" data-lang="en" hidden>Location &amp; Market</h2>
+  </div>
+
+  <div class="cols2">
+    <div class="prose i18n" data-lang="de">
+      <p>Baar ist eine wachsende, kaufkräftige Gemeinde im Kanton Zug mit rund 25'000 Einwohnern — die am schnellsten wachsende Gemeinde der Region. Rund 19.7% der Bevölkerung sind unter 20 Jahre alt, das sind knapp 4'900 potenzielle Geburtstagskinder direkt vor der Tür. Über die S-Bahn ist der Kanton Zug (135'000 Einwohner) und die Agglomeration Zürich in Minuten erreichbar — unser Einzugsgebiet endet nicht an der Gemeindegrenze.</p>
+      <p>82.9% der Arbeitsplätze in Baar liegen im Dienstleistungssektor, verteilt auf 3'947 Unternehmen allein in dieser Gemeinde. Das ist die Zielgruppe für unser Firmen-Angebot — ohne dass wir für Firmenkunden auch nur eine S-Bahn-Station überbrücken müssen.</p>
+    </div>
+    <div class="prose i18n" data-lang="en" hidden>
+      <p>Baar is a growing, affluent municipality in the Canton of Zug with around 25,000 residents — the fastest-growing municipality in the region. About 19.7% of the population is under 20, close to 4,900 potential birthday kids right on the doorstep. The S-Bahn puts the wider Canton of Zug (135,000 residents) and the Zurich agglomeration minutes away — our catchment area doesn't stop at the municipal border.</p>
+      <p>82.9% of jobs in Baar sit in the service sector, spread across 3,947 companies in this municipality alone. That's the target audience for our corporate offer — without needing to cross a single S-Bahn stop to reach them.</p>
+    </div>
+
+    <div class="tilegrid">
+      <div class="tile"><div class="v">~25'000</div><div class="l i18n" data-lang="de">Einwohner Baar</div><div class="l i18n" data-lang="en" hidden>Residents of Baar</div></div>
+      <div class="tile"><div class="v">~4'900</div><div class="l i18n" data-lang="de">Kinder &amp; Jugendliche (0–19)</div><div class="l i18n" data-lang="en" hidden>Children &amp; youth (0–19)</div></div>
+      <div class="tile"><div class="v">3'947</div><div class="l i18n" data-lang="de">Unternehmen in Baar</div><div class="l i18n" data-lang="en" hidden>Companies in Baar</div></div>
+      <div class="tile"><div class="v">135'000</div><div class="l i18n" data-lang="de">Einwohner Kanton Zug</div><div class="l i18n" data-lang="en" hidden>Residents, Canton of Zug</div></div>
+    </div>
+  </div>
+  <p class="footnote i18n" data-lang="de">Quellen: Fachstelle für Statistik Kanton Zug, Wikipedia (Baar ZG), Gemeindestatistik.</p>
+  <p class="footnote i18n" data-lang="en" hidden>Sources: Canton of Zug statistics office, Wikipedia (Baar ZG), municipal statistics.</p>
+</section>
+
+<!-- 04 WETTBEWERB -->
+<section class="chapter wrap" id="competition">
+  <div class="chapter-head"><span class="chapter-num">04</span>
+    <h2 class="i18n" data-lang="de">Wettbewerb &amp; Positionierung</h2>
+    <h2 class="i18n" data-lang="en" hidden>Competition &amp; Positioning</h2>
+  </div>
+  <p class="lead i18n" data-lang="de">Vergleichbare Ateliers gibt es fast ausschliesslich in Zürich — 25 bis 35 Minuten entfernt. In Baar und im Kanton Zug wäre Color and Play das erste Konzept dieser Art.</p>
+  <p class="lead i18n" data-lang="en" hidden>Comparable studios exist almost exclusively in Zurich — 25 to 35 minutes away. In Baar and the Canton of Zug, Color and Play would be the first concept of its kind.</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr>
+        <th class="i18n" data-lang="de">Anbieter</th><th class="i18n" data-lang="en" hidden>Provider</th>
+        <th class="i18n" data-lang="de">Standort</th><th class="i18n" data-lang="en" hidden>Location</th>
+        <th class="i18n" data-lang="de">Beispielpreis</th><th class="i18n" data-lang="en" hidden>Sample price</th>
+        <th class="i18n" data-lang="de">Besonderheit</th><th class="i18n" data-lang="en" hidden>Note</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><strong>Color and Play</strong></td><td>Baar, ZG</td><td class="num">CHF 48 – 75<span class="i18n" data-lang="de">/Kind (Geburtstag)</span><span class="i18n" data-lang="en" hidden>/child (birthday)</span></td><td class="i18n" data-lang="de">6 Angebotslinien, einziger Anbieter im Kanton</td><td class="i18n" data-lang="en" hidden>6 offer lines, only provider in the canton</td></tr>
+        <tr><td>Atelier for Kids</td><td>Zürich</td><td class="num">CHF 290<span class="i18n" data-lang="de">/Person (Skulptur-Workshop)</span><span class="i18n" data-lang="en" hidden>/person (sculpture workshop)</span></td><td class="i18n" data-lang="de">Premium-Positionierung, kleine Gruppen</td><td class="i18n" data-lang="en" hidden>Premium positioning, small groups</td></tr>
+        <tr><td>Malspielraum</td><td>Zürich</td><td class="num">–</td><td class="i18n" data-lang="de">Kurse &amp; Maltherapie, kein Party-Format</td><td class="i18n" data-lang="en" hidden>Courses &amp; art therapy, no party format</td></tr>
+        <tr><td>PaintEvents.ch</td><td>Zürich</td><td class="num">–<span class="i18n" data-lang="de"> (nur Offerte)</span><span class="i18n" data-lang="en" hidden> (quote only)</span></td><td class="i18n" data-lang="de">Mobile Events, kein fester Standort</td><td class="i18n" data-lang="en" hidden>Mobile events, no fixed venue</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote i18n" data-lang="de">Wir positionieren uns bewusst in der Mitte: inklusiver als das Premium-Segment (Material &amp; Getränk immer inbegriffen), aber mit sechs Formaten statt einem einzigen Kursangebot.</p>
+  <p class="footnote i18n" data-lang="en" hidden>We position deliberately in the middle: more inclusive than the premium segment (materials &amp; drink always included), but with six formats instead of a single course offer.</p>
+</section>
+
+<!-- 05 MARKETING -->
+<section class="chapter wrap" id="marketing">
+  <div class="chapter-head"><span class="chapter-num">05</span>
+    <h2 class="i18n" data-lang="de">Marketing &amp; Kundengewinnung</h2>
+    <h2 class="i18n" data-lang="en" hidden>Marketing &amp; Customer Acquisition</h2>
+  </div>
+  <div class="offergrid">
+    <div class="card"><h4 class="i18n" data-lang="de">Lokale Sichtbarkeit</h4><h4 class="i18n" data-lang="en" hidden>Local visibility</h4>
+      <p class="small i18n" data-lang="de">Google Business Profil, lokale SEO für «Kindergeburtstag Baar/Zug», Eintrag in Familien- und Eltern-Gruppen.</p>
+      <p class="small i18n" data-lang="en" hidden>Google Business profile, local SEO for "kids birthday Baar/Zug", listings in family and parent groups.</p></div>
+    <div class="card"><h4 class="i18n" data-lang="de">Partnerschaften</h4><h4 class="i18n" data-lang="en" hidden>Partnerships</h4>
+      <p class="small i18n" data-lang="de">Kitas, Primarschulen und Spielgruppen in Baar als Empfehlungspartner; Aushang &amp; Flyer bei lokalen Familienbetrieben.</p>
+      <p class="small i18n" data-lang="en" hidden>Kindergartens, primary schools and playgroups in Baar as referral partners; flyers at local family-oriented businesses.</p></div>
+    <div class="card"><h4 class="i18n" data-lang="de">Firmenkunden</h4><h4 class="i18n" data-lang="en" hidden>Corporate outreach</h4>
+      <p class="small i18n" data-lang="de">Direktansprache der 3'947 Baarer Unternehmen via LinkedIn und HR-Kontakte für Team-Events fernab vom Bildschirm.</p>
+      <p class="small i18n" data-lang="en" hidden>Direct outreach to Baar's 3,947 companies via LinkedIn and HR contacts, pitching team events away from the screen.</p></div>
+    <div class="card"><h4 class="i18n" data-lang="de">Eröffnung &amp; Presse</h4><h4 class="i18n" data-lang="en" hidden>Opening &amp; press</h4>
+      <p class="small i18n" data-lang="de">Nachbarschaftseröffnung, Einladung an Zuger Zeitung/Bote der Urschweiz, Instagram/Facebook für Baar &amp; Zug.</p>
+      <p class="small i18n" data-lang="en" hidden>Neighbourhood opening event, invite to local press, Instagram/Facebook targeting Baar &amp; Zug.</p></div>
+  </div>
+</section>
+
+<!-- 06 RECHTLICHES -->
+<section class="chapter wrap" id="legal">
+  <div class="chapter-head"><span class="chapter-num">06</span>
+    <h2 class="i18n" data-lang="de">Rechtliches &amp; Bewilligungen</h2>
+    <h2 class="i18n" data-lang="en" hidden>Legal &amp; Permits</h2>
+  </div>
+  <p class="lead i18n" data-lang="de">Wir haben die Rechtslage für den Kanton Zug vorab mit einer eigenen rechtlichen Grundlagenprüfung abgeklärt, damit auf dem Weg zur Eröffnung keine Überraschungen entstehen.</p>
+  <p class="lead i18n" data-lang="en" hidden>We reviewed the legal situation for the Canton of Zug in advance with our own groundwork, so no surprises come up on the way to opening.</p>
+
+  <div class="offergrid">
+    <div class="card">
+      <h4 class="i18n" data-lang="de">Rechtsform</h4><h4 class="i18n" data-lang="en" hidden>Legal structure</h4>
+      <p class="small i18n" data-lang="de">GmbH statt Einzelunternehmen — begrenzte Haftung, CHF 20'000 Stammkapital. Für Arbeit mit Kindergruppen die verantwortungsvollere Wahl.</p>
+      <p class="small i18n" data-lang="en" hidden>GmbH (LLC) instead of sole proprietorship — limited liability, CHF 20,000 share capital. The more responsible choice for work with groups of children.</p>
+    </div>
+    <div class="card">
+      <h4 class="i18n" data-lang="de">Kinderbetreuung (FEB)</h4><h4 class="i18n" data-lang="en" hidden>Childcare permit (FEB)</h4>
+      <p class="small i18n" data-lang="de">Bewilligungspflicht erst ab 25 Std./Woche Betreuung pro Kind — unsere 2‑stündigen Sessions fallen nicht darunter. Schriftliche Bestätigung der Fachstelle FEB Baar vor Vertragsunterschrift eingeplant.</p>
+      <p class="small i18n" data-lang="en" hidden>A permit is only required above 25 hrs/week of care per child — our 2-hour sessions fall well under that. Written confirmation from the Baar FEB office is planned before signing.</p>
+    </div>
+    <div class="card">
+      <h4 class="i18n" data-lang="de">Alkohol &amp; Getränke</h4><h4 class="i18n" data-lang="en" hidden>Alcohol &amp; drinks</h4>
+      <p class="small i18n" data-lang="de">Alkoholfreies Willkommensgetränk ohne Bewilligung möglich. Für optionalen Wein/Prosecco: Gelegenheitsbewilligung je Anlass bzw. Gastwirtschaftspatent bei regelmässigem Ausschank.</p>
+      <p class="small i18n" data-lang="en" hidden>Non-alcoholic welcome drinks need no permit. For optional wine/prosecco: an occasional-event permit, or a full restaurant patent if served regularly.</p>
+    </div>
+    <div class="card">
+      <h4 class="i18n" data-lang="de">Versicherung</h4><h4 class="i18n" data-lang="en" hidden>Insurance</h4>
+      <p class="small i18n" data-lang="de">Betriebshaftpflicht (Personen-/Sachschäden Dritter), Sachversicherung (Inventar), UVG bei Aushilfen — alle ab Eröffnungstag aktiv, budgetiert in Kapitel 07.</p>
+      <p class="small i18n" data-lang="en" hidden>Business liability (third-party injury/property), contents insurance, accident insurance for any casual staff — all active from opening day, budgeted in chapter 07.</p>
+    </div>
+    <div class="card">
+      <h4 class="i18n" data-lang="de">Steuern &amp; Abgaben</h4><h4 class="i18n" data-lang="en" hidden>Taxes &amp; contributions</h4>
+      <p class="small i18n" data-lang="de">MWST-Pflicht ab CHF 100'000 Jahresumsatz (Satz 8.1%); AHV/IV/EO-Anmeldung bei der Ausgleichskasse Zug ab Geschäftsstart.</p>
+      <p class="small i18n" data-lang="en" hidden>VAT registration required above CHF 100,000 annual turnover (rate 8.1%); AHV/IV/EO registration with the Zug compensation office from the start.</p>
+    </div>
+    <div class="card">
+      <h4 class="i18n" data-lang="de">Sicherheit vor Ort</h4><h4 class="i18n" data-lang="en" hidden>On-site safety</h4>
+      <p class="small i18n" data-lang="de">Kindersichere Steckdosen, keine scharfen Kanten, kindergerechte Sanitäranlagen — Teil der Ausbauplanung in Kapitel 07.1.</p>
+      <p class="small i18n" data-lang="en" hidden>Child-safe outlets, no sharp edges, child-appropriate sanitary facilities — part of the fit-out plan in chapter 07.1.</p>
+    </div>
+  </div>
+  <p class="footnote i18n" data-lang="de">Diese Übersicht ersetzt keine rechtliche oder steuerliche Beratung; sie ist die Gesprächsgrundlage für unseren Treuhänder und die Gemeinde Baar. Eine ausführliche Fassung liegt als separates Dokument vor.</p>
+  <p class="footnote i18n" data-lang="en" hidden>This overview does not replace legal or tax advice; it is the basis for our conversation with our fiduciary and the municipality of Baar. A detailed version exists as a separate document.</p>
+</section>
+
+<!-- 07 FINANZPLAN -->
+<section class="chapter wrap" id="finance">
+  <div class="chapter-head"><span class="chapter-num">07</span>
+    <h2 class="i18n" data-lang="de">Finanzplan</h2>
+    <h2 class="i18n" data-lang="en" hidden>Financial Plan</h2>
+  </div>
+  <p class="lead i18n" data-lang="de">Das Kernstück dieses Dokuments. Konservativ gerechnet, monatsgenau, mit Reserve für den Ernstfall — genau das, was in der ersten Version gefehlt hat.</p>
+  <p class="lead i18n" data-lang="en" hidden>The heart of this document. Calculated conservatively, month by month, with a reserve for the worst case — exactly what the first version was missing.</p>
+
+  <!-- 7.1 Investitionsplan -->
+  <h3 class="i18n" data-lang="de" style="font-size:1.1rem;margin-bottom:4px;">7.1 — Investitionsplan (einmalig)</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.1rem;margin-bottom:4px;">7.1 — Start-up Investment (one-time)</h3>
+  <p class="assumption i18n" data-lang="de">Bestätigt durch das Aufmass des Vermieters: Ladenfläche Erdgeschoss 120 m² + Kellerfläche (Lager, Waschküche, Trockenraum) 43.8 m² — total 163.8 m² Nutzfläche für CHF 2'000/Monat. Direkt angrenzend an die Ladenfläche liegt eine WC-Anlage; im Keller sind eine Waschmaschine und fest verbaute Schrankelemente bereits vorhanden. Das deckt Lagerung und Betriebswäsche vollständig ab, reduziert den Ausbauaufwand spürbar und schafft zusätzlich Reserve für künftiges Wachstum, ohne externe Lagermiete.</p>
+  <p class="assumption i18n" data-lang="en" hidden>Confirmed by the landlord's floor plan: ground-floor retail area 120 m² + basement area (storage, laundry, drying room) 43.8 m² — 163.8 m² total usable space for CHF 2,000/month. A WC is directly adjacent to the retail area; the basement already has a washing machine and built-in cabinet units. This fully covers storage and operational laundry needs, meaningfully reduces the fit-out required, and leaves headroom for future growth, with no need for separate external storage rental.</p>
+
+  <div class="tblwrap" style="margin-top:12px;">
+    <table>
+      <thead><tr>
+        <th class="i18n" data-lang="de">Position</th><th class="i18n" data-lang="en" hidden>Item</th>
+        <th class="num i18n" data-lang="de">CHF</th><th class="num i18n" data-lang="en" hidden>CHF</th>
+      </tr></thead>
+      <tbody id="startup-tbody-de" class="i18n" data-lang="de">
+        <tr><td>GmbH-Gründung (Notar, Handelsregister, Sperrkonto)</td><td class="num">3'000</td></tr>
+        <tr><td>Mietkaution (3 Monatsmieten)</td><td class="num">6'000</td></tr>
+        <tr><td>Ausbau &amp; Einrichtung Ladenfläche EG, 120 m² (Malerarbeiten, Beleuchtung, Waschbecken, Kindersicherheit)</td><td class="num">30'000</td></tr>
+        <tr><td>Lagerausbau Keller, 43.8 m² (Beleuchtung, Bodenschutz — Waschmaschine &amp; Schrankelemente bereits vorhanden)</td><td class="num">1'500</td></tr>
+        <tr><td>Mobiliar &amp; Ausstattung (Tische, Stühle, Staffeleien, Lager, Kasse)</td><td class="num">12'000</td></tr>
+        <tr><td>Erstausstattung Material (Farben, Leinwände, Steine, Gips, Spiegel, Taschen)</td><td class="num">5'000</td></tr>
+        <tr><td>Branding, Signaletik, Fotografie, Website/Domain</td><td class="num">4'000</td></tr>
+        <tr><td>Versicherungen &amp; Bewilligungen (Jahresprämien, FEB-Abklärung, Patente)</td><td class="num">2'200</td></tr>
+        <tr><td>Eröffnungsmarketing (Launch-Event, lokale Werbung)</td><td class="num">3'000</td></tr>
+        <tr><td>Reserve / Unvorhergesehenes (10%)</td><td class="num">6'670</td></tr>
+        <tr class="total"><td>Investitionsplan total</td><td class="num">73'370</td></tr>
+        <tr><td>Betriebskapital-Reserve (3 Monate Fixkosten)</td><td class="num">9'885</td></tr>
+        <tr class="total"><td>Startkapital benötigt</td><td class="num">83'255</td></tr>
+        <tr><td>GmbH-Stammkapital (verbleibt als Eigenkapital)</td><td class="num">20'000</td></tr>
+        <tr class="total"><td>Gesamtkapital, 100% Eigenmittel</td><td class="num">≈ 103'255</td></tr>
+      </tbody>
+      <tbody id="startup-tbody-en" class="i18n" data-lang="en" hidden>
+        <tr><td>GmbH formation (notary, commercial register, blocked account)</td><td class="num">3,000</td></tr>
+        <tr><td>Lease deposit (3 months' rent)</td><td class="num">6,000</td></tr>
+        <tr><td>Fit-out &amp; renovation, ground floor 120 m² (paint, lighting, sink, child-proofing)</td><td class="num">30,000</td></tr>
+        <tr><td>Basement fit-out, 43.8 m² (lighting, floor protection — washing machine &amp; cabinet units already in place)</td><td class="num">1,500</td></tr>
+        <tr><td>Furniture &amp; equipment (tables, chairs, easels, storage, till)</td><td class="num">12,000</td></tr>
+        <tr><td>Initial material stock (paint, canvases, stones, plaster, mirrors, totes)</td><td class="num">5,000</td></tr>
+        <tr><td>Branding, signage, photography, website/domain</td><td class="num">4,000</td></tr>
+        <tr><td>Insurance &amp; permits (first-year premiums, FEB review, licences)</td><td class="num">2,200</td></tr>
+        <tr><td>Opening marketing (launch event, local advertising)</td><td class="num">3,000</td></tr>
+        <tr><td>Contingency reserve (10%)</td><td class="num">6,670</td></tr>
+        <tr class="total"><td>Total start-up investment</td><td class="num">73,370</td></tr>
+        <tr><td>Working capital buffer (3 months' fixed costs)</td><td class="num">9,885</td></tr>
+        <tr class="total"><td>Capital required</td><td class="num">83,255</td></tr>
+        <tr><td>GmbH share capital (stays as company equity)</td><td class="num">20,000</td></tr>
+        <tr class="total"><td>Total capital, 100% self-funded</td><td class="num">≈ 103,255</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote i18n" data-lang="de">Finanzierung: vollständig aus persönlichen Ersparnissen der Gründerperson. Kein Bankkredit, kein externer Investor, keine Fremdkapitalzinsen.</p>
+  <p class="footnote i18n" data-lang="en" hidden>Funding: entirely from the founder's personal savings. No bank loan, no outside investor, no debt interest.</p>
+
+  <!-- 7.2 Fixkosten -->
+  <h3 class="i18n" data-lang="de" style="font-size:1.1rem;margin:32px 0 4px;">7.2 — Monatliche Fixkosten</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.1rem;margin:32px 0 4px;">7.2 — Monthly Fixed Costs</h3>
+  <div class="tblwrap" style="margin-top:12px;">
+    <table>
+      <thead><tr><th class="i18n" data-lang="de">Position</th><th class="i18n" data-lang="en" hidden>Item</th><th class="num i18n" data-lang="de">CHF / Monat</th><th class="num i18n" data-lang="en" hidden>CHF / month</th></tr></thead>
+      <tbody class="i18n" data-lang="de">
+        <tr><td>Miete</td><td class="num">2'000</td></tr>
+        <tr><td>Nebenkosten (Strom, Wasser, Heizung)</td><td class="num">350</td></tr>
+        <tr><td>Versicherungen (Betriebshaftpflicht + Sach)</td><td class="num">95</td></tr>
+        <tr><td>Marketing</td><td class="num">300</td></tr>
+        <tr><td>Software, Buchungssystem, Telefon, Internet</td><td class="num">150</td></tr>
+        <tr><td>Reinigung &amp; Betriebsmaterial</td><td class="num">150</td></tr>
+        <tr><td>Buchhaltung / Treuhand</td><td class="num">250</td></tr>
+        <tr class="total"><td>Total Fixkosten</td><td class="num">3'295</td></tr>
+      </tbody>
+      <tbody class="i18n" data-lang="en" hidden>
+        <tr><td>Rent</td><td class="num">2,000</td></tr>
+        <tr><td>Utilities (electricity, water, heating)</td><td class="num">350</td></tr>
+        <tr><td>Insurance (liability + contents)</td><td class="num">95</td></tr>
+        <tr><td>Marketing</td><td class="num">300</td></tr>
+        <tr><td>Software, booking system, phone, internet</td><td class="num">150</td></tr>
+        <tr><td>Cleaning &amp; operating supplies</td><td class="num">150</td></tr>
+        <tr><td>Accounting / fiduciary</td><td class="num">250</td></tr>
+        <tr class="total"><td>Total fixed costs</td><td class="num">3,295</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote i18n" data-lang="de">Variable Materialkosten (18–25% je nach Angebotslinie) sind separat in der Erfolgsrechnung als Wareneinsatz erfasst, nicht in den Fixkosten.</p>
+  <p class="footnote i18n" data-lang="en" hidden>Variable material costs (18–25% depending on offer line) are captured separately in the P&amp;L as cost of goods, not in fixed costs.</p>
+
+  <!-- 7.3 Umsatzplanung Jahr 1 -->
+  <h3 class="i18n" data-lang="de" style="font-size:1.1rem;margin:32px 0 4px;">7.3 — Umsatz &amp; Kosten, Jahr 1 (konservatives Szenario)</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.1rem;margin:32px 0 4px;">7.3 — Revenue &amp; Costs, Year 1 (conservative scenario)</h3>
+  <div class="chartcard" style="margin-top:12px;">
+    <div id="revenue-chart" role="img" aria-label="Monthly revenue vs total cost, year 1"></div>
+    <div class="chart-legend">
+      <span class="item"><span class="sw" style="background:var(--teal);"></span><span class="i18n" data-lang="de">Umsatz pro Monat</span><span class="i18n" data-lang="en" hidden>Revenue per month</span></span>
+      <span class="item"><span class="sw" style="background:var(--coral); border-radius:50%; width:8px; height:8px;"></span><span class="i18n" data-lang="de">Gesamtkosten pro Monat (Wareneinsatz + Fixkosten)</span><span class="i18n" data-lang="en" hidden>Total cost per month (COGS + fixed costs)</span></span>
+    </div>
+  </div>
+  <p class="footnote i18n" data-lang="de" style="margin-top:10px;">Vier Phasen: Soft Opening (Monat 1–2) → Markteinführung (3–5) → Wachstum (6–9) → stabiler Betrieb (10–12). Operativer Break-even bereits in Monat 3.</p>
+  <p class="footnote i18n" data-lang="en" hidden style="margin-top:10px;">Four phases: soft opening (months 1–2) → market entry (3–5) → growth (6–9) → steady state (10–12). Operating break-even already in month 3.</p>
+
+  <!-- 7.4 Erfolgsrechnung nach Phase -->
+  <h3 class="i18n" data-lang="de" style="font-size:1.1rem;margin:32px 0 4px;">7.4 — Erfolgsrechnung nach Phase</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.1rem;margin:32px 0 4px;">7.4 — P&amp;L by Phase</h3>
+  <div class="tblwrap" style="margin-top:12px;">
+    <table>
+      <thead><tr>
+        <th class="i18n" data-lang="de">Phase</th><th class="i18n" data-lang="en" hidden>Phase</th>
+        <th class="num i18n" data-lang="de">Umsatz/Mt.</th><th class="num i18n" data-lang="en" hidden>Revenue/mo.</th>
+        <th class="num i18n" data-lang="de">Wareneinsatz</th><th class="num i18n" data-lang="en" hidden>COGS</th>
+        <th class="num i18n" data-lang="de">Fixkosten</th><th class="num i18n" data-lang="en" hidden>Fixed costs</th>
+        <th class="num i18n" data-lang="de">EBITDA vor Lohn</th><th class="num i18n" data-lang="en" hidden>EBITDA pre-draw</th>
+      </tr></thead>
+      <tbody class="i18n" data-lang="de">
+        <tr><td>Monat 1–2 · Soft Opening</td><td class="num">2'168</td><td class="num">495</td><td class="num">3'295</td><td class="num negative-inline" style="color:var(--coral);">−1'621</td></tr>
+        <tr><td>Monat 3–5 · Markteinführung</td><td class="num">6'088</td><td class="num">1'325</td><td class="num">3'295</td><td class="num" style="color:var(--teal-deep);">1'468</td></tr>
+        <tr><td>Monat 6–9 · Wachstum</td><td class="num">10'753</td><td class="num">2'306</td><td class="num">3'295</td><td class="num" style="color:var(--teal-deep);">5'152</td></tr>
+        <tr><td>Monat 10–12 · Stabiler Betrieb</td><td class="num">14'385</td><td class="num">3'057</td><td class="num">3'295</td><td class="num" style="color:var(--teal-deep);">8'033</td></tr>
+        <tr class="total"><td>Jahr 1 total (12 Monate)</td><td class="num">108'769</td><td class="num">23'361</td><td class="num">39'540</td><td class="num">45'868</td></tr>
+      </tbody>
+      <tbody class="i18n" data-lang="en" hidden>
+        <tr><td>Month 1–2 · Soft opening</td><td class="num">2,168</td><td class="num">495</td><td class="num">3,295</td><td class="num" style="color:var(--coral);">−1,621</td></tr>
+        <tr><td>Month 3–5 · Market entry</td><td class="num">6,088</td><td class="num">1,325</td><td class="num">3,295</td><td class="num" style="color:var(--teal-deep);">1,468</td></tr>
+        <tr><td>Month 6–9 · Growth</td><td class="num">10,753</td><td class="num">2,306</td><td class="num">3,295</td><td class="num" style="color:var(--teal-deep);">5,152</td></tr>
+        <tr><td>Month 10–12 · Steady state</td><td class="num">14,385</td><td class="num">3,057</td><td class="num">3,295</td><td class="num" style="color:var(--teal-deep);">8,033</td></tr>
+        <tr class="total"><td>Year 1 total (12 months)</td><td class="num">108,769</td><td class="num">23,361</td><td class="num">39,540</td><td class="num">45,868</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote i18n" data-lang="de">Ein bescheidener Unternehmerlohn (CHF 0 in den ersten 5 Monaten, danach stufenweise auf CHF 3'500/Monat steigend) ist in der EBITDA-Zeile noch nicht abgezogen — er wird erst gezahlt, wenn der Betrieb ihn tatsächlich erwirtschaftet. Nach Unternehmerlohn verbleibt für Jahr 1 ein Jahresgewinn von CHF 29'368.</p>
+  <p class="footnote i18n" data-lang="en" hidden>A modest owner's draw (CHF 0 for the first 5 months, then stepping up to CHF 3,500/month) is not yet deducted in the EBITDA line — it is only paid once the business actually earns it. After the owner's draw, Year 1 leaves a net profit of CHF 29,368.</p>
+
+  <!-- 7.5 3-Jahres-Ausblick -->
+  <h3 class="i18n" data-lang="de" style="font-size:1.1rem;margin:32px 0 4px;">7.5 — 3-Jahres-Ausblick</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.1rem;margin:32px 0 4px;">7.5 — 3-Year Outlook</h3>
+  <div class="tblwrap" style="margin-top:12px;">
+    <table>
+      <thead><tr>
+        <th></th>
+        <th class="num i18n" data-lang="de">Jahr 1</th><th class="num i18n" data-lang="en" hidden>Year 1</th>
+        <th class="num i18n" data-lang="de">Jahr 2</th><th class="num i18n" data-lang="en" hidden>Year 2</th>
+        <th class="num i18n" data-lang="de">Jahr 3</th><th class="num i18n" data-lang="en" hidden>Year 3</th>
+      </tr></thead>
+      <tbody class="i18n" data-lang="de">
+        <tr><td>Umsatz</td><td class="num">108'769</td><td class="num">130'522</td><td class="num">146'185</td></tr>
+        <tr><td>Unternehmerlohn</td><td class="num">16'500</td><td class="num">42'000</td><td class="num">48'000</td></tr>
+        <tr class="total"><td>Jahresgewinn nach Lohn</td><td class="num">29'368</td><td class="num">19'763</td><td class="num">24'840</td></tr>
+        <tr><td>Miete als Anteil vom Umsatz</td><td class="num">22.0%</td><td class="num">18.4%</td><td class="num">16.4%</td></tr>
+      </tbody>
+      <tbody class="i18n" data-lang="en" hidden>
+        <tr><td>Revenue</td><td class="num">108,769</td><td class="num">130,522</td><td class="num">146,185</td></tr>
+        <tr><td>Owner's draw</td><td class="num">16,500</td><td class="num">42,000</td><td class="num">48,000</td></tr>
+        <tr class="total"><td>Net profit after draw</td><td class="num">29,368</td><td class="num">19,763</td><td class="num">24,840</td></tr>
+        <tr><td>Rent as share of revenue</td><td class="num">22.0%</td><td class="num">18.4%</td><td class="num">16.4%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote i18n" data-lang="de">Jahr 2: +20% Buchungswachstum, Jahr 3: +12% — bewusst konservativ gegenüber der 46-Std.-Öffnungszeit, die selbst im dritten Jahr erst zu rund 60% ausgelastet wäre. Der Rückgang des Jahresgewinns von Jahr 1 zu Jahr 2 ist kein Warnsignal, sondern der volle, marktübliche Unternehmerlohn, der ab Jahr 2 ausbezahlt wird.</p>
+  <p class="footnote i18n" data-lang="en" hidden>Year 2: +20% booking growth, Year 3: +12% — deliberately conservative against the 46-hour opening schedule, which even in year three would only run at roughly 60% utilisation. The dip in net profit from Year 1 to Year 2 is not a warning sign — it's the full, market-rate owner's salary being paid out from Year 2 onward.</p>
+
+  <!-- 7.6 Stresstest -->
+  <h3 class="i18n" data-lang="de" style="font-size:1.1rem;margin:32px 0 4px;">7.6 — Stresstest: 25% weniger Buchungen</h3>
+  <h3 class="i18n" data-lang="en" hidden style="font-size:1.1rem;margin:32px 0 4px;">7.6 — Stress Test: 25% Fewer Bookings</h3>
+  <div class="cols2">
+    <div class="prose i18n" data-lang="de">
+      <p>Selbst wenn die tatsächlichen Buchungen im stabilen Betrieb (Monat 10–12) um 25% unter unserer bereits vorsichtigen Planung liegen, bleibt ein EBITDA von rund CHF 6'000/Monat vor Unternehmerlohn — das Dreifache der Miete. Und selbst wenn sich die Anlaufphase auf vier statt zwei Monate verdoppelt, deckt die budgetierte Betriebskapital-Reserve (CHF 9'885) die entstehenden Verluste vollständig ab, ohne dass die Miete gefährdet wäre.</p>
+    </div>
+    <div class="prose i18n" data-lang="en" hidden>
+      <p>Even if actual bookings during steady state (months 10–12) come in 25% below our already-cautious plan, EBITDA before the owner's draw stays around CHF 6,000/month — three times the rent. And even if the ramp-up phase takes twice as long as planned, the budgeted working-capital reserve (CHF 9,885) fully absorbs the resulting losses without ever putting the rent at risk.</p>
+    </div>
+    <div class="tilegrid" style="grid-template-columns:1fr 1fr;">
+      <div class="tile"><div class="v">3×</div><div class="l i18n" data-lang="de">Mietdeckung im Abwärtsszenario</div><div class="l i18n" data-lang="en" hidden>Rent coverage in downside case</div></div>
+      <div class="tile"><div class="v">CHF 9'885</div><div class="l i18n" data-lang="de">Kapitalreserve für die Anlaufphase</div><div class="l i18n" data-lang="en" hidden>Cash reserve for ramp-up</div></div>
+    </div>
+  </div>
+
+  <!-- 7.7 Fazit -->
+  <div class="card" style="margin-top:28px; border-left:3px solid var(--teal); background:var(--teal-soft);">
+    <p class="i18n" data-lang="de" style="font-size:15px;"><strong>Kurz gesagt:</strong> Die Miete ist ab Monat 3 operativ gedeckt, in jedem realistischen Szenario mehrfach abgesichert, und wird von einer Gründerperson finanziert, die keinen Franken Fremdkapital braucht.</p>
+    <p class="i18n" data-lang="en" hidden style="font-size:15px;"><strong>In short:</strong> rent is operationally covered from month 3, backed several times over in every realistic scenario, and funded by a founder who needs not one franc of outside debt.</p>
+  </div>
+</section>
+
+<!-- 08 RISIKOANALYSE -->
+<section class="chapter wrap" id="risk">
+  <div class="chapter-head"><span class="chapter-num">08</span>
+    <h2 class="i18n" data-lang="de">Risikoanalyse</h2>
+    <h2 class="i18n" data-lang="en" hidden>Risk Analysis</h2>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr>
+        <th class="i18n" data-lang="de">Risiko</th><th class="i18n" data-lang="en" hidden>Risk</th>
+        <th class="i18n" data-lang="de">Einstufung</th><th class="i18n" data-lang="en" hidden>Rating</th>
+        <th class="i18n" data-lang="de">Gegenmassnahme</th><th class="i18n" data-lang="en" hidden>Mitigation</th>
+      </tr></thead>
+      <tbody class="i18n" data-lang="de">
+        <tr><td>Langsamerer Anlauf als geplant</td><td><span class="chip med">mittel</span></td><td>3-Monats-Kapitalreserve deckt selbst einen doppelt so langen Anlauf</td></tr>
+        <tr><td>Saisonale Flaute (Schulferien)</td><td><span class="chip low">gering</span></td><td>6 diversifizierte Angebotslinien; Ferienprogramme gezielt für Kinder in den Ferien</td></tr>
+        <tr><td>Verzögerung bei Bewilligungen</td><td><span class="chip low">gering</span></td><td>FEB- und Alkohol-Abklärung vor Vertragsunterschrift eingeplant (siehe Zeitplan)</td></tr>
+        <tr><td>Ein-Personen-Abhängigkeit</td><td><span class="chip med">mittel</span></td><td>Aushilfen auf Abruf für Spitzenzeiten budgetiert; Betriebsunterbrechungsversicherung</td></tr>
+        <tr><td>Mietausfallrisiko für den Vermieter</td><td><span class="chip low">gering</span></td><td>3 Monatsmieten Kaution + persönliche Bürgschaft trotz GmbH-Struktur</td></tr>
+      </tbody>
+      <tbody class="i18n" data-lang="en" hidden>
+        <tr><td>Slower ramp-up than planned</td><td><span class="chip med">medium</span></td><td>3-month cash reserve absorbs even a ramp-up twice as long as modelled</td></tr>
+        <tr><td>Seasonal dip (school holidays)</td><td><span class="chip low">low</span></td><td>6 diversified offer lines; dedicated holiday programmes for kids off school</td></tr>
+        <tr><td>Permit delays</td><td><span class="chip low">low</span></td><td>FEB and alcohol-permit review planned before signing (see timeline)</td></tr>
+        <tr><td>Single-founder dependency</td><td><span class="chip med">medium</span></td><td>On-call casual staff budgeted for peak times; business-interruption insurance</td></tr>
+        <tr><td>Landlord's rent-default risk</td><td><span class="chip low">low</span></td><td>3 months' rent as deposit + personal guarantee despite the GmbH structure</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 09 ZEITPLAN -->
+<section class="chapter wrap" id="timeline">
+  <div class="chapter-head"><span class="chapter-num">09</span>
+    <h2 class="i18n" data-lang="de">Zeitplan bis zur Eröffnung</h2>
+    <h2 class="i18n" data-lang="en" hidden>Timeline to Opening</h2>
+  </div>
+  <div class="timeline i18n" data-lang="de">
+    <div class="tstep"><div class="wk">Wo. 1–2</div><div><h4>Vertragsunterschrift &amp; Gründung</h4><p>Mietvertrag, GmbH-Gründungsprozess, FEB-Abklärung, Versicherungen abschliessen.</p></div></div>
+    <div class="tstep"><div class="wk">Wo. 3–5</div><div><h4>Ausbau &amp; Einrichtung</h4><p>Malerarbeiten, Beleuchtung, Sicherheitsanpassungen, Möblierung, Einrichtung der Party-Ecke.</p></div></div>
+    <div class="tstep"><div class="wk">Wo. 6</div><div><h4>Bewilligungen &amp; Personal</h4><p>Finale Bewilligungen einholen, Aushilfen für Spitzenzeiten einarbeiten.</p></div></div>
+    <div class="tstep"><div class="wk">Wo. 7–8</div><div><h4>Soft Opening</h4><p>Limitierte Buchungen, Testbetrieb, letzte Anpassungen an Ablauf und Material.</p></div></div>
+    <div class="tstep"><div class="wk">Wo. 9</div><div><h4>Marketing-Push</h4><p>Nachbarschaftseinladung, Social Media, lokale Presse.</p></div></div>
+    <div class="tstep"><div class="wk">Wo. 10</div><div><h4>Grand Opening</h4><p>Offizielle Eröffnung, volle Buchbarkeit über alle sechs Angebotslinien.</p></div></div>
+  </div>
+  <div class="timeline i18n" data-lang="en" hidden>
+    <div class="tstep"><div class="wk">Wk 1–2</div><div><h4>Signing &amp; incorporation</h4><p>Lease signature, GmbH formation process, FEB review, insurance in place.</p></div></div>
+    <div class="tstep"><div class="wk">Wk 3–5</div><div><h4>Fit-out</h4><p>Painting, lighting, safety upgrades, furniture, setting up the party corner.</p></div></div>
+    <div class="tstep"><div class="wk">Wk 6</div><div><h4>Permits &amp; staffing</h4><p>Final permits secured, casual staff briefed for peak times.</p></div></div>
+    <div class="tstep"><div class="wk">Wk 7–8</div><div><h4>Soft opening</h4><p>Limited bookings, live testing, final adjustments to flow and materials.</p></div></div>
+    <div class="tstep"><div class="wk">Wk 9</div><div><h4>Marketing push</h4><p>Neighbourhood invite, social media, local press.</p></div></div>
+    <div class="tstep"><div class="wk">Wk 10</div><div><h4>Grand opening</h4><p>Official launch, full bookability across all six offer lines.</p></div></div>
+  </div>
+</section>
+
+<!-- 10 GRÜNDER -->
+<section class="chapter wrap" id="founder">
+  <div class="chapter-head"><span class="chapter-num">10</span>
+    <h2 class="i18n" data-lang="de">Über den Gründer</h2>
+    <h2 class="i18n" data-lang="en" hidden>About the Founder</h2>
+  </div>
+  <div class="cols2">
+    <div class="prose i18n" data-lang="de">
+      <p><strong>Suzana Kozic</strong> — Gründerin und Betreiberin von Color and Play. Verantwortlich für Konzept, Finanzplanung und den täglichen Betrieb.</p>
+      <p>Dieses Dokument selbst ist der beste Beleg für die Arbeitsweise: Markt-, Rechts- und Finanzanalyse wurden vollständig in Eigenregie erstellt, bevor überhaupt ein Franken ausgegeben wurde — dieselbe Sorgfalt, mit der auch das Geschäft geführt wird. Das Startkapital stammt vollständig aus persönlichen Ersparnissen; es gibt keine Abhängigkeit von Investoren oder Bankkrediten, die den Betrieb unter Druck setzen könnten.</p>
+      <p class="footnote" style="margin-top:10px;"><em>[Platz für ergänzende persönliche Angaben — Ausbildung, bisherige berufliche Stationen, Referenzen.]</em></p>
+    </div>
+    <div class="prose i18n" data-lang="en" hidden>
+      <p><strong>Suzana Kozic</strong> — founder and operator of Color and Play. Responsible for the concept, financial planning and day-to-day operations.</p>
+      <p>This document is itself the best evidence of the working style: the market, legal and financial analysis was built entirely in-house before a single franc was spent — the same discipline that will run the business day to day. Start-up capital comes entirely from personal savings; there is no dependency on investors or bank debt that could put pressure on the operation.</p>
+      <p class="footnote" style="margin-top:10px;"><em>[Space for additional personal background — education, prior professional experience, references.]</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 DAS ANGEBOT AN SIE -->
+<section class="chapter wrap" id="ask">
+  <div class="chapter-head"><span class="chapter-num">11</span>
+    <h2 class="i18n" data-lang="de">Unser Angebot an Sie</h2>
+    <h2 class="i18n" data-lang="en" hidden>Our Offer to You</h2>
+  </div>
+  <p class="lead i18n" data-lang="de">Das hier ist keine Bitte um Vertrauensvorschuss. Es ist ein konkretes Angebot mit Zahlen, Sicherheiten und Verbindlichkeit.</p>
+  <p class="lead i18n" data-lang="en" hidden>This is not a request for a leap of faith. It's a concrete offer backed by numbers, security and commitment.</p>
+
+  <div class="asklist i18n" data-lang="de">
+    <div class="askrow"><div class="ck"></div><div><h4>Mietdauer: 5 Jahre, mit Verlängerungsoption</h4><p>Ein langfristiger, planbarer Mieter statt wiederkehrender Nachmietersuche.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Kaution: 3 Monatsmieten (CHF 6'000) bei Vertragsunterschrift</h4><p>Bereits vollständig im Investitionsplan budgetiert.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Persönliche Solidarbürgschaft</h4><p>Trotz GmbH-Struktur haftet die Gründerperson persönlich — üblich bei neu gegründeten Gesellschaften ohne Track-Record.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Wir finanzieren den Ausbau selbst</h4><p>Rund CHF 31'500 Ausbaukosten (Ladenfläche &amp; Kellerausbau) gehen vollständig zulasten der Gründerperson — eine Werterhöhung der Liegenschaft ohne Kosten für den Eigentümer.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Vollständig versichert ab Eröffnungstag</h4><p>Betriebshaftpflicht- und Sachversicherung sind aktiv, bevor der erste Gast das Atelier betritt.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Ruhiges, familienfreundliches Nutzungsprofil</h4><p>Geordnete Öffnungszeiten, kein Wochenend-Partylärm, klar geregelte Party-Ecke im Innenbereich.</p></div></div>
+    <div class="askrow optional"><div class="ck"></div><div><h4>Optional: reduzierte Miete in Monat 1–2</h4><p>Als Anlaufhilfe denkbar (z. B. 50%), im Gegenzug für eine längere Laufzeit — rein optional. Dank Kapitalreserve können wir auch ab Tag 1 die volle Miete zahlen.</p></div></div>
+  </div>
+  <div class="asklist i18n" data-lang="en" hidden>
+    <div class="askrow"><div class="ck"></div><div><h4>Lease term: 5 years, with renewal option</h4><p>A long-term, predictable tenant instead of a recurring search for the next one.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Deposit: 3 months' rent (CHF 6,000) on signing</h4><p>Already fully budgeted in the investment plan.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Personal guarantee</h4><p>Despite the GmbH structure, the founder is personally liable — standard practice for a newly formed company with no track record.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>We fund the fit-out ourselves</h4><p>Roughly CHF 31,500 in renovation costs (ground floor &amp; basement fit-out) are borne entirely by the founder — a value increase to the property at no cost to the owner.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>Fully insured from opening day</h4><p>Liability and contents insurance are active before the first guest walks in.</p></div></div>
+    <div class="askrow"><div class="ck"></div><div><h4>A quiet, family-friendly use profile</h4><p>Structured opening hours, no weekend party noise, a clearly contained indoor party corner.</p></div></div>
+    <div class="askrow optional"><div class="ck"></div><div><h4>Optional: reduced rent for months 1–2</h4><p>Conceivable as ramp-up support (e.g. 50%) in exchange for a longer term — entirely optional. Thanks to the cash reserve, we can equally pay full rent from day one.</p></div></div>
+  </div>
+</section>
+
+<!-- 12 KONTAKT -->
+<section class="chapter wrap" id="contact" style="border-bottom:0;">
+  <div class="chapter-head"><span class="chapter-num">12</span>
+    <h2 class="i18n" data-lang="de">Kontakt</h2>
+    <h2 class="i18n" data-lang="en" hidden>Contact</h2>
+  </div>
+  <div class="cols2">
+    <div class="prose i18n" data-lang="de">
+      <p>Wir stehen jederzeit für ein persönliches Gespräch, eine Besichtigung oder Rückfragen zu jeder Zahl in diesem Dokument zur Verfügung. Eine gedruckte Fassung dieses Businessplans liegt als PDF zum Mitnehmen bereit.</p>
+    </div>
+    <div class="prose i18n" data-lang="en" hidden>
+      <p>We're available at any time for a personal conversation, a viewing, or questions about any figure in this document. A printed version of this business plan is available as a PDF to take away.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:20px; max-width:420px;">
+    <h4>Suzana Kozic — Color and Play</h4>
+    <p class="small">suzana.androvic@gmail.com</p>
+    <p class="small i18n" data-lang="de">Live-Vorschau der Webseite auf Anfrage verfügbar.</p>
+    <p class="small i18n" data-lang="en" hidden>Live website preview available on request.</p>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="footgrid">
+    <div>
+      <div class="footer-brand">Color and Play</div>
+      <div class="footer-meta i18n" data-lang="de">Businessplan &amp; Mietvorschlag · Baar, Kanton Zug<br>Version 2 — vollständig überarbeitet</div>
+      <div class="footer-meta i18n" data-lang="en" hidden>Business Plan &amp; Lease Proposal · Baar, Canton of Zug<br>Version 2 — fully revised</div>
+    </div>
+    <div class="footer-meta i18n" data-lang="de">Erstellt <span id="date-de"></span></div>
+    <div class="footer-meta i18n" data-lang="en" hidden>Prepared <span id="date-en"></span></div>
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  var LANG_KEY = "cap_lang";
+  var currentLang = "de";
+
+  function getStoredLang(){
+    try{
+      var v = window.localStorage.getItem(LANG_KEY);
+      if (v === "de" || v === "en") return v;
+    }catch(e){}
+    return null;
+  }
+  function storeLang(l){
+    try{ window.localStorage.setItem(LANG_KEY, l); }catch(e){}
+  }
+
+  window.setLang = function(lang){
+    currentLang = lang;
+    var nodes = document.querySelectorAll(".i18n");
+    for (var i=0;i<nodes.length;i++){
+      var n = nodes[i];
+      n.hidden = n.getAttribute("data-lang") !== lang;
+    }
+    document.getElementById("btn-de").setAttribute("aria-pressed", String(lang === "de"));
+    document.getElementById("btn-en").setAttribute("aria-pressed", String(lang === "en"));
+    document.documentElement.lang = lang;
+    storeLang(lang);
+    renderChart(lang);
+  };
+
+  /* ---------------- Chart: revenue bars + cost line, 12 months ---------------- */
+  var MONTHS_REV  = [2168.46,2168.46,6087.98,6087.98,6087.98,10753.12,10753.12,10753.12,10753.12,14385.13,14385.13,14385.13];
+  var MONTHS_COST = [3789.73,3789.73,4620.07,4620.07,4620.07,5601.06,5601.06,5601.06,5601.06,6352.41,6352.41,6352.41];
+
+  function fmtCH(n, lang){
+    var r = Math.round(n);
+    var s = Math.abs(r).toString();
+    var sep = lang === "de" ? "'" : ",";
+    var out = "";
+    while (s.length > 3){
+      out = sep + s.slice(-3) + out;
+      s = s.slice(0, -3);
+    }
+    out = s + out;
+    return (r < 0 ? "-" : "") + out;
+  }
+
+  function renderChart(lang){
+    var el = document.getElementById("revenue-chart");
+    if (!el) return;
+    var W = 760, H = 340, padL = 54, padR = 14, padT = 16, padB = 38;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var maxV = 16000;
+    var gridVals = [0,4000,8000,12000,16000];
+    var n = MONTHS_REV.length;
+    var slot = plotW / n;
+    var barW = Math.min(26, slot * 0.5);
+
+    function x(i){ return padL + slot*i + slot/2; }
+    function y(v){ return padT + plotH - (v/maxV)*plotH; }
+
+    var monthLabel = lang === "de" ? "M" : "M";
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" style="max-width:100%;display:block;font-family:var(--font-mono);">';
+
+    // gridlines
+    gridVals.forEach(function(v){
+      var yy = y(v);
+      svg += '<line x1="'+padL+'" y1="'+yy+'" x2="'+(W-padR)+'" y2="'+yy+'" stroke="var(--line)" stroke-width="1" />';
+      svg += '<text x="'+(padL-10)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10.5" fill="var(--ink-faint)">'+fmtCH(v,lang)+'</text>';
+    });
+
+    // bars (revenue)
+    for (var i=0;i<n;i++){
+      var bx = x(i) - barW/2;
+      var by = y(MONTHS_REV[i]);
+      var bh = (padT+plotH) - by;
+      svg += '<rect x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="3" fill="var(--teal)" opacity="0.92" />';
+    }
+
+    // cost line
+    var pts = [];
+    for (var j=0;j<n;j++){ pts.push(x(j) + "," + y(MONTHS_COST[j])); }
+    svg += '<polyline points="'+pts.join(" ")+'" fill="none" stroke="var(--coral)" stroke-width="2.25" stroke-linejoin="round" stroke-linecap="round" />';
+    for (var k=0;k<n;k++){
+      svg += '<circle cx="'+x(k)+'" cy="'+y(MONTHS_COST[k])+'" r="3.4" fill="var(--coral)" stroke="var(--bg)" stroke-width="1.5" />';
+    }
+
+    // breakeven marker at month 3 (index 2)
+    var bx3 = x(2);
+    svg += '<line x1="'+bx3+'" y1="'+padT+'" x2="'+bx3+'" y2="'+(padT+plotH)+'" stroke="var(--gold)" stroke-width="1.25" stroke-dasharray="3,3" />';
+    var beLabel = lang === "de" ? "Break-even" : "Break-even";
+    svg += '<text x="'+(bx3+6)+'" y="'+(padT+12)+'" font-size="10.5" fill="var(--gold)" font-weight="600">'+beLabel+'</text>';
+
+    // x-axis month labels (every month, abbreviated)
+    for (var m=0;m<n;m++){
+      svg += '<text x="'+x(m)+'" y="'+(padT+plotH+18)+'" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">'+monthLabel+(m+1)+'</text>';
+    }
+
+    svg += '</svg>';
+    el.innerHTML = svg;
+  }
+
+  // date fill
+  try{
+    var opts = { year:"numeric", month:"long" };
+    var now = new Date();
+    var deEl = document.getElementById("date-de");
+    var enEl = document.getElementById("date-en");
+    if (deEl) deEl.textContent = now.toLocaleDateString("de-CH", opts);
+    if (enEl) enEl.textContent = now.toLocaleDateString("en-GB", opts);
+  }catch(e){}
+
+  var initial = getStoredLang() || "de";
+  setLang(initial);
+})();
+</script>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var HASH = "48ba5ac5c91a8d0635c6ede400b8e7d0ba43b5cc3ce9d20b165077754ec4802b";
+  var SESSION_KEY = "cap_bp_unlocked";
+
+  async function sha256Hex(str){
+    var enc = new TextEncoder().encode(str);
+    var buf = await crypto.subtle.digest("SHA-256", enc);
+    var arr = Array.from(new Uint8Array(buf));
+    return arr.map(function(b){ return b.toString(16).padStart(2, "0"); }).join("");
+  }
+
+  function reveal(){
+    document.getElementById("bp-gate").style.display = "none";
+    document.getElementById("bp-content").style.display = "block";
+  }
+
+  window.bpUnlock = async function(){
+    var val = document.getElementById("bp-pw").value;
+    var hex = await sha256Hex(val);
+    if (hex === HASH){
+      try{ sessionStorage.setItem(SESSION_KEY, "1"); }catch(e){}
+      reveal();
+    } else {
+      document.getElementById("bp-err").style.display = "block";
+    }
+  };
+
+  document.getElementById("bp-pw").addEventListener("keydown", function(e){
+    if (e.key === "Enter") window.bpUnlock();
+  });
+
+  try{
+    if (sessionStorage.getItem(SESSION_KEY) === "1") reveal();
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
