@@ -4,13 +4,25 @@ Tehnicka dokumentacija za svakog ko (covek ili bot) nastavlja rad na ovom sajtu.
 
 ## Struktura fajlova
 
+**VAZNO:** ovaj git repo (`Desktop\Color & Play` na ovom racunaru,
+`github.com/juznipetar/colorandplay-website`) ima sve na ROOT nivou — nema
+`site/` podfoldera u samom repo-u. Kad ova dokumentacija (ili stariji izvestaji)
+pominju `site/index.html`, misli se na putanju relativno u odnosu na cloud dev
+projekat (vidi ispod) — u OVOM repo-u je to prosto `index.html`.
+
 ```
-site/
+(repo root — Desktop\Color & Play)
   index.html              javna marketing stranica (deploy: /)
   businessplan/
     index.html             zasticena biznis-plan stranica (deploy: /businessplan/)
-  robots.txt               blokira /businessplan/ za search engine crawlere
+  robots.txt               blokira /businessplan/ za search engine crawlere, referencira sitemap.xml
+  sitemap.xml              samo javna stranica, businessplan NIJE u sitemap-u
+  favicon.svg, favicon.ico, favicon-16.png, favicon-32.png,
+  favicon-192.png, favicon-512.png, apple-touch-icon.png    favicon set (teal/gold)
+  og-image.png             1200x630 OG/Twitter preview slika
+  check_i18n.py            proverava da li DE/EN parovi postoje (pokreni pre svakog commit-a)
   DEPLOY.md                uputstvo za GitHub Pages + domenu (za coveka)
+  .gitignore                iskljucuje "Claude outputs/" (rezidual od file-delivery mehanizma)
   docs/
     ROADMAP.md              fazni plan rada (ovaj fajl prati "roadmap rezim")
     ARHITEKTURA.md           ovaj fajl
@@ -18,14 +30,21 @@ site/
   CNAME                    (dodaje se tek kad je domena kupljena — vidi DEPLOY.md)
 ```
 
-Van `site/` foldera (u glavnom projektu, ne ide na GitHub):
+Van ovog repo-a, u cloud dev projektu (Cowork sesija koja je ovo napravila —
+NIJE na ovom racunaru osim ako ti neko eksplicitno prebaci te fajlove):
 ```
 pitch.html          izvor sadrzaja za businessplan stranicu (identican sadrzaj)
 build_site.py        generise site/businessplan/index.html iz pitch.html + lozinka-gate
+                      (u cloud projektu se output stavlja u lokalni site/ podfolder
+                      pre kopiranja u OVAJ repo — otud ime "site/" u starijim beleskama)
 build_print.py        generise print.html (za PDF)
 make_pdfs.py           generise oba PDF-a (DE/EN)
 model.py                finansijski model (izvor brojeva u pitch.html)
 ```
+
+Ako menjas `businessplan/index.html` sadrzaj, a nemas pristup `pitch.html` +
+`build_site.py` na ovom racunaru, PITAJ korisnika da ti ih prebaci — ne
+rekonstruisi build skriptu iz ovog fajla, kopiraj postojecu.
 
 ## Princip: oba HTML fajla su potpuno samostalna
 

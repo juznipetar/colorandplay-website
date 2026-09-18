@@ -6,19 +6,26 @@
 >
 > Prati se preporuceni redosled faza odozgo na dole. BOT preskace stavke oznacene
 > COVEK i prelazi na sledecu BOT stavku bez blokiranja celog toka.
+>
+> **Model: koristi ISKLJUCIVO Composer 2.5 za sav rad na ovom projektu** (vidi
+> `docs/BOT-INSTRUKCIJE.md`, sekcija "OBAVEZNO — model", za pun detalj).
 
 ## Faza 0 — Fondacija (GOTOVO)
 
 - [x] Poslovni plan za vlasnika lokala (Artifact + 2× PDF, DE/EN) — v5, sa Paket-Portfolio 2.1
-- [x] Javna marketing stranica `site/index.html` — v1 (osnovna verzija)
-- [x] Javna marketing stranica `site/index.html` — v2 (premium ton, tier paketi, animacije, count-up statistika)
-- [x] Zasticena stranica `site/businessplan/index.html` (client-side lozinka + noindex)
-- [x] `site/robots.txt`, `site/DEPLOY.md`
+- [x] Javna marketing stranica `index.html` — v1 (osnovna verzija)
+- [x] Javna marketing stranica `index.html` — v2 (premium ton, tier paketi, animacije, count-up statistika)
+- [x] Zasticena stranica `businessplan/index.html` (client-side lozinka + noindex)
+- [x] `robots.txt`, `DEPLOY.md`
+
+(Napomena o putanjama: ovaj repo nema `site/` podfolder — sve je na root nivou.
+Vidi `docs/ARHITEKTURA.md` "Struktura fajlova" za objasnjenje zasto se `site/`
+ipak pominje u starijim beleskama i u cloud dev projektu.)
 
 ## Faza 1 — Deploy & infrastruktura
 
 - [x] **BOT:** GitHub repo napravljen (`juznipetar/colorandplay-website`, public),
-      `site/` pushovan na `main`, GitHub Pages ukljucen i verifikovan (HTTP 200).
+      repo sadrzaj pushovan na `main`, GitHub Pages ukljucen i verifikovan (HTTP 200).
       Live na `https://juznipetar.github.io/colorandplay-website/`. Uradjeno
       direktno iz cloud sesije preko Desktop Commander-a (vec autentifikovan
       `gh` CLI nadjen na racunaru) — nije trazilo COVEK korak.
@@ -42,7 +49,7 @@
       teal/gold, generisan sa PIL — teal zaobljeni kvadrat + gold tacka)
 - [x] Dodati Open Graph i Twitter Card meta tagove (`og:title`, `og:description`,
       `og:image` [custom 1200×630 slika], `twitter:card`) u `<head>` oba fajla
-- [x] Dodati `sitemap.xml` za `site/index.html` (businessplan stranica NE ide u
+- [x] Dodati `sitemap.xml` za `index.html` (businessplan stranica NE ide u
       sitemap — ostaje van indeksiranja), i referencu na njega u `robots.txt`
 - [x] Provera i18n parova — skripta `check_i18n.py` (u repo root-u) proverava da
       svaki `data-lang="de"` ima par `data-lang="en"` i obrnuto. Oba fajla OK
@@ -86,8 +93,8 @@
 
 ## Faza 4 — Jedan izvor istine za cene (BOT, tehnicki dug)
 
-Trenutno cene i paketi postoje rucno upisani na DVA mesta: `site/index.html`
-(marketing stranica) i `pitch.html` → `site/businessplan/index.html` (biznis plan
+Trenutno cene i paketi postoje rucno upisani na DVA mesta: `index.html`
+(marketing stranica) i `pitch.html` → `businessplan/index.html` (biznis plan
 za vlasnika). Kad se prave/finalne cene odrede, lako je da se zaboravi izmeniti oba
 mesta i da se brojevi razmimoilaze.
 

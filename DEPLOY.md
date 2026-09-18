@@ -53,7 +53,7 @@ Preporuka: **Hostpoint** ili **Infomaniak** (svajcarski registrari, .ch domen ~C
 
 U originalnom projektu (ne u ovom deploy folderu) postoji `build_site.py` koji generise `businessplan/index.html` iz `pitch.html`. Da promenis kod:
 1. Otvori `build_site.py`, promeni liniju `PASSWORD = "ColorPlay2026"` na novi kod.
-2. Pokreni `python3 build_site.py` — ovo regenerise `site/businessplan/index.html` sa novim kodom (hesiran, ne stoji plaintext u fajlu).
+2. Pokreni `python3 build_site.py` — ovo regenerise `businessplan/index.html` (u build skripte lokalnom `site/` output folderu, odakle ga onda kopiras/pushujes u ovaj repo) sa novim kodom (hesiran, ne stoji plaintext u fajlu).
 3. Uploaduj novi `businessplan/index.html` u repo (zameni stari).
 
 Ako nemas pristup toj Python skripti, javi mi — mogu ti odmah generisati novi fajl sa drugim kodom.
