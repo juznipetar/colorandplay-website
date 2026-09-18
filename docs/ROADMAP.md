@@ -17,38 +17,58 @@
 
 ## Faza 1 — Deploy & infrastruktura
 
-- [ ] **COVEK:** Napraviti GitHub repo (npr. `colorandplay-website`)
+- [x] **BOT:** GitHub repo napravljen (`juznipetar/colorandplay-website`, public),
+      `site/` pushovan na `main`, GitHub Pages ukljucen i verifikovan (HTTP 200).
+      Live na `https://juznipetar.github.io/colorandplay-website/`. Uradjeno
+      direktno iz cloud sesije preko Desktop Commander-a (vec autentifikovan
+      `gh` CLI nadjen na racunaru) — nije trazilo COVEK korak.
 - [ ] **COVEK:** Kupiti .ch domenu na 1 godinu (preporuka: Hostpoint ili Infomaniak)
-- [ ] **BOT:** Kad repo postoji — pushovati sadrzaj `site/` na `main` granu
-      (vidi `site/DEPLOY.md` koraci 1-2). Gotovo je kad GitHub Pages URL
-      (`https://<user>.github.io/<repo>/`) prikazuje javnu stranicu.
 - [ ] **BOT (posle domene):** Napraviti `CNAME` fajl u root-u sa kupljenom domenom,
       uputiti korisnika koje DNS zapise da doda kod registrara (vidi DEPLOY.md
       korak 4). Ukljuciti "Enforce HTTPS" u Settings → Pages.
 - [ ] **BOT:** Promeniti pristupni kod za businessplan stranicu sa placeholder-a
       `ColorPlay2026` na nesto sto Suzana/Petar odaberu (menja se u `build_site.py`,
       pa se skripta ponovo pokrene). Gotovo je kad je stari kod vise ne radi.
+      I dalje otvoreno — repo je public, pa je hash trenutno vidljiv u izvornom
+      kodu (view-source), samo hash ne plaintext, ali svejedno promeniti pre
+      slanja linka Aligu.
 - [ ] **BOT (opciono, jaca zastita):** Podesiti Cloudflare (besplatno) ispred GitHub
       Pages-a i Cloudflare Access na putanji `/businessplan/*` sa pravim
       email-based login-om. Vidi napomenu u `DEPLOY.md` sekcija 6.
 
 ## Faza 2 — Kvalitet i tehnicka higijena (BOT, samostalno)
 
-- [ ] Dodati `favicon.ico` / `apple-touch-icon` (brend dot-logo u teal/gold, trenutno
-      sajt nema nikakvu ikonicu u tabu)
-- [ ] Dodati Open Graph i Twitter Card meta tagove (`og:title`, `og:description`,
-      `og:image`, `twitter:card`) u `<head>` oba fajla, da link lepo izgleda kad se
-      deli u WhatsApp-u/Instagramu
-- [ ] Dodati `sitemap.xml` za `site/index.html` (businessplan stranica NE ide u
-      sitemap — ostaje van indeksiranja)
-- [ ] Provera i18n parova: svaki element sa `data-lang="de"` mora imati par
-      `data-lang="en"` i obrnuto — mali skript koji to proveri automatski i javi
-      nesparene stringove
+- [x] Dodati `favicon.ico` / `favicon.svg` / `apple-touch-icon` (brend dot-logo u
+      teal/gold, generisan sa PIL — teal zaobljeni kvadrat + gold tacka)
+- [x] Dodati Open Graph i Twitter Card meta tagove (`og:title`, `og:description`,
+      `og:image` [custom 1200×630 slika], `twitter:card`) u `<head>` oba fajla
+- [x] Dodati `sitemap.xml` za `site/index.html` (businessplan stranica NE ide u
+      sitemap — ostaje van indeksiranja), i referencu na njega u `robots.txt`
+- [x] Provera i18n parova — skripta `check_i18n.py` (u repo root-u) proverava da
+      svaki `data-lang="de"` ima par `data-lang="en"` i obrnuto. Oba fajla OK
+      (134/134 na index.html, 158/158 na businessplan/index.html)
+- [x] **Bug nadjen i ispravljen (deep check 2026-09-18):** `build_site.py` je
+      ubacivao `<title>`, `<meta name="description">`, `<meta name="robots"
+      content="noindex,nofollow">` i font `<link>`-ove direktno u `<body>`
+      umesto u `<head>` — jer `pitch.html` (izvor za Artifact) je "goli" fragment
+      bez `<head>`/`<body>` strukture, a skripta ga je samo omotala bez pravog
+      razdvajanja. Najvaznija posledica: `noindex` meta tag NIJE bio pouzdano
+      u `<head>` gde ga crawleri ocekuju — bas na stranici cija je cela svrha da
+      ostane van pretrage. Ispravljeno: `build_site.py` sada eksplicitno deli
+      fragment na head-deo i body-deo. Verifikovano sa `tidy -e` (HTML5
+      validator) — čisto na oba fajla, i sa Playwright testom da `noindex` meta
+      sad postoji u `<head>` i da lozinka-gate i dalje radi ispravno.
+- [x] Uklonjen slucajan `Claude outputs/colorandplay-site.zip` fajl iz git repo-a
+      (ostao je u folderu od ranijeg preuzimanja, `git add -A` ga je slucajno
+      pokupio u prvi deploy commit) — dodat `.gitignore` da se to ne ponovi.
 - [ ] Provera linkova, tipfelera (DE i EN), i da `mailto:` link ima ispravnu
-      email adresu
+      email adresu — linkovi/anchor-i provereni automatski (svi rade), tipfeleri
+      NISU rucno citani rec-po-rec, ostaje otvoreno
 - [ ] Provera pristupacnosti (accessibility): kontrast boja, `alt` tekstovi,
       tab-navigacija kroz formu i dugmad, `prefers-reduced-motion` ponasanje
-      (vec je implementirano — samo potvrditi da radi)
+      (vec je implementirano — samo potvrditi da radi). Osnovna provera uradjena
+      (nema slika bez `alt`, nema duplih `id`-ova), puna accessibility revizija
+      (kontrast, tab-order, screen reader) NIJE radjena
 - [ ] Performance provera (Lighthouse ili slicno) — cilj: 90+ na Performance i SEO
 
 ## Faza 3 — Prosirenje paketa (BOT)
