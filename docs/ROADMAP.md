@@ -305,6 +305,15 @@ Svaka stranica sadrzi:
       prefilled Nachricht (vidi `build_pages.py` / index JS)
 - [ ] Vizuelni pregled pilota od strane coveka pre smatranja finalnim (preporuka)
 
+### 7.5 — Final deep-check (sesija 10, 2026-09-18) — [x]
+
+Poslednji BOT pass pre hard stop-a. Live HTTP 200 na svim kljucnim URL-ovima,
+33/33 cena usaglaseno sa `pricing.json`, i18n OK na 17 HTML fajlova, forma +
+gate + robots/noindex OK. Ispravljeno: `404.html` lang localStorage kljuc
+(`cap_lang`), `check_i18n.py` default putanje (bez nepostojeceg `site/`), lightbox
+HTML/JS uvek u build output-u + DE/EN alt/aria za galeriju. Detalji:
+`docs/izvestaji/10-izvestaj-sesije-2026-09.md`.
+
 ### 7.4 — Sta bot moze odmah vs. sta ceka coveka
 
 **BOT moze odmah, redosledom:**
