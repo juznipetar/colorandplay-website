@@ -147,10 +147,13 @@ samo posle eksplicitnog OK od Petra/Suzane.
       Pages), koja prava korisnik ima. Bot moze napisati nacrt teksta, ali
       **pravno ime firme / tacna adresa mora potvrditi covek** pre nego sto
       ide live — dodati kao vidljiv `[TODO: potvrditi]` placeholder ako fali.
-- [ ] **JSON-LD structured data (schema.org LocalBusiness)** na `index.html` —
+- [x] **JSON-LD structured data (schema.org LocalBusiness)** na `index.html` —
       ime, adresa (Baar, Kanton Zug), tip usluge, cenovni raspon, radno vreme
       ako postoji. Besplatan lokalni SEO potez (Google lokalni rezultati za
       "Kindergeburtstag Baar", "Malatelier Zug" i sl.), ne dira vizuelni dizajn.
+      Uradjeno 2026-09-18 — `<script type="application/ld+json">` u `<head>`,
+      samo podaci sa sajta (bez ulice, telefona, recenzija); detalji u
+      `docs/izvestaji/07-izvestaj-sesije-2026-09.md`.
 - [x] **Custom 404 stranica** — `404.html` u root-u, DE/EN (data-lang + lang
       toggle), Playful Pastel stil, link `./` na start. GitHub Pages automatski
       servira za nepoznate putanje.
