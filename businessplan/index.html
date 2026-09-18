@@ -1,44 +1,24 @@
 <!doctype html>
-<html>
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
 <title>Color and Play — Businessplan</title>
 <meta name="description" content="Vollständiger Business- und Mietvorschlag für Color and Play, Baar: Konzept, Markt, Recht, Finanzplan und Risikoanalyse." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-#bp-gate{position:fixed; inset:0; z-index:999; background:var(--bg); display:flex;
-  align-items:center; justify-content:center; padding:24px;}
-#bp-gate .box{max-width:360px; width:100%; background:var(--surface); border:1px solid var(--line);
-  border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px;}
-#bp-gate h2{font-size:1.3rem; margin-bottom:8px;}
-#bp-gate p{font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;}
-#bp-gate input{width:100%; font-family:var(--font-mono); font-size:15px; padding:11px 13px;
-  border:1px solid var(--line-strong); border-radius:10px; background:var(--bg); color:var(--ink);
-  margin-bottom:12px;}
-#bp-gate button{width:100%; font-weight:600; font-size:14.5px; padding:11px 13px; border-radius:10px;
-  border:1px solid var(--teal); background:var(--teal); color:#fff; cursor:pointer;}
-#bp-gate button:hover{background:var(--teal-deep); border-color:var(--teal-deep);}
-#bp-gate .err{font-size:12.5px; color:var(--coral); margin-top:10px; display:none;}
-#bp-content{display:none;}
-</style>
-<div id="bp-gate">
-  <div class="box">
-    <h2>Color and Play</h2>
-    <p>Diese Seite enthält den vollständigen Businessplan und ist nur mit Zugangscode sichtbar.<br>This page holds the full business plan and requires an access code.</p>
-    <input type="password" id="bp-pw" placeholder="Zugangscode / Access code" autocomplete="off">
-    <button type="button" onclick="bpUnlock()">Öffnen / Open</button>
-    <div class="err" id="bp-err">Falscher Code. / Incorrect code.</div>
-  </div>
-</div>
-<div id="bp-content">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&amp;family=Work+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../favicon.ico">
+<link rel="icon" sizes="16x16" href="../favicon-16.png">
+<link rel="icon" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Color and Play">
+<meta property="og:title" content="Color and Play — Businessplan">
+<meta property="og:description" content="Vollständiger Business- und Mietvorschlag für Color and Play, Baar: Konzept, Markt, Recht, Finanzplan und Risikoanalyse.">
+<meta property="og:locale" content="de_CH">
 <style>
 :root{
   --bg:#FAF6EC; --surface:#FFFFFF; --surface-2:#F1E9D6; --surface-3:#EAE0C8;
@@ -249,6 +229,35 @@ footer{padding-block:44px 60px;}
   @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
 }
 </style>
+<style>
+#bp-gate{position:fixed; inset:0; z-index:999; background:var(--bg); display:flex;
+  align-items:center; justify-content:center; padding:24px;}
+#bp-gate .box{max-width:360px; width:100%; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px;}
+#bp-gate h2{font-size:1.3rem; margin-bottom:8px;}
+#bp-gate p{font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;}
+#bp-gate input{width:100%; font-family:var(--font-mono); font-size:15px; padding:11px 13px;
+  border:1px solid var(--line-strong); border-radius:10px; background:var(--bg); color:var(--ink);
+  margin-bottom:12px;}
+#bp-gate button{width:100%; font-weight:600; font-size:14.5px; padding:11px 13px; border-radius:10px;
+  border:1px solid var(--teal); background:var(--teal); color:#fff; cursor:pointer;}
+#bp-gate button:hover{background:var(--teal-deep); border-color:var(--teal-deep);}
+#bp-gate .err{font-size:12.5px; color:var(--coral); margin-top:10px; display:none;}
+#bp-content{display:none;}
+</style>
+</head>
+<body>
+<div id="bp-gate">
+  <div class="box">
+    <h2>Color and Play</h2>
+    <p>Diese Seite enthält den vollständigen Businessplan und ist nur mit Zugangscode sichtbar.<br>This page holds the full business plan and requires an access code.</p>
+    <input type="password" id="bp-pw" placeholder="Zugangscode / Access code" autocomplete="off">
+    <button type="button" onclick="bpUnlock()">Öffnen / Open</button>
+    <div class="err" id="bp-err">Falscher Code. / Incorrect code.</div>
+  </div>
+</div>
+<div id="bp-content">
+
 
 <div class="topbar">
   <div class="wrap topbar-inner">
@@ -1009,7 +1018,6 @@ footer{padding-block:44px 60px;}
 </script>
 
 </div>
-
 <script>
 (function(){
   "use strict";
@@ -1048,6 +1056,5 @@ footer{padding-block:44px 60px;}
   }catch(e){}
 })();
 </script>
-
 </body>
 </html>

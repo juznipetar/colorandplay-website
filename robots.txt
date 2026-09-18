@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /businessplan/
+
+Sitemap: https://juznipetar.github.io/colorandplay-website/sitemap.xml
