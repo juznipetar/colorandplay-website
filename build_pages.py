@@ -112,6 +112,22 @@ LIGHTBOX_JS = """
       }
     }
 
+    function imgAltForLang(img){
+      if (!img) return "";
+      var lang = document.documentElement.lang === "en" ? "en" : "de";
+      var key = lang === "en" ? "data-alt-en" : "data-alt-de";
+      return img.getAttribute(key) || img.alt || "";
+    }
+
+    function syncGalleryAria(){
+      var lang = document.documentElement.lang === "en" ? "en" : "de";
+      triggers.forEach(function(btn){
+        var key = lang === "en" ? "data-aria-en" : "data-aria-de";
+        var label = btn.getAttribute(key);
+        if (label) btn.setAttribute("aria-label", label);
+      });
+    }
+
     function openAt(idx){
       if (!triggers[idx]) return;
       lastFocus = triggers[idx];
@@ -119,7 +135,7 @@ LIGHTBOX_JS = """
       var img = triggers[idx].querySelector("img");
       if (img && lbImg){
         lbImg.src = img.src;
-        lbImg.alt = img.alt;
+        lbImg.alt = imgAltForLang(img);
       }
       lb.hidden = false;
       document.body.style.overflow = "hidden";
@@ -151,6 +167,19 @@ LIGHTBOX_JS = """
     lb.addEventListener("click", function(ev){
       if (ev.target === lb) closeLb();
     });
+
+    syncGalleryAria();
+    var origSetLang = window.setLang;
+    if (typeof origSetLang === "function"){
+      window.setLang = function(lang){
+        origSetLang(lang);
+        syncGalleryAria();
+        if (!lb.hidden && current >= 0){
+          var activeImg = triggers[current] && triggers[current].querySelector("img");
+          if (activeImg && lbImg) lbImg.alt = imgAltForLang(activeImg);
+        }
+      };
+    }
   })();
 """
 
@@ -353,6 +382,7 @@ def render_gallery_grid(images: list[dict], prefix: str, placeholder_count: int 
         alt_en = h(img["alt_en"])
         items.append(
             f'<button type="button" class="gallery-item" data-index="{i}" '
+            f'data-aria-de="{alt_de}" data-aria-en="{alt_en}" '
             f'aria-label="{alt_de}">'
             f'<img src="{h(src)}" alt="" width="400" height="300" loading="lazy" '
             f'data-alt-de="{alt_de}" data-alt-en="{alt_en}"></button>'
@@ -567,9 +597,9 @@ def generate_package_page(
   </section>
 {render_faq(faq)}
 </main>
-{render_lightbox() if mini else ""}"""
+{render_lightbox()}"""
 
-    extra = LIGHTBOX_JS if mini else ""
+    extra = LIGHTBOX_JS
     return page_shell(
         title,
         description,
@@ -595,8 +625,8 @@ def generate_gallery_page(gallery: dict, base_style: str, base_script: str) -> s
     {render_gallery_grid(images, "../", 8)}
   </section>
 </main>
-{render_lightbox() if images else ""}"""
-    extra = LIGHTBOX_JS if images else ""
+{render_lightbox()}"""
+    extra = LIGHTBOX_JS
     return page_shell(
         "Galerie | Color and Play",
         "Galerie — Color and Play Kreativatelier in Baar. Fotos aus Workshops und Atelier folgen in Kürze.",
