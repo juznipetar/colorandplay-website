@@ -218,6 +218,30 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 .infolist{display:flex; flex-direction:column; gap:10px; font-size:14px;}
 .infolist .k{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); display:block; margin-bottom:2px;}
 .infolist .v{color:var(--ink);}
+.contact-layout{display:grid; grid-template-columns:1fr; gap:28px; margin-top:30px;}
+@media (min-width:820px){ .contact-layout{grid-template-columns:1.15fr .85fr; align-items:start;} }
+.contact-form{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px 28px; box-shadow:var(--shadow);}
+.contact-form fieldset{border:0; margin:0; padding:0; display:flex; flex-direction:column; gap:16px;}
+.contact-form legend{font-family:var(--font-display); font-size:1.05rem; font-weight:600; margin-bottom:4px; padding:0;}
+.field{display:flex; flex-direction:column; gap:6px;}
+.field label{font-size:13.5px; font-weight:600; color:var(--ink);}
+.field label .opt{font-weight:400; color:var(--ink-faint); font-size:12px;}
+.field input,.field textarea{width:100%; font:inherit; font-size:15px; color:var(--ink); background:var(--bg); border:1px solid var(--line-strong); border-radius:10px; padding:11px 13px; transition:border-color .2s, box-shadow .2s;}
+.field input:focus,.field textarea:focus,.field input:focus-visible,.field textarea:focus-visible{outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-soft);}
+.field textarea{min-height:132px; resize:vertical;}
+.contact-form .cta{width:100%; justify-content:center; margin-top:4px; cursor:pointer; font-family:inherit;}
+.contact-form .cta:disabled{opacity:.65; cursor:not-allowed; transform:none;}
+.form-status{font-size:14px; margin-top:14px; padding:12px 14px; border-radius:10px; display:none;}
+.form-status.is-visible{display:block;}
+.form-status.ok{background:var(--teal-soft); color:var(--teal-deep); border:1px solid color-mix(in srgb, var(--teal) 25%, transparent);}
+.form-status.err{background:var(--coral-soft); color:var(--coral); border:1px solid color-mix(in srgb, var(--coral) 25%, transparent);}
+.contact-fallback{font-size:14px; color:var(--ink-soft); margin-top:18px;}
+.contact-fallback a{color:var(--teal-deep); font-weight:600; text-decoration:underline; text-underline-offset:2px;}
+.contact-aside{display:flex; flex-direction:column; gap:16px;}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+@media (prefers-reduced-motion:reduce){
+  .field input,.field textarea{transition:none;}
+}
 
 /* ---------- footer ---------- */
 footer{padding-block:44px 60px;}
@@ -314,7 +338,7 @@ footer{padding-block:44px 60px;}
     <div class="prop" style="--i:2">
       <div class="ic">03</div>
       <h3 class="i18n" data-lang="de">Mitten in Baar</h3><h3 class="i18n" data-lang="en" hidden>Right in Baar</h3>
-      <p class="i18n" data-lang="de">Gut erreichbar, 6 Tage die Woche geöffnet — von frühem Nachmittag bis in den Abend.</p>
+      <p class="i18n" data-lang="de">Gut erreichbar, 6 Tage die Woche geöffnet — vom frühen Nachmittag bis in den Abend.</p>
       <p class="i18n" data-lang="en" hidden>Easy to reach, open 6 days a week — from early afternoon into the evening.</p>
     </div>
   </div>
@@ -780,10 +804,54 @@ footer{padding-block:44px 60px;}
   <h2 class="i18n" data-lang="en" hidden>Let's plan your event.</h2>
   <p class="lead i18n" data-lang="de">Schreib uns dein Wunschdatum, die Personenzahl, das gewünschte Format und die Stufe — wir melden uns innert 24 Stunden.</p>
   <p class="lead i18n" data-lang="en" hidden>Send us your preferred date, group size, format and tier — we'll get back to you within 24 hours.</p>
-  <div class="hero-ctas" style="margin-top:22px;">
-    <a class="cta" href="mailto:suzana.androvic@gmail.com?subject=Anfrage%20Color%20and%20Play">
-      <span class="i18n" data-lang="de">E-Mail schreiben</span><span class="i18n" data-lang="en" hidden>Send an email</span>
-    </a>
+  <div class="contact-layout">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+      <fieldset>
+        <legend class="i18n" data-lang="de">Anfrage senden</legend>
+        <legend class="i18n" data-lang="en" hidden>Send an enquiry</legend>
+        <div class="field">
+          <label for="contact-name">
+            <span class="i18n" data-lang="de">Name</span><span class="i18n" data-lang="en" hidden>Name</span>
+          </label>
+          <input type="text" id="contact-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="contact-email">
+            <span class="i18n" data-lang="de">E-Mail</span><span class="i18n" data-lang="en" hidden>Email</span>
+          </label>
+          <input type="email" id="contact-email" name="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="field">
+          <label for="contact-phone">
+            <span class="i18n" data-lang="de">Telefon</span><span class="i18n" data-lang="en" hidden>Phone</span>
+            <span class="opt i18n" data-lang="de"> (optional)</span><span class="opt i18n" data-lang="en" hidden> (optional)</span>
+          </label>
+          <input type="tel" id="contact-phone" name="phone" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="contact-message">
+            <span class="i18n" data-lang="de">Nachricht</span><span class="i18n" data-lang="en" hidden>Message</span>
+          </label>
+          <textarea id="contact-message" name="message" required></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Anfrage Color and Play">
+        <button type="submit" class="cta" id="contact-submit">
+          <span class="i18n" data-lang="de">Anfrage absenden</span><span class="i18n" data-lang="en" hidden>Send enquiry</span>
+        </button>
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+      </fieldset>
+    </form>
+    <div class="contact-aside">
+      <div class="infocard">
+        <h3 class="i18n" data-lang="de">Direkt per E-Mail</h3><h3 class="i18n" data-lang="en" hidden>Email us directly</h3>
+        <p class="i18n" data-lang="de" style="font-size:14px; color:var(--ink-soft); margin-bottom:12px;">Lieber klassisch? Schreib uns direkt — gleiche Adresse wie im Formular.</p>
+        <p class="i18n" data-lang="en" hidden style="font-size:14px; color:var(--ink-soft); margin-bottom:12px;">Prefer email? Write to us directly — same address as the form.</p>
+        <a class="cta ghost" href="mailto:suzana.androvic@gmail.com?subject=Anfrage%20Color%20and%20Play">
+          <span class="i18n" data-lang="de">E-Mail schreiben</span><span class="i18n" data-lang="en" hidden>Send an email</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -878,6 +946,61 @@ footer{padding-block:44px 60px;}
     counters.forEach(function(el){ io2.observe(el); });
   } else {
     counters.forEach(animateCount);
+  }
+
+  /* ---------- contact form (Formspree) ---------- */
+  var contactForm = document.getElementById("contact-form");
+  var formStatus = document.getElementById("form-status");
+  var submitBtn = document.getElementById("contact-submit");
+  if (contactForm && formStatus && submitBtn){
+    var statusCopy = {
+      sending: { de: "Wird gesendet …", en: "Sending …" },
+      ok: { de: "Danke! Wir melden uns innert 24 Stunden.", en: "Thank you! We'll get back to you within 24 hours." },
+      err: { de: "Das hat nicht geklappt. Bitte versuche es erneut oder schreib uns per E-Mail.", en: "Something went wrong. Please try again or email us directly." },
+      invalid: { de: "Bitte fülle alle Pflichtfelder aus.", en: "Please fill in all required fields." }
+    };
+    function currentLang(){
+      return document.documentElement.lang === "en" ? "en" : "de";
+    }
+    function showStatus(key){
+      var lang = currentLang();
+      formStatus.textContent = statusCopy[key][lang];
+      formStatus.className = "form-status is-visible " + (key === "ok" ? "ok" : (key === "sending" ? "" : "err"));
+      if (key === "sending") formStatus.classList.remove("ok", "err");
+    }
+    contactForm.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      if (!contactForm.checkValidity()){
+        showStatus("invalid");
+        return;
+      }
+      if (contactForm.action.indexOf("YOUR_FORMSPREE_ID") !== -1){
+        showStatus("err");
+        formStatus.textContent = currentLang() === "de"
+          ? "Formular noch nicht aktiv — bitte Formspree-ID eintragen (siehe DEPLOY.md) oder nutze die E-Mail-Option."
+          : "Form not active yet — add the Formspree ID (see DEPLOY.md) or use the email option.";
+        return;
+      }
+      submitBtn.disabled = true;
+      showStatus("sending");
+      var data = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      }).then(function(res){
+        if (res.ok){
+          contactForm.reset();
+          showStatus("ok");
+        } else {
+          showStatus("err");
+        }
+      }).catch(function(){
+        showStatus("err");
+      }).finally(function(){
+        submitBtn.disabled = false;
+      });
+    });
   }
 })();
 </script>

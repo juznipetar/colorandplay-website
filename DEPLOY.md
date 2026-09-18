@@ -64,7 +64,31 @@ Ovo je "lagana" zastita (client-side provera lozinke) — dovoljna da neko ko sl
 
 Ako zelis jace resenje bez napustanja GitHub Pages-a: postavi domen kroz **Cloudflare** (besplatno) i koristi **Cloudflare Access** da zakljucas putanju `/businessplan/*` pravim login-om (npr. samo Aligov email dobija jednokratni kod na mail). Javi ako zelis da ti pripremim i to.
 
-## 7. Kad Alig pregleda plan — uklanjanje stranice
+## 7. Kontakt formular (Formspree)
+
+Javna stranica (`index.html`) ima kontakt formular koji šalje upite na Formspree.
+Dok se ne podesi nalog, u `action` URL-u stoji placeholder `YOUR_FORMSPREE_ID` —
+formular prikazuje poruku da nije aktivan; `mailto:` link ostaje kao rezerva.
+
+### Koraci za Petara/Suzanu (besplatan tier, ~5 min)
+
+1. Idi na [formspree.io](https://formspree.io) i napravi besplatan nalog (email na koji želite da stižu upiti — npr. `suzana.androvic@gmail.com`).
+2. Klikni **+ New Form**, daj mu ime npr. „Color and Play Anfragen“.
+3. Formspree će pokazati **Form endpoint** u obliku  
+   `https://formspree.io/f/xxxxxxxx` — kopiraj samo deo posle `/f/` (to je tvoj Form ID).
+4. U repou otvori `index.html`, nađi:
+   ```html
+   action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+   ```
+   Zameni `YOUR_FORMSPREE_ID` pravim ID-jem (npr. `action="https://formspree.io/f/abcdwxyz"`).
+5. Commit + push na `main` — GitHub Pages redeployuje za par minuta.
+6. Test: popuni formular na live sajtu; u Formspree inbox-u treba da se pojavi poruka. Proveri i spam folder.
+
+**Besplatan plan (orientaciono):** ~50 submissiona mesečno, email notifikacije — dovoljno za start. Više submissiona ili timski inbox zahteva plaćeni plan (vidi formspree.io/pricing).
+
+**Polja u formularu:** name, email, message (obavezno), phone (opciono). Formspree automatski prepoznaje `email` za Reply-To.
+
+## 8. Kad Alig pregleda plan — uklanjanje stranice
 
 1. U repou obrisi `businessplan/index.html` (ili ceo `businessplan` folder).
 2. Commit — GitHub Pages automatski redeployuje za par minuta i stranica vise ne postoji (404).
