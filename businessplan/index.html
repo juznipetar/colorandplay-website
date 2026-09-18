@@ -7,7 +7,9 @@
 <meta name="description" content="Vollständiger Business- und Mietvorschlag für Color and Play, Baar: Konzept, Markt, Recht, Finanzplan und Risikoanalyse." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&amp;family=Work+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&amp;family=Work+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&amp;family=Work+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&amp;family=Work+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"></noscript>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="../favicon.ico">
 <link rel="icon" sizes="16x16" href="../favicon-16.png">
@@ -22,7 +24,7 @@
 <style>
 :root{
   --bg:#FAF6EC; --surface:#FFFFFF; --surface-2:#F1E9D6; --surface-3:#EAE0C8;
-  --ink:#1E241F; --ink-soft:#5B665D; --ink-faint:#8B9389;
+  --ink:#1E241F; --ink-soft:#5B665D; --ink-faint:#6B746C;
   --line:#E3D9BF; --line-strong:#CDBF9C;
   --teal:#0B6E6B; --teal-deep:#083F3E; --teal-soft:#DCEEEC;
   --gold:#C9962E; --gold-soft:#F5E7C4;
@@ -130,7 +132,7 @@ section.chapter{padding-block:52px; border-bottom:1px solid var(--line);}
 .chapter-head{display:flex; gap:18px; align-items:baseline; margin-bottom:26px;}
 .chapter-num{font-family:var(--font-mono); font-size:14px; color:var(--ink-faint); padding-top:6px; min-width:26px;}
 .chapter-head h2{font-size:clamp(1.6rem,3.4vw,2.15rem);}
-.chapter-kicker{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:6px; display:block;}
+.chapter-kicker{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; margin-bottom:6px; display:block;}
 .lead{font-size:1.08rem; color:var(--ink-soft); max-width:700px; margin-bottom:22px;}
 .prose{max-width:700px; color:var(--ink); font-size:15.5px;}
 .prose p + p{margin-top:14px;}
@@ -228,6 +230,14 @@ footer{padding-block:44px 60px;}
   .fade-in{animation:fadeIn .5s ease both;}
   @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
 }
+@media (prefers-reduced-motion:reduce){
+  .fade-in{animation:none!important;}
+}
+:focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+.langtoggle button:focus-visible,
+.brandmark:focus-visible{outline-offset:3px;}
+#bp-gate input:focus-visible,
+#bp-gate button:focus-visible{outline-offset:2px;}
 </style>
 <style>
 #bp-gate{position:fixed; inset:0; z-index:999; background:var(--bg); display:flex;
@@ -243,17 +253,19 @@ footer{padding-block:44px 60px;}
   border:1px solid var(--teal); background:var(--teal); color:#fff; cursor:pointer;}
 #bp-gate button:hover{background:var(--teal-deep); border-color:var(--teal-deep);}
 #bp-gate .err{font-size:12.5px; color:var(--coral); margin-top:10px; display:none;}
+#bp-gate label{display:block; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); font-weight:600; margin-bottom:8px;}
 #bp-content{display:none;}
 </style>
 </head>
 <body>
-<div id="bp-gate">
+<div id="bp-gate" role="dialog" aria-modal="true" aria-labelledby="bp-gate-title" aria-describedby="bp-gate-desc">
   <div class="box">
-    <h2>Color and Play</h2>
-    <p>Diese Seite enthält den vollständigen Businessplan und ist nur mit Zugangscode sichtbar.<br>This page holds the full business plan and requires an access code.</p>
-    <input type="password" id="bp-pw" placeholder="Zugangscode / Access code" autocomplete="off">
+    <h2 id="bp-gate-title">Color and Play</h2>
+    <p id="bp-gate-desc">Diese Seite enthält den vollständigen Businessplan und ist nur mit Zugangscode sichtbar.<br>This page holds the full business plan and requires an access code.</p>
+    <label for="bp-pw">Zugangscode / Access code</label>
+    <input type="password" id="bp-pw" placeholder="Zugangscode / Access code" autocomplete="off" aria-describedby="bp-err" aria-invalid="false">
     <button type="button" onclick="bpUnlock()">Öffnen / Open</button>
-    <div class="err" id="bp-err">Falscher Code. / Incorrect code.</div>
+    <div class="err" id="bp-err" role="alert" aria-live="polite">Falscher Code. / Incorrect code.</div>
   </div>
 </div>
 <div id="bp-content">
@@ -261,16 +273,16 @@ footer{padding-block:44px 60px;}
 
 <div class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brandmark" href="#top">
-      <span class="dot"></span>
+    <a class="brandmark" href="#top" aria-label="Color and Play — Businessplan">
+      <span class="dot" aria-hidden="true"></span>
       <span class="brandmark-text">Color and Play<small class="i18n" data-lang="de">Businessplan · Baar</small><small class="i18n" data-lang="en" hidden>Business Plan · Baar</small></span>
     </a>
     <div class="topbar-right">
       <span class="pdfhint i18n" data-lang="de">Druckversion: siehe PDF</span>
       <span class="pdfhint i18n" data-lang="en" hidden>Print version: see PDF</span>
-      <div class="langtoggle" role="group" aria-label="Language">
-        <button type="button" id="btn-de" aria-pressed="true" onclick="setLang('de')">DE</button>
-        <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      <div class="langtoggle" role="group" aria-label="Sprache / Language">
+        <button type="button" id="btn-de" aria-pressed="true" aria-label="Deutsch" onclick="setLang('de')">DE</button>
+        <button type="button" id="btn-en" aria-pressed="false" aria-label="English" onclick="setLang('en')">EN</button>
       </div>
     </div>
   </div>
@@ -1039,11 +1051,15 @@ footer{padding-block:44px 60px;}
   window.bpUnlock = async function(){
     var val = document.getElementById("bp-pw").value;
     var hex = await sha256Hex(val);
+    var pwInput = document.getElementById("bp-pw");
     if (hex === HASH){
       try{ sessionStorage.setItem(SESSION_KEY, "1"); }catch(e){}
+      pwInput.setAttribute("aria-invalid", "false");
       reveal();
     } else {
       document.getElementById("bp-err").style.display = "block";
+      pwInput.setAttribute("aria-invalid", "true");
+      pwInput.focus();
     }
   };
 
@@ -1053,6 +1069,7 @@ footer{padding-block:44px 60px;}
 
   try{
     if (sessionStorage.getItem(SESSION_KEY) === "1") reveal();
+    else document.getElementById("bp-pw").focus();
   }catch(e){}
 })();
 </script>
