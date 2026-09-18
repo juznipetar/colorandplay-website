@@ -1,0 +1,11 @@
+{
+  "_schema_napomena": "Galerija slika - jedan zapis po fotografiji. PRAZNO JE NAMERNO: prave fotografije ateljea jos ne postoje (vidi ROADMAP.md Faza 7.1 i STROGE GRANICE u BOT-INSTRUKCIJE.md - ne popunjavati stock-foto materijalom). Kad Suzana/Petar dostave prave fotografije: 1) sacuvaj fajlove u /assets/galerie/<naziv>.jpg (ili .webp), 2) dodaj po jedan zapis ovde po obrascu ispod, 3) pokreni build_pages.py da se galerija i pakete-stranice azuriraju. 'tagovi' povezuje sliku sa paketom/paketima - koristi iste slug-ove kao u pricing.json (npr. 'kindergeburtstage', 'wine-draw') plus opste tagove ('atelje', 'radionica', 'gotovi-radovi', 'grupa') za slike koje ne pripadaju jednom odredjenom paketu.",
+  "_primer_zapisa": {
+    "fajl": "assets/galerie/primer-naziv-fajla.jpg",
+    "alt_de": "Kratak opis slike na nemackom, za pristupacnost i SEO",
+    "alt_en": "Short image description in English, for accessibility and SEO",
+    "tagovi": ["kindergeburtstage", "atelje"],
+    "je_hero_za": null
+  },
+  "slike": []
+}

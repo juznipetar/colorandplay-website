@@ -173,12 +173,15 @@ mogao da provali kod (rainbow table napad na jednostavnu lozinku). Za ovu svrhu
 (privremeno deljenje sa jednim vlasnikom lokala, stranica se brise posle pregleda)
 ovo je dovoljno. Za jace resenje vidi `DEPLOY.md` sekcija 6 (Cloudflare Access).
 
-## Planirano prosirenje: vise-stranicni sajt (Faza 7, ROADMAP.md)
+## Planirano prosirenje: vise-stranicni sajt (Faza 7, ROADMAP.md + docs/faza7-spec.md)
 
 Sajt do sada sledi princip "jedna stranica, anchor navigacija" (`index.html`
 sa `#pakete`, `#standort`, `#kontakt` itd.). Korisnik je trazio veci obim:
-galerija slika + posebna stranica za svaki od 11 paketa. Pun plan je u
-`docs/ROADMAP.md` Faza 7 — ovde samo arhitekturne implikacije:
+galerija slika + posebna stranica za svaki od 11 paketa. Pun plan (redosled,
+status) je u `docs/ROADMAP.md` Faza 7; **tacan tehnicki oblik** (HTML skelet,
+JSON seme, JSON-LD sabloni, pristupacnost) je u `docs/faza7-spec.md` — procitaj
+oba pre pisanja koda. `data/pricing.json` (pravi podaci) i `data/gallery.json`
+(prazna sema) vec postoje u repo root-u. Ovde samo arhitekturne implikacije:
 
 - **Novi URL obrazac:** `/pakete/<slug>/index.html` (11 stranica) i
   `/galerie/index.html` — isti obrazac koji `businessplan/index.html` vec

@@ -201,19 +201,34 @@ preduslov. Razlog: cim postoji 11 paket-stranica + pocetna, cena/tier podatak
 postoji na **12 mesta** koja se moraju rucno drzati sinhronizovanim — bez jednog
 izvora istine je pitanje vremena kad ce se brojevi razmimoici.
 
-Preporuceni pristup (u duhu vec postojeceg `build_site.py` obrasca za
-businessplan, ne uvodi se nista fundamentalno novo):
-- `data/pricing.json` — jedan zapis po paketu: slug, naziv (DE/EN), tag/uslov,
-  3 tier-a (naziv, cena, per-jedinica, lista pogodnosti DE/EN, da li je "popular")
-- `data/gallery.json` — jedan zapis po slici: fajl, alt tekst (DE/EN), tag-ovi
-  (koji paket/paketi je slika relevantna za)
-- `templates/` folder sa deljenim delovima (nav/header/footer/script) + template
-  za paket-stranicu — prost Python string-template ili Jinja2, ne pravi framework
-- Skripta (npr. `build_pages.py`) koja iz JSON-a + template-a generise:
-  - `.signature`/`.tiers` blokove na `index.html` (pakete sekcija)
-  - svih 11 `/pakete/<slug>/index.html` stranica
-  - `/galerie/index.html`
-  - `sitemap.xml` (dodaje nove URL-ove automatski)
+**Delimicno vec uradjeno (sesija 08, cloud agent) — proveri pre upotrebe:**
+- [x] `data/pricing.json` — POSTOJI, popunjen PRAVIM podacima, ekstraktovanim
+      direktno iz live `index.html` 18.09.2026 (programski parsiran, ne rucno
+      prekucan — svih 11 paketa × 3 tier-a, cene, jedinice, pogodnosti DE/EN).
+      Bot treba da ga brzo pregleda (uporedi par vrednosti sa live sajtom) pre
+      nego sto ga koristi u build skripti, ali NE treba ponovo da kuca sve
+      cene — to je vec odradjeno da bota postedi te muke.
+- [x] `data/gallery.json` — POSTOJI, prazna sema (`slike: []`) spremna za
+      popunjavanje kad prave fotografije stignu — vidi `docs/faza7-spec.md`.
+- [x] `docs/faza7-spec.md` (NOVO) — tehnicka specifikacija: tacan HTML skelet
+      za paket-stranicu, JSON-LD `Service` sablon, breadcrumb/CTA mehanizam
+      (query param `?paket=<slug>` koji predizabere paket u kontakt formi),
+      pristupacnost galerije (focus trap, aria, reduced-motion — Lighthouse
+      Accessibility 100 ne sme da padne), konvencija imenovanja slika,
+      `sitemap.xml` format, i tacna definicija "gotovo je kad..." za svaki
+      pod-korak. **Procitaj ovaj fajl PRE nego sto pises ijednu paket-stranicu**
+      — resava dosta odluka unapred da 11 stranica ne ispadnu medjusobno
+      nekonzistentne.
+
+**Jos treba (BOT):**
+- [ ] `data/opisi.json` — prosireni marketing opis + opciono FAQ po paketu
+      (bot pise NACRT na osnovu `tag_de`/`pogodnosti` iz `pricing.json`, ide na
+      pregled coveku pre nego sto ide live — vidi `docs/faza7-spec.md` sekcija 4)
+- [ ] `build_pages.py` — cita `pricing.json`/`gallery.json`/`opisi.json`,
+      generise `.tiers` blokove na `index.html` + 11 paket-stranica +
+      `/galerie/index.html` + azurira `sitemap.xml`. Test da build ne menja
+      postojeci `index.html` sadrzaj (vidi "gotovo je kad..." u spec fajlu,
+      tacka 1) pre nego sto se nastavi dalje.
 
 **Vazna napomena o principu iz ARHITEKTURA.md** ("nema build koraka, nema
 framework-a"): ovo se NE krsi. Princip se odnosi na to sta GitHub Pages servira

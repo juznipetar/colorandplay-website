@@ -1,0 +1,759 @@
+{
+  "_schema_napomena": "Jedan izvor istine za cene/tier-ove svih 11 paketa. Generisano iz live index.html 2026-09-18 (sesija 08) - tacno odgovara onome sto je live u tom trenutku. Bot treba da ovaj fajl koristi kao ulaz za build_pages.py (Faza 7.0) - ne da ponovo rucno prekucava cene. Ako se cena promeni na jednom mestu, menja se OVDE pa se build skripta ponovo pokrene - ne direktno u HTML-u.",
+  "pakete": [
+    {
+      "slug": "kindergeburtstage",
+      "naziv_de": "Kindergeburtstage",
+      "naziv_en": "Kids' Birthdays",
+      "tag_de": "4–12 Jahre · bis 10 Kinder",
+      "tag_en": "Ages 4–12 · up to 10 kids",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 390",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "90 Minuten, bis 8 Kinder",
+              "en": "90 minutes, up to 8 kids"
+            },
+            {
+              "de": "1 Technik (Leinwand)",
+              "en": "1 technique (canvas)"
+            },
+            {
+              "de": "Material & Begleitung inkl.",
+              "en": "Materials & guidance included"
+            }
+          ],
+          "cena_broj": 390,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 480",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "120 Minuten, bis 8 Kinder",
+              "en": "120 minutes, up to 8 kids"
+            },
+            {
+              "de": "2 Techniken (Leinwand + Steine)",
+              "en": "2 techniques (canvas + stones)"
+            },
+            {
+              "de": "Deko-Paket & Geburtstagskrone",
+              "en": "Decor package & birthday crown"
+            }
+          ],
+          "cena_broj": 480,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 600",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "150 Minuten, bis 10 Kinder",
+              "en": "150 minutes, up to 10 kids"
+            },
+            {
+              "de": "3 Techniken inkl. Glow-Art",
+              "en": "3 techniques incl. glow-art"
+            },
+            {
+              "de": "Volle Deko, Snacks & Fotobox",
+              "en": "Full decor, snacks & photo booth"
+            }
+          ],
+          "cena_broj": 600,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "firmen-teams",
+      "naziv_de": "Firmen & Teams",
+      "naziv_en": "Companies & Teams",
+      "tag_de": "8–30 Personen",
+      "tag_en": "8–30 people",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 89",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "90 Minuten, 1 Technik",
+              "en": "90 minutes, 1 technique"
+            },
+            {
+              "de": "Standard-Setup",
+              "en": "Standard setup"
+            },
+            {
+              "de": "Material & Begleitung inkl.",
+              "en": "Materials & guidance included"
+            }
+          ],
+          "cena_broj": 89,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 110",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "120 Minuten, 2 Techniken",
+              "en": "120 minutes, 2 techniques"
+            },
+            {
+              "de": "Personalisiertes Motiv",
+              "en": "Personalised motif"
+            },
+            {
+              "de": "Alkoholfreier Apéro",
+              "en": "Non-alcoholic apéro"
+            }
+          ],
+          "cena_broj": 110,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 145",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "150 Minuten, freie Technikwahl",
+              "en": "150 minutes, free choice of technique"
+            },
+            {
+              "de": "Individuelles Firmen-Branding",
+              "en": "Custom company branding"
+            },
+            {
+              "de": "Vollcatering & Team-Fotoecke",
+              "en": "Full catering & team photo corner"
+            }
+          ],
+          "cena_broj": 145,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "wine-draw",
+      "naziv_de": "Wine & Draw",
+      "naziv_en": "Wine & Draw",
+      "tag_de": "Fr & Sa, 19:00 Uhr",
+      "tag_en": "Fri & Sat, 7 pm",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 55",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "1 Leinwand, 1 Glas Wein",
+              "en": "1 canvas, 1 glass of wine"
+            },
+            {
+              "de": "Geführte Session, 90 Min.",
+              "en": "Guided session, 90 min"
+            }
+          ],
+          "cena_broj": 55,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 65",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "1 Leinwand, 2 Gläser Wein",
+              "en": "1 canvas, 2 glasses of wine"
+            },
+            {
+              "de": "Snackplatte zum Teilen",
+              "en": "Sharing snack plate"
+            }
+          ],
+          "cena_broj": 65,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 85",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "2 Leinwände zum Mitnehmen",
+              "en": "2 canvases to take home"
+            },
+            {
+              "de": "Getränke-Flatrate im Slot",
+              "en": "Unlimited drinks during the slot"
+            },
+            {
+              "de": "Käseplatte & Playlist-Wunsch",
+              "en": "Cheese board & playlist request"
+            }
+          ],
+          "cena_broj": 85,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "private-feiern",
+      "naziv_de": "Private Feiern",
+      "naziv_en": "Private Celebrations",
+      "tag_de": "JGA · Babyshower · Jubiläen",
+      "tag_en": "Bachelorette · Baby Showers · Anniversaries",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 55",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "2 Std. exklusive Studio-Miete",
+              "en": "2 hrs exclusive studio buyout"
+            },
+            {
+              "de": "Grunddekoration",
+              "en": "Basic decor"
+            }
+          ],
+          "cena_broj": 55,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 75",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "3 Std., Theme-Deko nach Wahl",
+              "en": "3 hrs, themed decor of your choice"
+            },
+            {
+              "de": "Eigene Playlist & Musik-Setup",
+              "en": "Your own playlist & music setup"
+            }
+          ],
+          "cena_broj": 75,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 95",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "3.5 Std., volle Deko & Fotobox",
+              "en": "3.5 hrs, full decor & photo booth"
+            },
+            {
+              "de": "Snacks & alkoholfreie Cocktails",
+              "en": "Snacks & non-alcoholic cocktails"
+            }
+          ],
+          "cena_broj": 95,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "art-club",
+      "naziv_de": "Art Club Mitgliedschaft",
+      "naziv_en": "Art Club Membership",
+      "tag_de": "Monatlich kündbar",
+      "tag_en": "Cancel anytime",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 59",
+          "jedinica_de": "/ Monat",
+          "jedinica_en": "/ month",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "1 Session pro Monat",
+              "en": "1 session per month"
+            },
+            {
+              "de": "Material inklusive",
+              "en": "Materials included"
+            }
+          ],
+          "cena_broj": 59,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 89",
+          "jedinica_de": "/ Monat",
+          "jedinica_en": "/ month",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "2 Sessions pro Monat",
+              "en": "2 sessions per month"
+            },
+            {
+              "de": "10% Rabatt auf Material",
+              "en": "10% off materials"
+            }
+          ],
+          "cena_broj": 89,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 129",
+          "jedinica_de": "/ Monat",
+          "jedinica_en": "/ month",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "4 Sessions pro Monat",
+              "en": "4 sessions per month"
+            },
+            {
+              "de": "15% Rabatt + 1 Gast-Ticket gratis",
+              "en": "15% off + 1 free guest ticket"
+            }
+          ],
+          "cena_broj": 129,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "grundangebot",
+      "naziv_de": "Grundangebot",
+      "naziv_en": "Core Packages",
+      "tag_de": "Leinwand · Steine · Gips · 1.5–2 Std.",
+      "tag_en": "Canvas · Stones · Plaster · 1.5–2 hrs",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 49",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "1.5 Std., 1 Technik (Leinwand)",
+              "en": "1.5 hrs, 1 technique (canvas)"
+            },
+            {
+              "de": "Material & Begleitung inkl.",
+              "en": "Materials & guidance included"
+            }
+          ],
+          "cena_broj": 49,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 59",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "2 Std., 2 Techniken (Leinwand + Steine)",
+              "en": "2 hrs, 2 techniques (canvas + stones)"
+            },
+            {
+              "de": "Geführte Session & Motivwahl",
+              "en": "Guided session & motif choice"
+            }
+          ],
+          "cena_broj": 59,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 69",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "2 Std., alle 3 Techniken inkl. Gips",
+              "en": "2 hrs, all 3 techniques incl. plaster"
+            },
+            {
+              "de": "Zusatz-Material & Mitnahme-Box",
+              "en": "Extra materials & take-home box"
+            }
+          ],
+          "cena_broj": 69,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "solo-abend",
+      "naziv_de": "Solo-Abend für Erwachsene",
+      "naziv_en": "Solo Evening for Adults",
+      "tag_de": "Offenes Atelier · Di & Sa, 17:30 Uhr · 20 Plätze",
+      "tag_en": "Open studio · Tue & Sat, 5:30 pm · 20 seats",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 45",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "90 Min., 1 Leinwand",
+              "en": "90 min, 1 canvas"
+            },
+            {
+              "de": "Material & Begleitung inkl.",
+              "en": "Materials & guidance included"
+            }
+          ],
+          "cena_broj": 45,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 49",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "90 Min., 1 Leinwand + Snack",
+              "en": "90 min, 1 canvas + snack"
+            },
+            {
+              "de": "1 alkoholfreies Getränk inkl.",
+              "en": "1 non-alcoholic drink included"
+            }
+          ],
+          "cena_broj": 49,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 59",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "2 Std., 2 Leinwände zum Mitnehmen",
+              "en": "2 hrs, 2 canvases to take home"
+            },
+            {
+              "de": "Getränke-Flatrate im Slot",
+              "en": "Unlimited drinks during the slot"
+            }
+          ],
+          "cena_broj": 59,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "familie-paare-60plus",
+      "naziv_de": "Familie · Paare · 60+",
+      "naziv_en": "Family · Couples · 60+",
+      "tag_de": "Familientisch · Paar-Abend · Kreativkreis",
+      "tag_en": "Family table · Couples' evening · Creative circle",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 39",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "90 Min. Familientisch (bis 4 Pers.)",
+              "en": "90 min family table (up to 4 people)"
+            },
+            {
+              "de": "1 Technik, Material inkl.",
+              "en": "1 technique, materials included"
+            }
+          ],
+          "cena_broj": 39,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 69",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "2 Std. Paar-Abend (2 Pers.)",
+              "en": "2 hrs couples' evening (2 people)"
+            },
+            {
+              "de": "2 Techniken & gemeinsames Motiv",
+              "en": "2 techniques & shared motif"
+            }
+          ],
+          "cena_broj": 69,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 290",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "2.5 Std. Kreativkreis (bis 8 Pers.)",
+              "en": "2.5 hrs creative circle (up to 8 people)"
+            },
+            {
+              "de": "Freie Technikwahl, Snacks & Getränke",
+              "en": "Free choice of technique, snacks & drinks"
+            }
+          ],
+          "cena_broj": 290,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "plus-angebot",
+      "naziv_de": "Plus-Angebot",
+      "naziv_en": "Plus Add-ons",
+      "tag_de": "Spiegel & Taschen bemalen · Zusatz zu jedem Grundformat",
+      "tag_en": "Mirror & tote painting · Add-on to any core format",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "+CHF 69",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "Spiegel ODER Tasche bemalen",
+              "en": "Paint a mirror OR a tote bag"
+            },
+            {
+              "de": "Standard-Material inkl.",
+              "en": "Standard materials included"
+            }
+          ],
+          "cena_broj": 69,
+          "je_dodatak": true
+        },
+        {
+          "naziv": "Advance",
+          "cena": "+CHF 74",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "Spiegel UND Tasche bemalen",
+              "en": "Paint a mirror AND a tote bag"
+            },
+            {
+              "de": "Premium-Farben & Schablonen",
+              "en": "Premium paints & stencils"
+            }
+          ],
+          "cena_broj": 74,
+          "je_dodatak": true
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "+CHF 79",
+          "jedinica_de": "/ Pers.",
+          "jedinica_en": "/ person",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "Beide Projekte + Geschenkverpackung",
+              "en": "Both projects + gift wrapping"
+            },
+            {
+              "de": "Individuelle Motiv-Vorlage",
+              "en": "Custom motif template"
+            }
+          ],
+          "cena_broj": 79,
+          "je_dodatak": true
+        }
+      ]
+    },
+    {
+      "slug": "geschenkgutscheine",
+      "naziv_de": "Geschenkgutscheine",
+      "naziv_en": "Gift Vouchers",
+      "tag_de": "Digital oder gedruckt · das ganze Jahr gültig",
+      "tag_en": "Digital or printed · valid year-round",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 49",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "1 Solo-Session (Offenes Atelier)",
+              "en": "1 solo session (open studio)"
+            },
+            {
+              "de": "Digitaler Gutschein per E-Mail",
+              "en": "Digital voucher by email"
+            }
+          ],
+          "cena_broj": 49,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 149",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "Halbtags-Erlebnis für 2 Personen",
+              "en": "Half-day experience for 2 people"
+            },
+            {
+              "de": "Gedruckter Gutschein in Geschenkbox",
+              "en": "Printed voucher in gift box"
+            }
+          ],
+          "cena_broj": 149,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 390",
+          "jedinica_de": "",
+          "jedinica_en": "",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "Kindergeburtstag Basic (bis 8 Kinder)",
+              "en": "Kids' birthday Basic (up to 8 kids)"
+            },
+            {
+              "de": "Premium-Geschenkbox & persönliche Karte",
+              "en": "Premium gift box & personal card"
+            }
+          ],
+          "cena_broj": 390,
+          "je_dodatak": false
+        }
+      ]
+    },
+    {
+      "slug": "ferien-workshops",
+      "naziv_de": "Ferien-Workshops",
+      "naziv_en": "School Holiday Workshops",
+      "tag_de": "Kinder & Jugendliche · Halbtags-Atelier in den Schulferien",
+      "tag_en": "Kids & teens · Half-day sessions during school holidays",
+      "tiers": [
+        {
+          "naziv": "Basic",
+          "cena": "CHF 55",
+          "jedinica_de": "/ Tag / Kind",
+          "jedinica_en": "/ day / child",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "Halbtag (3 Std.), 1 Projekt",
+              "en": "Half-day (3 hrs), 1 project"
+            },
+            {
+              "de": "Material & Begleitung inkl.",
+              "en": "Materials & guidance included"
+            }
+          ],
+          "cena_broj": 55,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "Advance",
+          "cena": "CHF 65",
+          "jedinica_de": "/ Tag / Kind",
+          "jedinica_en": "/ day / child",
+          "popular": true,
+          "pogodnosti": [
+            {
+              "de": "Halbtag (3.5 Std.), 2 Projekte",
+              "en": "Half-day (3.5 hrs), 2 projects"
+            },
+            {
+              "de": "Snack & Getränk inkl.",
+              "en": "Snack & drink included"
+            }
+          ],
+          "cena_broj": 65,
+          "je_dodatak": false
+        },
+        {
+          "naziv": "All Inclusive",
+          "cena": "CHF 85",
+          "jedinica_de": "/ Tag / Kind",
+          "jedinica_en": "/ day / child",
+          "popular": false,
+          "pogodnosti": [
+            {
+              "de": "Ganztag (6 Std.), 3 Projekte",
+              "en": "Full day (6 hrs), 3 projects"
+            },
+            {
+              "de": "Mittagessen & Mitnahme-Set",
+              "en": "Lunch & take-home kit"
+            }
+          ],
+          "cena_broj": 85,
+          "je_dodatak": false
+        }
+      ]
+    }
+  ]
+}
