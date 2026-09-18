@@ -69,14 +69,16 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
       (ostao je u folderu od ranijeg preuzimanja, `git add -A` ga je slucajno
       pokupio u prvi deploy commit) — dodat `.gitignore` da se to ne ponovi.
 - [ ] Provera linkova, tipfelera (DE i EN), i da `mailto:` link ima ispravnu
-      email adresu — linkovi/anchor-i provereni automatski (svi rade), tipfeleri
-      NISU rucno citani rec-po-rec, ostaje otvoreno
-- [ ] Provera pristupacnosti (accessibility): kontrast boja, `alt` tekstovi,
-      tab-navigacija kroz formu i dugmad, `prefers-reduced-motion` ponasanje
-      (vec je implementirano — samo potvrditi da radi). Osnovna provera uradjena
-      (nema slika bez `alt`, nema duplih `id`-ova), puna accessibility revizija
-      (kontrast, tab-order, screen reader) NIJE radjena
-- [ ] Performance provera (Lighthouse ili slicno) — cilj: 90+ na Performance i SEO
+      email adresu — linkovi/anchor-i provereni automatski (svi rade), lagani
+      automatski typo scan bez nalaza; puno rucno citanje rec-po-rec NIJE uradjeno
+- [x] Provera pristupacnosti (accessibility): kontrast boja (minimalne lokalne
+      korekcije `--ink-faint`, kicker na `--ink-soft`), `alt`/dekorativni elementi,
+      tab-navigacija i `:focus-visible`, heading redosled (h4→h3), skip link,
+      ARIA na lang toggle i businessplan gate, `prefers-reduced-motion` prosiren
+      (pulse/glow). Lighthouse Accessibility: 94→100 (lokalno posle fix-a).
+      Odlozeno: globalna `--sage`/`--gold` odluka ako se koriste za tekst.
+- [x] Performance provera (Lighthouse) — cilj 90+ Performance i SEO: live pre
+      91/100, lokalno posle 99/100 (async fonts, manje font-weight varijanti).
 
 ## Faza 3 — Prosirenje paketa (BOT)
 

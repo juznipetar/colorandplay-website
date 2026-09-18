@@ -30,11 +30,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&amp;family=Work+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&amp;family=Work+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&amp;family=Work+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&amp;family=Work+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"></noscript>
 <style>
 :root{
   --bg:#FAF6EC; --surface:#FFFFFF; --surface-2:#F1E9D6; --surface-3:#EAE0C8;
-  --ink:#1E241F; --ink-soft:#5B665D; --ink-faint:#8B9389;
+  --ink:#1E241F; --ink-soft:#5B665D; --ink-faint:#6B746C;
   --line:#E3D9BF; --line-strong:#CDBF9C;
   --teal:#0B6E6B; --teal-deep:#083F3E; --teal-soft:#DCEEEC;
   --gold:#C9962E; --gold-soft:#F5E7C4;
@@ -91,7 +93,16 @@ a{color:inherit;}
   html{scroll-behavior:auto;}
   .reveal{opacity:1!important; transform:none!important; transition:none!important;}
   .blob{animation:none!important;}
+  .brandmark .dot{animation:none!important;}
+  .tier .badge{animation:none!important;}
 }
+.skip-link{position:absolute; left:12px; top:-100px; z-index:100; background:var(--teal); color:#fff; padding:10px 16px; border-radius:8px; font-weight:600; font-size:14px; text-decoration:none;}
+.skip-link:focus{top:12px;}
+:focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+.langtoggle button:focus-visible,
+.cta:focus-visible,
+.navlinks a:focus-visible,
+.brandmark:focus-visible{outline-offset:3px;}
 
 /* ---------- topbar ---------- */
 .topbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:40; background:color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
@@ -143,7 +154,7 @@ a{color:inherit;}
 
 /* ---------- sections ---------- */
 section.block{padding-block:60px; border-bottom:1px solid var(--line);}
-.kicker{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:10px; display:block;}
+.kicker{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; margin-bottom:10px; display:block;}
 .block h2{font-size:clamp(1.7rem,3.6vw,2.3rem); max-width:640px;}
 .block .lead{font-size:1.06rem; color:var(--ink-soft); max-width:660px; margin-top:14px;}
 
@@ -153,7 +164,7 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 .prop{padding:24px 22px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease;}
 .prop:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg);}
 .prop .ic{width:36px; height:36px; border-radius:10px; background:var(--teal-soft); color:var(--teal-deep); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:600; font-size:14px; margin-bottom:14px;}
-.prop h4{font-size:15.5px; margin-bottom:6px;}
+.prop h3{font-size:15.5px; margin-bottom:6px;}
 .prop p{font-size:13.8px; color:var(--ink-soft);}
 
 /* ---------- tier pricing ---------- */
@@ -196,7 +207,7 @@ section.block{padding-block:60px; border-bottom:1px solid var(--line);}
 .step{position:relative; padding:24px 22px 22px; background:var(--surface-2); border-radius:var(--radius); transition:transform .25s ease;}
 .step:hover{transform:translateY(-3px);}
 .step::before{counter-increment:step; content:counter(step); font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--teal-deep); background:var(--surface); width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:14px; border:1px solid var(--line-strong);}
-.step h4{font-size:15px; margin-bottom:6px;}
+.step h3{font-size:15px; margin-bottom:6px;}
 .step p{font-size:13.5px; color:var(--ink-soft);}
 
 /* ---------- location / contact ---------- */
@@ -213,27 +224,31 @@ footer{padding-block:44px 60px;}
 .footgrid{display:flex; flex-direction:column; gap:18px;}
 @media (min-width:680px){ .footgrid{flex-direction:row; justify-content:space-between; align-items:flex-end;} }
 .footer-brand{font-family:var(--font-display); font-size:1.3rem; font-weight:600;}
-.footer-meta{font-size:12.5px; color:var(--ink-faint); line-height:1.7;}
+.footer-meta{font-size:12.5px; color:var(--ink-soft); line-height:1.7;}
+.fineprint{font-size:12px; color:var(--ink-soft); margin-top:32px;}
 </style>
 </head>
 <body>
 
+<a class="skip-link i18n" data-lang="de" href="#main">Zum Inhalt springen</a>
+<a class="skip-link i18n" data-lang="en" href="#main" hidden>Skip to content</a>
+
 <div class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brandmark" href="#top">
-      <span class="dot"></span>
+    <a class="brandmark" href="#top" aria-label="Color and Play — Startseite / Home">
+      <span class="dot" aria-hidden="true"></span>
       <span class="brandmark-text">Color and Play</span>
     </a>
     <div class="topbar-right">
-      <nav class="navlinks">
+      <nav class="navlinks" aria-label="Hauptnavigation / Main navigation">
         <a href="#pakete" class="i18n" data-lang="de">Pakete</a><a href="#pakete" class="i18n" data-lang="en" hidden>Packages</a>
         <a href="#ablauf" class="i18n" data-lang="de">Ablauf</a><a href="#ablauf" class="i18n" data-lang="en" hidden>How it works</a>
         <a href="#standort" class="i18n" data-lang="de">Standort</a><a href="#standort" class="i18n" data-lang="en" hidden>Location</a>
         <a class="cta small" href="#kontakt"><span class="i18n" data-lang="de">Termin sichern</span><span class="i18n" data-lang="en" hidden>Reserve a spot</span></a>
       </nav>
-      <div class="langtoggle" role="group" aria-label="Language">
-        <button type="button" id="btn-de" aria-pressed="true" onclick="setLang('de')">DE</button>
-        <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      <div class="langtoggle" role="group" aria-label="Sprache / Language">
+        <button type="button" id="btn-de" aria-pressed="true" aria-label="Deutsch" onclick="setLang('de')">DE</button>
+        <button type="button" id="btn-en" aria-pressed="false" aria-label="English" onclick="setLang('en')">EN</button>
       </div>
     </div>
   </div>
@@ -276,6 +291,8 @@ footer{padding-block:44px 60px;}
   </div>
 </header>
 
+<main id="main">
+
 <section class="block wrap reveal">
   <span class="kicker i18n" data-lang="de">Warum Color and Play</span>
   <span class="kicker i18n" data-lang="en" hidden>Why Color and Play</span>
@@ -284,19 +301,19 @@ footer{padding-block:44px 60px;}
   <div class="propgrid reveal-stagger reveal">
     <div class="prop" style="--i:0">
       <div class="ic">01</div>
-      <h4 class="i18n" data-lang="de">Für jeden Anspruch</h4><h4 class="i18n" data-lang="en" hidden>For every occasion</h4>
+      <h3 class="i18n" data-lang="de">Für jeden Anspruch</h3><h3 class="i18n" data-lang="en" hidden>For every occasion</h3>
       <p class="i18n" data-lang="de">Von der Kindergeburtstags-Party bis zum exklusiven Firmenanlass — jedes Format ist bis ins Detail durchdacht.</p>
       <p class="i18n" data-lang="en" hidden>From kids' birthday parties to exclusive corporate events — every format is thought through to the last detail.</p>
     </div>
     <div class="prop" style="--i:1">
       <div class="ic">02</div>
-      <h4 class="i18n" data-lang="de">Alles inklusive</h4><h4 class="i18n" data-lang="en" hidden>Everything included</h4>
+      <h3 class="i18n" data-lang="de">Alles inklusive</h3><h3 class="i18n" data-lang="en" hidden>Everything included</h3>
       <p class="i18n" data-lang="de">Material, professionelle Begleitung und Aufräumen sind immer im Preis enthalten — keine versteckten Kosten.</p>
       <p class="i18n" data-lang="en" hidden>Materials, professional guidance and clean-up are always included — no hidden costs.</p>
     </div>
     <div class="prop" style="--i:2">
       <div class="ic">03</div>
-      <h4 class="i18n" data-lang="de">Mitten in Baar</h4><h4 class="i18n" data-lang="en" hidden>Right in Baar</h4>
+      <h3 class="i18n" data-lang="de">Mitten in Baar</h3><h3 class="i18n" data-lang="en" hidden>Right in Baar</h3>
       <p class="i18n" data-lang="de">Gut erreichbar, 6 Tage die Woche geöffnet — von frühem Nachmittag bis in den Abend.</p>
       <p class="i18n" data-lang="en" hidden>Easy to reach, open 6 days a week — from early afternoon into the evening.</p>
     </div>
@@ -703,8 +720,8 @@ footer{padding-block:44px 60px;}
     </div>
   </div>
 
-  <p style="font-size:12px; color:var(--ink-faint); margin-top:32px;" class="i18n" data-lang="de">Alle Preise vorläufig und können sich bis zur Eröffnung noch ändern.</p>
-  <p style="font-size:12px; color:var(--ink-faint); margin-top:32px;" class="i18n" data-lang="en" hidden>All prices are preliminary and may still change before opening.</p>
+  <p class="fineprint i18n" data-lang="de">Alle Preise vorläufig und können sich bis zur Eröffnung noch ändern.</p>
+  <p class="fineprint i18n" data-lang="en" hidden>All prices are preliminary and may still change before opening.</p>
 </section>
 
 <section class="block wrap reveal" id="ablauf">
@@ -714,17 +731,17 @@ footer{padding-block:44px 60px;}
   <h2 class="i18n" data-lang="en" hidden>Your studio experience in three steps.</h2>
   <div class="steps reveal-stagger reveal">
     <div class="step" style="--i:0">
-      <h4 class="i18n" data-lang="de">Format wählen</h4><h4 class="i18n" data-lang="en" hidden>Choose a format</h4>
+      <h3 class="i18n" data-lang="de">Format wählen</h3><h3 class="i18n" data-lang="en" hidden>Choose a format</h3>
       <p class="i18n" data-lang="de">Ob Geburtstag, Team-Event oder Wine &amp; Draw — wähle Paket und Stufe.</p>
       <p class="i18n" data-lang="en" hidden>Birthday, team event or Wine &amp; Draw — pick your package and tier.</p>
     </div>
     <div class="step" style="--i:1">
-      <h4 class="i18n" data-lang="de">Termin anfragen</h4><h4 class="i18n" data-lang="en" hidden>Request a date</h4>
+      <h3 class="i18n" data-lang="de">Termin anfragen</h3><h3 class="i18n" data-lang="en" hidden>Request a date</h3>
       <p class="i18n" data-lang="de">Schreib uns kurz dein Wunschdatum — wir bestätigen innert 24 Std.</p>
       <p class="i18n" data-lang="en" hidden>Send us your preferred date — we confirm within 24 hours.</p>
     </div>
     <div class="step" style="--i:2">
-      <h4 class="i18n" data-lang="de">Kreativ werden</h4><h4 class="i18n" data-lang="en" hidden>Get creative</h4>
+      <h3 class="i18n" data-lang="de">Kreativ werden</h3><h3 class="i18n" data-lang="en" hidden>Get creative</h3>
       <p class="i18n" data-lang="de">Material und Begleitung sind bereit — du musst nur noch loslegen.</p>
       <p class="i18n" data-lang="en" hidden>Materials and guidance are ready — all you do is show up and create.</p>
     </div>
@@ -769,6 +786,8 @@ footer{padding-block:44px 60px;}
     </a>
   </div>
 </section>
+
+</main>
 
 <footer class="wrap">
   <div class="footgrid">
