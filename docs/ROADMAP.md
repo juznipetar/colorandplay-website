@@ -53,7 +53,7 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
       sitemap — ostaje van indeksiranja), i referencu na njega u `robots.txt`
 - [x] Provera i18n parova — skripta `check_i18n.py` (u repo root-u) proverava da
       svaki `data-lang="de"` ima par `data-lang="en"` i obrnuto. Oba fajla OK
-      (134/134 na index.html, 158/158 na businessplan/index.html)
+      (188/188 na index.html, 158/158 na businessplan/index.html)
 - [x] **Bug nadjen i ispravljen (deep check 2026-09-18):** `build_site.py` je
       ubacivao `<title>`, `<meta name="description">`, `<meta name="robots"
       content="noindex,nofollow">` i font `<link>`-ove direktno u `<body>`
@@ -84,7 +84,12 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
       [bojaprica-ewkzvomb.manus.space](https://bojaprica-ewkzvomb.manus.space)
       — hex map u `:root` na `index.html` i `businessplan/index.html`, dark mode
       usklađen, lokalne WCAG korekcije (CTA/teal tekst). Detalji u
-      `docs/izvestaji/05-izvestaj-sesije-2026-09.md`.
+      `docs/izvestaji/05-izvestaj-sesije-2026-09.md` (sekcija Paleta).
+- [x] **Deep polish (sesija 05, 2026-09-18):** scroll-margin za sticky nav,
+      mobilna nav traka, validan jedan `<legend>`, forma field-level greške,
+      trustbar cena bez „CHF 0“ flash-a, gate error clear on type, reduced-motion
+      hover transform. Detalji: `docs/izvestaji/05-izvestaj-sesije-2026-09.md`
+      (sekcija Deep polish).
 
 ## Faza 3 — Prosirenje paketa (BOT)
 

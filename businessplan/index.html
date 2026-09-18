@@ -1064,17 +1064,23 @@ footer{padding-block:44px 60px;}
     var val = document.getElementById("bp-pw").value;
     var hex = await sha256Hex(val);
     var pwInput = document.getElementById("bp-pw");
+    var errEl = document.getElementById("bp-err");
     if (hex === HASH){
       try{ sessionStorage.setItem(SESSION_KEY, "1"); }catch(e){}
       pwInput.setAttribute("aria-invalid", "false");
+      errEl.style.display = "none";
       reveal();
     } else {
-      document.getElementById("bp-err").style.display = "block";
+      errEl.style.display = "block";
       pwInput.setAttribute("aria-invalid", "true");
       pwInput.focus();
     }
   };
 
+  document.getElementById("bp-pw").addEventListener("input", function(){
+    document.getElementById("bp-err").style.display = "none";
+    document.getElementById("bp-pw").setAttribute("aria-invalid", "false");
+  });
   document.getElementById("bp-pw").addEventListener("keydown", function(e){
     if (e.key === "Enter") window.bpUnlock();
   });

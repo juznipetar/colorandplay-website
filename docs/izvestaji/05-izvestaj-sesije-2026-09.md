@@ -2,6 +2,8 @@
 
 Pre nastavka: `git pull origin main`, `python3 check_i18n.py index.html businessplan/index.html`.
 
+---
+
 ## Paleta — Playful Pastel / Manus (user-approved)
 
 Izvor istine: [bojaprica-ewkzvomb.manus.space](https://bojaprica-ewkzvomb.manus.space)
@@ -44,12 +46,65 @@ Dark override-i zadržavaju postojeću strukturu (`prefers-color-scheme` + `data
 - `favicon.svg`: ažuriran na `#0b8e8b` / `#dcebe5` / `#f5cb50`.
 - `og-image.png` i generisani PNG/ICO favicon set **nisu** u repo-u na ovom VM-u — nisu regenerisani; meta tagovi i dalje referenciraju postojeće fajlove na GitHub Pages.
 
+---
+
+## Deep polish — bugfix / a11y / form UX (bez promene `:root` tokena)
+
+Posle merge PR #4; paleta primenjena odvojeno (gore). Ovaj PR dira samo layout, HTML validnost, form UX i gate ponašanje — **nema izmena `:root` hex vrednosti**.
+
+### Automatske provere (pre fix-a)
+
+| Provera | Rezultat |
+|---------|----------|
+| Live HTTP 200 (`/` i `/businessplan/`) | OK |
+| `python3 check_i18n.py index.html businessplan/index.html` | OK (188/188, 158/158) |
+| Duplikat `id` atributa | 0 |
+| Broken internal anchors | 0 |
+| Missing `alt` na `<img>` | N/A (nema slika u HTML-u) |
+| `robots.txt` `Disallow: /businessplan/` | OK (live i repo) |
+| `noindex` u `<head>` businessplan-a | OK |
+| html5lib parse oba fajla | OK |
+| Lokalni asset linkovi (favicon, og-image) | OK |
+
+### Bugovi pronađeni i ispravljeni
+
+#### `index.html`
+
+1. **Sticky header prekriva anchor sekcije** — `scroll-padding-top` / `scroll-margin-top` (~72px) za `#pakete`, `#ablauf`, `#standort`, `#kontakt`, `#main`.
+2. **Mobilna navigacija nedostupna** — `.navlinks` horizontalni scroll ispod branda (Pakete, Ablauf, Standort, Termin sichern).
+3. **Trustbar „ab CHF 0“ flash** — statična cena `CHF 39` (bez count-up na prefiksiranom broju).
+4. **Nevažeći HTML: dva `<legend>` u jednom `<fieldset>`** — spojeno u jedan `<legend>` sa DE/EN `.i18n` spanovima.
+5. **Kontakt forma — validacija UX** — `.field.is-invalid`, `aria-invalid`, fokus na prvo nevalidno polje; clear on input.
+6. **Formspree placeholder poruka** — `.form-status.warn` (informativno); ID nije menjan.
+7. **`prefers-reduced-motion`** — hover `transform` off na `.cta`, `.prop`, `.tier`, `.step`, `.offercard`.
+
+#### `businessplan/index.html`
+
+8. **Gate greška ostaje posle pogrešnog koda** — `input` listener sakriva `#bp-err` i resetuje `aria-invalid`.
+
+### Svesno odloženo
+
+- **Formspree ID** — i dalje `YOUR_FORMSPREE_ID` (COVEK — `DEPLOY.md` §7).
+- **Businessplan lozinka** — placeholder `ColorPlay2026`.
+- **Nema novih DE/EN tipfelera** na ovom pass-u.
+
+---
+
 ## Verifikacija
 
 ```bash
 python3 check_i18n.py index.html businessplan/index.html
 ```
 
+- html5lib parse — OK
+- Gate, lang toggle, forma (prazno / placeholder / mailto) — smoke test u browseru
+
 ## ROADMAP
 
-Označena odluka o paleti (ranije „čeka korisnika“ u izveštaju 04).
+Označena odluka o paleti (ranije „čeka korisnika“ u izveštaju 04) i deep polish stavka u Fazi 2.
+
+## Šta korisnik treba da odluči (nepromenjeno)
+
+1. Formspree nalog + zamena placeholder ID-ja (`DEPLOY.md` §7).
+2. Nova businessplan lozinka pre slanja linka Aligu.
+3. Calendly pilot (`docs/predlog-calendly.md`).
