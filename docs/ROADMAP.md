@@ -68,9 +68,10 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
 - [x] Uklonjen slucajan `Claude outputs/colorandplay-site.zip` fajl iz git repo-a
       (ostao je u folderu od ranijeg preuzimanja, `git add -A` ga je slucajno
       pokupio u prvi deploy commit) — dodat `.gitignore` da se to ne ponovi.
-- [ ] Provera linkova, tipfelera (DE i EN), i da `mailto:` link ima ispravnu
-      email adresu — linkovi/anchor-i provereni automatski (svi rade), lagani
-      automatski typo scan bez nalaza; puno rucno citanje rec-po-rec NIJE uradjeno
+- [x] Provera linkova, tipfelera (DE i EN), i da `mailto:` link ima ispravnu
+      email adresu — rucno procitan vidljiv DE/EN marketing copy na `index.html`
+      (jedan jasan DE ispravak: „vom frühen Nachmittag“); `mailto:` i tekst u
+      businessplan-u konzistentno koriste `suzana.androvic@gmail.com`
 - [x] Provera pristupacnosti (accessibility): kontrast boja (minimalne lokalne
       korekcije `--ink-faint`, kicker na `--ink-soft`), `alt`/dekorativni elementi,
       tab-navigacija i `:focus-visible`, heading redosled (h4→h3), skip link,
@@ -88,11 +89,11 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
       Ferien-Workshops. Koristiti isti `.tiers`/`.tier` CSS obrazac kao postojecih
       5 kategorija (vidi `docs/ARHITEKTURA.md`). Uradjeno 2026-09-18 — svih 11
       paketa sada ima 3 tier-a na marketing stranici.
-- [ ] Razmotriti pravi upitni formular (umesto samo `mailto:`) — npr. Formspree
-      (besplatan tier, bez sopstvenog servera) koji salje upit direktno na mail
-- [ ] Istraziti opciju pravog booking/kalendar sistema (npr. Calendly embed) za
-      "Termin anfragen" — SAMO istraziti i predloziti, ne implementirati bez
-      dogovora, jer to je poslovna odluka (placanje, provizija, itd.)
+- [x] Razmotriti pravi upitni formular (umesto samo `mailto:`) — Formspree
+      kontakt forma u `#kontakt` (name, email, message, optional phone), placeholder
+      `YOUR_FORMSPREE_ID`, mailto fallback; uputstvo u `DEPLOY.md` sekcija 7
+- [x] Istraziti opciju pravog booking/kalendar sistema (npr. Calendly embed) za
+      "Termin anfragen" — predlog u `docs/predlog-calendly.md` (bez embed-a na sajtu)
 
 ## Faza 4 — Jedan izvor istine za cene (BOT, tehnicki dug)
 
