@@ -173,13 +173,39 @@ mogao da provali kod (rainbow table napad na jednostavnu lozinku). Za ovu svrhu
 (privremeno deljenje sa jednim vlasnikom lokala, stranica se brise posle pregleda)
 ovo je dovoljno. Za jace resenje vidi `DEPLOY.md` sekcija 6 (Cloudflare Access).
 
+## Planirano prosirenje: vise-stranicni sajt (Faza 7, ROADMAP.md)
+
+Sajt do sada sledi princip "jedna stranica, anchor navigacija" (`index.html`
+sa `#pakete`, `#standort`, `#kontakt` itd.). Korisnik je trazio veci obim:
+galerija slika + posebna stranica za svaki od 11 paketa. Pun plan je u
+`docs/ROADMAP.md` Faza 7 — ovde samo arhitekturne implikacije:
+
+- **Novi URL obrazac:** `/pakete/<slug>/index.html` (11 stranica) i
+  `/galerie/index.html` — isti obrazac koji `businessplan/index.html` vec
+  koristi (folder + `index.html`, radi bez servera na GitHub Pages).
+- **Ovo je trenutak kad se uvodi lokalna build skripta** (`data/pricing.json`
+  + `data/gallery.json` + `templates/` + generator skripta) — jedini nacin da
+  se 11 novih stranica + pocetna drze sinhronizovane bez rucnog dupliranja
+  cena/sadrzaja na 12 mesta. **Ovo NE krsi princip "potpuno samostalni fajlovi"
+  ispod** — princip se odnosi na sta GitHub Pages servira (cist staticki HTML,
+  nula servera), ne na to da li se HTML generise rucno ili skriptom pre commit-a.
+  Isti obrazac vec postoji za `businessplan/index.html` (generisan iz
+  `pitch.html` preko `build_site.py`) — Faza 7 samo primenjuje isti obrazac na
+  marketing deo sajta.
+- I dalje vazi: bez npm/node, bez pravog frontend build pipeline-a (Webpack/Vite/
+  React). Generator je obican Python (Jinja2 ili string-template), pokrece se
+  rucno pre commit-a, output je obican HTML fajl kao i svaki drugi u repo-u.
+
 ## Poznata ogranicenja / tehnicki dug
 
 - Cene postoje na dva mesta rucno (marketing stranica + businessplan) — vidi
-  ROADMAP.md Faza 4 za plan konsolidacije u jedan JSON izvor
-- Nema pravog kontakt formulara, samo `mailto:` link — radi, ali ne loguje upite
-  nigde niti radi validaciju
-- Nema favicon/OG meta tagova jos (ROADMAP.md Faza 2)
+  ROADMAP.md Faza 4 za plan konsolidacije u jedan JSON izvor. **Ovo je sada
+  BLOKIRAJUCI preduslov za Fazu 7**, ne vise samo "nice to have".
+- Kontakt formular postoji (Formspree, sesija 04) ali jos sa placeholder ID-jem
+  — ceka pravi Formspree nalog od coveka (`DEPLOY.md` §7).
+- Favicon/OG meta tagovi postoje i usaglaseni su sa trenutnom Playful Pastel
+  paletom (sesija 06).
 - Tier struktura (Basic/Advance/All Inclusive) postoji za svih 11 paketa na
   marketing stranici (Faza 3 zavrsena 2026-09-18). Cene u `businessplan/index.html`
   i dalje su odvojene — vidi Faza 4 za plan konsolidacije.
+- Nema jos galerije slika niti pojedinacnih stranica po paketu — vidi Faza 7.

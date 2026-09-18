@@ -3,8 +3,8 @@
 Ovaj fajl je napisan da se direktno nalepi u `zadatak.md` tvog lokalnog agenta
 (Desktop\sync\agent, NASTAVI.bat/AGENT.bat) ili da posluzi kao referenca kad mu
 rucno zadajes posao. Pise ga Claude (Cowork sesija) za Claude Code lokalnog agenta —
-zato je precizan i eksplicitan o granicama. Poslednje azurirano: 18.09.2026,
-posle deploy-a i punog deep-check-a sajta.
+zato je precizan i eksplicitan o granicama. Poslednje azurirano: 18.09.2026 (sesija 08) — dodata Faza 7, korisnikova
+originalna vizija za galeriju + pojedinacne stranice po paketu.
 
 ## OBAVEZNO — model
 
@@ -57,61 +57,32 @@ komponenta) PRE nego sto pises ijednu liniju koda. Ako imas "roadmap rezim", ova
   `python3 check_i18n.py index.html businessplan/index.html` — mora da vrati OK
   za oba fajla pre commit-a.
 
-## Zadaci (redosled po prioritetu)
+## Zadaci — jedini izvor istine je `docs/ROADMAP.md`
 
-### 1. Bezbednost — promeni placeholder lozinku (URADI PRVO, sajt je vec public)
-`build_site.py` (u cloud radnom folderu, van ovog repo-a — proveri da li ti je
-dostupan; ako nije, pitaj korisnika da ti prebaci `pitch.html` + `build_site.py`)
-ima liniju `PASSWORD = "ColorPlay2026"`. Ovo je placeholder i NE SME da ostane
-sad kad je repo vec public na GitHub-u i sajt live. Ako korisnik (Petar/Suzana)
-nije vec dao novu lozinku, PITAJ ih za nju pre nego sto nastavis — ne izmisljaj
-lozinku sam. Kad dobijes lozinku, izmeni `PASSWORD` u skripti, pokreni
-`python3 build_site.py`, proveri da `businessplan/index.html` sadrzi novi hash
-(ne stari), pokreni `check_i18n.py`, i commituj + push-uj.
+Ovaj fajl vise NE duplira spisak zadataka (radjeno tako do sesije 07 — pokazalo
+se da stari spiskovi ovde zaostaju za stvarnim stanjem i zbune sledecu sesiju).
+**Pre svakog rada procitaj `docs/ROADMAP.md` od vrha — taj fajl je azuran i ima
+tacan status po fazi (`[x]`/`[ ]`, COVEK/BOT).** Ovaj fajl daje samo kontekst,
+prioritet i cvrste granice.
 
-### 2. Odluka o boji palete — CEKA NA POTVRDU, ne biraj sam
-U posebnoj Cowork sesiji su pripremljene 3 konkretne, veselije palete boja
-(Sunny Citrus, Playful Pastel, Bold Primary Play — svaka sa hex kodovima i
-mapom upotrebe) kao vizuelno poredjenje, ali korisnik JOS NIJE izabrao koju
-(ili da li uopste menja trenutnu tamniju/ekskluzivnu teal/gold/coral/sage
-paletu). **Ne primenjuj nijednu paletu sam.** Ako Petar/Suzana kazu koju zele
-(ili traze mesavinu), tek onda promeni `:root` promenljive u `index.html` i
-`businessplan/index.html` (isto mesto na oba fajla, vidi ARHITEKTURA.md "Dizajn
-sistem"), i proveri kontrast/citljivost posle promene.
+Kratak status (detalji i tacan redosled u ROADMAP.md):
+- Faze 0-3 (fondacija, deploy, tehnicka higijena, tier paketi za svih 11
+  ponuda) — **GOTOVO**, vidi izvestaje 01-05.
+- Faza 4 (jedan izvor istine za cene, `data/pricing.json`) — **SADA PRIORITET,
+  ne "kad ima vremena"** — postala je BLOKIRAJUCI preduslov za Fazu 7 (vidi
+  ispod). Uradi ovo pre nego sto pocnes 7.x zadatke.
+- Faza 5 — van trenutnog obima, ne raditi bez dogovora.
+- Faza 6 — sitniji kreativni dodaci (Impressum/Datenschutz, JSON-LD SEO, 404
+  stranica [GOTOVO], print stylesheet [GOTOVO], mini-kviz, vaucer-preview).
+- **Faza 7 — NOVO, korisnikova originalna vizija: galerija slika + pojedinacna
+  stranica za svaki od 11 paketa.** Ovo je najveci pojedinacni zadatak do sad
+  (sajt prelazi iz jednostranicnog u vise-stranicni). Redosled: 7.0 (pricing.json
+  + build skripta, isto sto i Faza 4) → 7.2 pilot stranica jednog paketa na
+  odobrenje coveku → tek onda ostatak + galerija (7.1, 7.3). NE raditi sve u
+  jednom PR-u, vidi puni plan u ROADMAP.md.
 
-### 3. Deploy odrzavanje (domena, kad je kupljena)
-Ako korisnik kupi .ch domenu, napravi `CNAME` fajl u root-u sa domenom, uputi
-korisnika koje DNS zapise da doda kod registrara (vidi DEPLOY.md korak 4), i
-ukljuci "Enforce HTTPS" u repo Settings → Pages (rucno kroz browser, ili
-`gh api` ako znas tacan endpoint — testiraj pre nego sto potvrdis korisniku
-da je gotovo).
-
-### 4. Tehnicka higijena — VECINA VEC GOTOVA, ostalo:
-Favicon, OG/Twitter tagovi, sitemap.xml i i18n-check skripta su vec uradjeni
-(vidi gore). Ostaje:
-- Provera pristupacnosti (accessibility): kontrast boja (posebno ako menjas
-  paletu u zadatku 2 — ponovo proveri), `alt` tekstovi, tab-navigacija kroz
-  formu i dugmad
-- Performance provera (Lighthouse ili slicno) — cilj: 90+ na Performance i SEO
-- Rucno citanje DE/EN teksta na tipfelere (i18n-check proverava samo da li su
-  parovi kompletni, ne i da li je tekst tacan)
-
-### 5. Prosirenje tier paketa (Faza 3)
-Dodaj Basic/Advance/All Inclusive strukturu (isti CSS obrazac, vidi
-ARHITEKTURA.md sekciju "Tier pricing komponenta") za: Grundangebot, Solo-Abend,
-Familie/Paare/Senioren, Plus-Angebot, Geschenkgutscheine, Ferien-Workshops.
-
-**Cene su proizvoljne/ilustrativne — izmisli razumne cene u istom stilu kao
-postojecih 5 grupa (Basic jeftinije/osnovnije, Advance srednje sa "Beliebt"
-bedzom, All Inclusive najskuplje sa najvise pogodnosti).** Ovo je izricito
-trazeno od korisnika ("cene stavi proizvoljne, mozemo kasnije da azuriramo") —
-ne treba da pitas za svaku cenu, samo budi razuman i konzistentan sa postojecim
-rasponima. Pokreni `check_i18n.py` posle.
-
-### 6. Jedan izvor istine za cene (Faza 4 — vremenski zahtevno, radi kad ima vremena)
-Napravi `data/pricing.json` i prepravi build skripte da iz njega generisu HTML.
-Ovo je veci refaktor — testiraj dobro da oba fajla (marketing + businessplan) i
-dalje rade identicno posle promene.
+Businessplan pristupni kod (`ColorPlay2026` placeholder) — proveri u ROADMAP.md
+Faza 1 da li je vec promenjen pre nego sto pretpostavis da nije.
 
 ## STROGE GRANICE — nikad ne radi ovo bez eksplicitnog naloga od Petra/Suzane
 
@@ -119,13 +90,20 @@ dalje rade identicno posle promene.
   (Investitionsplan, Fixkosten, Umsatz, Startkapital itd.) — oni su racunati u
   `model.py` iz stvarnih pretpostavki i moraju odgovarati vec poslatim PDF-ovima.
   Ako mislis da treba da se promene, PITAJ prvo.
-- **Ne biraj/primenjuj boju paletu sam** (zadatak 2 gore) — cekaj potvrdu.
+- **Ne biraj/primenjuj boju paletu sam bez dogovora.** (Napomena: paleta je vec
+  jednom izabrana i primenjena — Playful Pastel/Manus, sesija 05 — ovo se odnosi
+  na BUDUCU promenu palete, ne na trenutnu.)
 - **Ne kupuj nista** (domenu, hosting, placene alate) — to trazi platne podatke,
   covek to mora sam da uradi (vidi DEPLOY.md).
 - **Ne dodaj lazne recenzije/testimonijale.** Sajt namerno nema "Sta gosti kazu"
   sekciju jer bi izmisljeni citati predstavljeni kao pravi bili neposteni prema
   buducim mustarijama. Ako se doda takva sekcija, MORA biti jasno obelezena kao
   primer/placeholder, nikad predstavljena kao stvarna recenzija.
+- **Ne koristi generican stock-foto materijal predstavljen kao da je iz pravog
+  ateljea** (Faza 7 — galerija, pakete stranice). Isti princip kao kod lazne
+  recenzije: dok prave fotografije ne stignu od Suzane/Petra, koristi jasno
+  obelezene placeholder pločice (brend-stil boja/blob, ne foto), nikad tudju
+  fotografiju predstavljenu kao "nas atelje".
 - **Ne izmisljaj tacnu adresu lokala.** Ugovor sa vlasnikom jos nije potpisan —
   adresa ostaje "Folgt in Kürze" dok Petar/Suzana ne potvrde da je potpisan.
 - **Ne uklanjaj `noindex` meta tag ni `robots.txt` pravilo** za `/businessplan/`
@@ -133,7 +111,10 @@ dalje rade identicno posle promene.
   ispravno u `<head>` — ne premesti ga slucajno nazad u `<body>` ako menjas
   `build_site.py`.
 - **Ne uvodi build alate/framework-e** (Webpack, React, itd.) bez dogovora — vidi
-  princip "potpuno samostalni fajlovi" u ARHITEKTURA.md.
+  princip "potpuno samostalni fajlovi" u ARHITEKTURA.md. Izuzetak vec dogovoren
+  i opisan: lokalna Python build skripta za Fazu 7.0 (`data/pricing.json` →
+  generisani staticki HTML) — to NIJE framework, GitHub Pages i dalje servira
+  cist staticki HTML, vidi ROADMAP.md 7.0 za obrazlozenje.
 - **Ne menjaj model** sa Composer 2.5 na nesto drugo bez eksplicitnog naloga
   (vidi "OBAVEZNO — model" na vrhu).
 - Ako naletis na odluku koja je poslovne/finansijske ili vizuelne/brend prirode
