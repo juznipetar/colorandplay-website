@@ -180,5 +180,6 @@ ovo je dovoljno. Za jace resenje vidi `DEPLOY.md` sekcija 6 (Cloudflare Access).
 - Nema pravog kontakt formulara, samo `mailto:` link — radi, ali ne loguje upite
   nigde niti radi validaciju
 - Nema favicon/OG meta tagova jos (ROADMAP.md Faza 2)
-- Tier struktura (Basic/Advance/All Inclusive) trenutno postoji samo za 5 od 11
-  paketa — ostalih 6 ima samo jednu cenu (ROADMAP.md Faza 3)
+- Tier struktura (Basic/Advance/All Inclusive) postoji za svih 11 paketa na
+  marketing stranici (Faza 3 zavrsena 2026-09-18). Cene u `businessplan/index.html`
+  i dalje su odvojene — vidi Faza 4 za plan konsolidacije.

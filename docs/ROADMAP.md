@@ -80,11 +80,12 @@ ipak pominje u starijim beleskama i u cloud dev projektu.)
 
 ## Faza 3 — Prosirenje paketa (BOT)
 
-- [ ] Dodati tier strukturu (Basic / Advance / All Inclusive) i za preostale
+- [x] Dodati tier strukturu (Basic / Advance / All Inclusive) i za preostale
       kategorije koje trenutno imaju samo jednu cenu: Grundangebot, Solo-Abend
       (Offenes Atelier), Familie/Paare/Senioren, Plus-Angebot, Geschenkgutscheine,
       Ferien-Workshops. Koristiti isti `.tiers`/`.tier` CSS obrazac kao postojecih
-      5 kategorija (vidi `docs/ARHITEKTURA.md`)
+      5 kategorija (vidi `docs/ARHITEKTURA.md`). Uradjeno 2026-09-18 — svih 11
+      paketa sada ima 3 tier-a na marketing stranici.
 - [ ] Razmotriti pravi upitni formular (umesto samo `mailto:`) — npr. Formspree
       (besplatan tier, bez sopstvenog servera) koji salje upit direktno na mail
 - [ ] Istraziti opciju pravog booking/kalendar sistema (npr. Calendly embed) za
